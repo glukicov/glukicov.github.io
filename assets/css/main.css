@@ -1827,8 +1827,8 @@ input, select, textarea {
 		ul.icons a {
 			display: inline-block;
 			width: 2em;
-			height: 2em;
-			line-height: 2em;
+			height: 1em;
+			line-height: 1.5em;
 			text-align: center;
 			border: 0;
 		}
@@ -1974,7 +1974,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background-color: #7eaeac;
+			background-color: #9ececc;
 		}
 
 /* Item */
@@ -2091,7 +2091,8 @@ input, select, textarea {
 			}
 
 				#header .icons a:hover {
-					color: #fff;
+					color: #E27689;
+					/*color: #fff;*/
 				}
 
 	#logo {
@@ -2150,7 +2151,7 @@ input, select, textarea {
 				#nav ul li a span {
 					position: relative;
 					display: block;
-					font-size: 1.0em;
+					font-size: 0.8em;
 				}
 
 					#nav ul li a span:before {
@@ -2237,7 +2238,8 @@ input, select, textarea {
 				}
 
 					#main > section.dark a:hover {
-						border-bottom-color: rgba(255, 255, 255, 0);
+						/*border-bottom-color: rgba(255, 255, 255, 0);*/
+						border-bottom-color: #E27689;
 					}
 
 			#main > section.cover {
