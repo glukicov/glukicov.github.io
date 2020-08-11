@@ -72,6 +72,7 @@ input, select, textarea {
 	appearance: none;
 }
 
+
 /* Basic */
 
 	html {
@@ -2107,15 +2108,15 @@ input, select, textarea {
 			color: #fff;
 			font-weight: 600;
 			font-size: 1em;
-			line-height: 1em;
+			line-height: 0.5em;
 		}
 
 		#logo p {
 			position: relative;
 			display: block;
-			font-size: 0.5em;
-			color: rgba(255, 255, 255, 0.5);
-			line-height: 1.25em;
+			font-size: 0.55em;
+			color: rgba(255, 255, 255, 10);
+			line-height: 1em;
 			margin: 0.5em 0 0 0;
 		}
 
