@@ -56,8 +56,10 @@ body {
 }
 
 mark {
-	background-color: transparent;
-	color: inherit;
+/*	background-color: transparent;
+	color: inherit;*/
+   background-color: #222629;
+   color: white;
 }
 
 input::-moz-focus-inner {
@@ -2138,7 +2140,7 @@ input, select, textarea {
 
 			#nav ul li a {
 				display: block;
-				padding: 0.09em 2.5em 0.09em 2.5em;
+				padding: 0.09em 1.8em 0.09em 2.5em;
 				/*color: rgba(255, 255, 255, 0.5);*/
 				text-decoration: none;
 				outline: 0;
@@ -2250,37 +2252,36 @@ input, select, textarea {
 			}
 
 			#main > section.one {
-				background-color: #272822;
-				background-image: url("../../images/ring.jpg");
+				background-color: #1D262E;
+				background-image: url("../../images/bg.gif");
 			}
 
 			#main > section.two {
-				background-color: #272822;
+				background-color: #1D242A;
 				
 			}
 
 			#main > section.three {
-				background-color: #272822;
-				background-image: url("../../images/flobber.jpg");
+				background-color: #151F29;
 			}
 
 
 			#main > section.four {
-				background-color: #272822;
+				background-color: #1D242A;
 				
 			}
 
-			#main > section.five {
-				/*background-color: #272822;*/
-				/*background-color: #272822;*/
+			/*#main > section.five {
+				/*background-color: #272822;
 				background-color: #272822;
-				background-image: url("../../images/tracker.jpg");
-			}
+			
+				background-image: url("../../images/bg.jpg");
+			}*/
 			/*#main > section.seven {
 				background-color: #272822;
 				height: 10px;
 
-				/*background-image: url("../../images/tracker.png");*/
+				/*background-image: url("../../images/tracker.png");
 			}*/
 
 /* Wide */
