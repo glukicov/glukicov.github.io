@@ -2254,21 +2254,21 @@ input, select, textarea {
 
 			#main > section.one {
 				background-color: #6B7200;
-				/*background-image: url("../../images/bg.gif");*/
+				background-image: url("../../images/bg.gif");
 			}
 
 			#main > section.two {
-				background-color: #1D242A;
+				background-color: #2C2F30;
 				
 			}
 
 			#main > section.three {
-				background-color: #151F29;
+				background-color: #162739;
 			}
 
 
 			#main > section.four {
-				background-color: #1D242A;
+				background-color: #2C2F30;
 				
 			}
 
