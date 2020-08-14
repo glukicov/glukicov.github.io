@@ -2272,18 +2272,9 @@ input, select, textarea {
 				
 			}
 
-			/*#main > section.five {
-				/*background-color: #272822;
-				background-color: #272822;
-			
-				background-image: url("../../images/bg.jpg");
-			}*/
-			/*#main > section.seven {
-				background-color: #272822;
-				height: 10px;
-
-				/*background-image: url("../../images/tracker.png");
-			}*/
+			#main > section.five {
+				background-color: #6B7200;
+			}
 
 /* Wide */
 
