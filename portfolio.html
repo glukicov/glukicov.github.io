@@ -207,6 +207,10 @@
             margin-right: var(--spacing-xs);
         }
 
+        .close-menu {
+            display: none; /* Hide close button by default for all screen sizes */
+        }
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -264,6 +268,11 @@
                 color: var(--text-light);
                 font-size: 1.5rem;
                 cursor: pointer;
+                display: none; /* Hide by default */
+            }
+
+            .nav.active .close-menu {
+                display: block; /* Only show when nav is active */
             }
         }
 
