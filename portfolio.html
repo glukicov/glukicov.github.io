@@ -114,7 +114,6 @@
         img {
             max-width: 100%;
             height: auto;
-            border-radius: var(--border-radius-md);
         }
 
         ul, ol {
@@ -467,6 +466,11 @@
             margin-bottom: var(--spacing-md);
         }
 
+        .card > img {
+            display: block;
+            width: 100%;
+        }
+
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -474,6 +478,11 @@
 
         .card-content {
             padding: var(--spacing-md);
+        }
+
+        .card > iframe {
+            display: block;
+            width: 100%;
         }
 
         .card-title {
@@ -538,8 +547,6 @@
         }
 
         .project-img {
-            margin-bottom: var(--spacing-sm);
-            border-radius: var(--border-radius-md);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
@@ -550,7 +557,6 @@
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
-            border-radius: var(--border-radius-md);
             margin-bottom: var(--spacing-md);
         }
 
@@ -759,6 +765,10 @@
         <div class="grid grid-2">
             <!-- Project 1 -->
             <div class="card">
+                <a href="https://medium.com/@lukicov/to-mlops-or-not-to-mlops-that-is-the-question-the-platform-is-the-answer-e148a8286b90"
+                   target="_blank">
+                    <img src="./images/mlops-cover-full.png" alt="MLOps Article" style="width: 100%;">
+                </a>
                 <div class="card-content">
                     <h3 class="card-title">To MLOps, or not to MLOps? 🤔</h3>
                     <p class="card-text">
@@ -769,14 +779,14 @@
                     <a href="https://medium.com/@lukicov/to-mlops-or-not-to-mlops-that-is-the-question-the-platform-is-the-answer-e148a8286b90"
                        target="_blank" class="card-link">Read on Medium</a>
                 </div>
-                <a href="https://medium.com/@lukicov/to-mlops-or-not-to-mlops-that-is-the-question-the-platform-is-the-answer-e148a8286b90"
-                   target="_blank">
-                    <img src="./images/mlops-cover-full.png" alt="MLOps Article" style="width: 100%;">
-                </a>
             </div>
 
             <!-- Project 2 -->
             <div class="card">
+                <a href="https://medium.com/@lukicov/ml-pipelines-in-the-age-of-llms-from-local-containers-to-cloud-experiments-1b688dcebee5"
+                   target="_blank">
+                    <img src="./images/steps.png" alt="ML Pipelines" style="width: 100%;">
+                </a>
                 <div class="card-content">
                     <h3 class="card-title">ML pipelines in the age of LLMs</h3>
                     <p class="card-text">
@@ -789,16 +799,17 @@
                     <a href="https://github.com/glukicov/llm_pipelines_demo" target="_blank" class="card-link">Demo on
                         GitHub</a>
                 </div>
-                <a href="https://medium.com/@lukicov/ml-pipelines-in-the-age-of-llms-from-local-containers-to-cloud-experiments-1b688dcebee5"
-                   target="_blank">
-                    <img src="./images/steps.png" alt="ML Pipelines" style="width: 100%;">
-                </a>
             </div>
         </div>
 
         <div class="grid grid-2 mt-3">
             <!-- Project 3 -->
             <div class="card">
+                                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
                 <div class="card-content">
                     <h3 class="card-title">Virgin Media O2: DevOps journey</h3>
                     <p class="card-text">
@@ -810,17 +821,17 @@
                     <a href="https://cloud.google.com/blog/products/devops-sre/devops-awards-2022-winner-vmo2"
                        target="_blank" class="card-link">More on our DevOps award</a>
                 </div>
-                <div class="iframe-container">
-                    <iframe src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                </div>
             </div>
 
             <!-- Project 4 -->
             <div class="card">
+                                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/6cMVcKeBdkI"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
                 <div class="card-content">
-                    <h3 class="card-title">Royal Statistical Society: interview</h3>
+                    <h3 class="card-title">Interview with the Royal Statistical Society</h3>
                     <p class="card-text">
                         In this interview, I share my journey from particle physics to data science and MLOps,
                         and how I discovered a passion for building data platforms and helping teams work with data at
@@ -830,11 +841,6 @@
                     </p>
 
                 </div>
-                <div class="iframe-container">
-                    <iframe src="https://www.youtube.com/embed/6cMVcKeBdkI"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                </div>
             </div>
 
         </div>
@@ -842,6 +848,9 @@
         <div class="grid grid-2 mt-3">
             <!-- Project 5 -->
             <div class="card">
+
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/0Xgw37MAKB1R7zGyBKehPe?utm_source=generator&t=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
                 <div class="card-content">
                     <h3 class="card-title">Electric Twin & MLOps Community London</h3>
                     <p class="card-text">
@@ -852,31 +861,24 @@
                     <a href="https://www.electrictwin.com" target="_blank" class="card-link">Learn more about our work
                         on digital personas</a>
                 </div>
-                <div class="iframe-container">
-                    <iframe src="https://open.spotify.com/embed/episode/0Xgw37MAKB1R7zGyBKehPe?utm_source=generator"
-                            allowfullscreen=""
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy"></iframe>
-                </div>
             </div>
 
             <!-- Project 6 -->
             <div class="card">
+                                <a href="https://towardsdatascience.com/set-up-of-a-personal-gpu-server-for-machine-learning-with-ubuntu-20-04-100e787105ad"
+                   target="_blank">
+                    <img src="./images/gpu.jpeg" alt="GPU Server" style="width: 100%;">
+                </a>
                 <div class="card-content">
                     <h3 class="card-title">Personal GPU server for ML</h3>
                     <p class="card-text">
                         With Ubuntu, CUDA and port-forwarding. I cover how to set up secure remote access over ssh,
                         wake-on-LAN feature to switch on your GPU server remotely and mounting the remote file system on
                         your laptop.
-
                     </p>
                     <a href="https://towardsdatascience.com/set-up-of-a-personal-gpu-server-for-machine-learning-with-ubuntu-20-04-100e787105ad"
                        target="_blank" class="card-link">Read on TDS</a>
                 </div>
-                <a href="https://towardsdatascience.com/set-up-of-a-personal-gpu-server-for-machine-learning-with-ubuntu-20-04-100e787105ad"
-                   target="_blank">
-                    <img src="./images/gpu.jpeg" alt="GPU Server" style="width: 100%;">
-                </a>
             </div>
         </div>
 
@@ -958,9 +960,9 @@
             </div>
 
             <div class="card">
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7311105895734693888?compact=1"
+                        height="399" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
                 <div class="card-content">
-                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7311105895734693888?compact=1"
-                            height="399" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
                     <p class="card-text mt-2">
                         🎂 Yesterday, we celebrated the 3-year birthday of the energetic MLOps community London 🇬🇧 It was
                         a very special festive meet-up at Monzo Bank. Thank you to our ⭐️ expert speakers Callum Court,
