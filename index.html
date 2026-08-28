@@ -533,6 +533,14 @@
                 color: var(--text-light);
             }
 
+            .card-text code {
+                background-color: rgba(0, 0, 0, 0.25);
+                border-radius: var(--border-radius-sm);
+                padding: 2px 6px;
+                font-size: 0.9em;
+                word-break: break-word;
+            }
+
             .card-link {
                 display: inline-block;
                 padding: var(--spacing-xs) var(--spacing-sm);
@@ -923,6 +931,57 @@
         <section class="section" id="ml">
             <div class="container section-content">
                 <h2 class="section-title">ML projects and articles 📚</h2>
+
+                <!-- SlideOps -->
+                <div class="card mb-3">
+                    <a
+                        href="https://github.com/glukicov/slideops"
+                        target="_blank"
+                    >
+                        <img
+                            src="./images/slideops-hero.png"
+                            alt="SlideOps demo deck title slide"
+                            style="width: 100%"
+                        />
+                    </a>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            SlideOps: decks that tell you when they go stale 🎞️
+                        </h3>
+                        <p class="card-text">
+                            Turn a repository into a slide deck that tells you
+                            when it stops matching the code. SlideOps is a pair
+                            of Agent Skills: one builds a single-file HTML deck
+                            from a repo, the other checks that deck later. Every
+                            reference in the deck carries the file it came from,
+                            the exact line range, and a hash of those source
+                            lines, so the check is standard-library Python: no
+                            model, no network, zero tokens, milliseconds.
+                        </p>
+                        <p class="card-text">
+                            The repo is its own plugin marketplace, so in Claude
+                            Code it is two lines:
+                            <code>/plugin marketplace add glukicov/slideops</code>,
+                            then <code>/plugin install slideops@slideops</code>.
+                            It also runs on Codex, Copilot CLI and OpenCode: all
+                            three read <code>~/.agents/skills</code>, and
+                            <code>./install.sh</code> in a clone puts the skills
+                            where each of them looks. MIT licensed.
+                        </p>
+                        <a
+                            href="https://github.com/glukicov/slideops"
+                            target="_blank"
+                            class="card-link"
+                            >SlideOps on GitHub</a
+                        >
+                        <a
+                            href="https://medium.com/@lukicov/your-documentation-is-a-build-artifact-start-treating-it-like-one-ab48df61b1e0"
+                            target="_blank"
+                            class="card-link"
+                            >Read on Medium</a
+                        >
+                    </div>
+                </div>
 
                 <div class="grid grid-2">
                     <!-- Project 1 -->
