@@ -731,74 +731,6 @@
                 border: 0;
             }
 
-            /* Click-to-load embed facades */
-            .facade {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                height: 100%;
-                border: 0;
-                margin: 0;
-                padding: 0;
-                cursor: pointer;
-                background-color: transparent;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                color: var(--text-light);
-                font: inherit;
-                text-align: center;
-                transition: box-shadow var(--transition-fast);
-            }
-
-            .iframe-container .facade {
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-
-            .card > .facade {
-                flex-direction: column;
-                gap: var(--spacing-xs);
-                padding: var(--spacing-md);
-                background-color: var(--card-bg);
-                box-shadow: inset 0 0 0 1px var(--border-color);
-            }
-
-            .card > .facade:hover {
-                background-color: var(--card-hover);
-                box-shadow: inset 0 0 0 1px var(--accent-soft);
-            }
-
-            .facade-play {
-                font-size: 3.5rem;
-                color: var(--accent-color);
-                text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
-                transition: color var(--transition-fast);
-            }
-
-            .facade:hover .facade-play {
-                color: var(--accent-bright);
-            }
-
-            .card > .facade .facade-play {
-                font-size: 2.5rem;
-                text-shadow: none;
-            }
-
-            .facade-brand {
-                font-size: 1.25rem;
-                font-weight: 700;
-                color: var(--text-light);
-            }
-
-            .facade-label {
-                font-family: "JetBrains Mono", ui-monospace, monospace;
-                font-size: 0.9rem;
-                color: var(--text-muted);
-            }
-
             .video-embed {
                 background-color: #000000;
                 background-position: center;
@@ -1133,27 +1065,14 @@
                     </div>
 
                     <div class="card">
-                        <button
-                            type="button"
-                            class="facade"
-                            style="height: 650px"
-                            data-src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7311105895734693888"
-                            data-height="650"
-                            data-width="100%"
-                            data-allowfullscreen=""
-                            data-frameborder="0"
-                            data-title="Embedded post"
-                            aria-label="Load embedded LinkedIn post"
-                        >
-                            <i
-                                class="fab fa-linkedin facade-play"
-                                aria-hidden="true"
-                            ></i>
-                            <span class="facade-brand">LinkedIn</span>
-                            <span class="facade-label"
-                                >Click to load embedded post</span
-                            >
-                        </button>
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7311105895734693888"
+                            title="Embedded post"
+                            width="100%"
+                            height="650"
+                            frameborder="0"
+                            allowfullscreen
+                        ></iframe>
                         <div class="card-content">
                             <a
                                 href="https://gatewaze.mlops.community/?mode=slack#email"
@@ -1337,14 +1256,9 @@
                     <!-- Project 3 -->
                     <div class="card">
                         <div class="iframe-container">
-                            <button
-                                type="button"
-                                class="facade"
-                                style="
-                                    background-image: url(&quot;https://i.ytimg.com/vi/bYUjAz_Q1Gs/hqdefault.jpg&quot;);
-                                "
-                                data-src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
-                                data-allow="
+                            <iframe
+                                src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
+                                allow="
                                     accelerometer;
                                     autoplay;
                                     clipboard-write;
@@ -1352,14 +1266,8 @@
                                     gyroscope;
                                     picture-in-picture;
                                 "
-                                data-allowfullscreen=""
-                                aria-label="Play video: Virgin Media O2: DevOps journey"
-                            >
-                                <i
-                                    class="fas fa-circle-play facade-play"
-                                    aria-hidden="true"
-                                ></i>
-                            </button>
+                                allowfullscreen
+                            ></iframe>
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">
@@ -1385,14 +1293,9 @@
                     <!-- Project 4 -->
                     <div class="card">
                         <div class="iframe-container">
-                            <button
-                                type="button"
-                                class="facade"
-                                style="
-                                    background-image: url(&quot;https://i.ytimg.com/vi/6cMVcKeBdkI/hqdefault.jpg&quot;);
-                                "
-                                data-src="https://www.youtube.com/embed/6cMVcKeBdkI"
-                                data-allow="
+                            <iframe
+                                src="https://www.youtube.com/embed/6cMVcKeBdkI"
+                                allow="
                                     accelerometer;
                                     autoplay;
                                     clipboard-write;
@@ -1400,14 +1303,8 @@
                                     gyroscope;
                                     picture-in-picture;
                                 "
-                                data-allowfullscreen=""
-                                aria-label="Play video: Interview with the Royal Statistical Society"
-                            >
-                                <i
-                                    class="fas fa-circle-play facade-play"
-                                    aria-hidden="true"
-                                ></i>
-                            </button>
+                                allowfullscreen
+                            ></iframe>
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">
@@ -1430,35 +1327,22 @@
                 <div class="grid grid-2 mt-3">
                     <!-- Project 5 -->
                     <div class="card">
-                        <button
-                            type="button"
-                            class="facade"
-                            style="height: 352px; border-radius: 12px"
-                            data-src="https://open.spotify.com/embed/episode/0Xgw37MAKB1R7zGyBKehPe?utm_source=generator&amp;t=0"
-                            data-style="border-radius: 12px"
-                            data-width="100%"
-                            data-height="352"
-                            data-frameborder="0"
-                            data-allowfullscreen=""
-                            data-allow="
+                        <iframe
+                            style="border-radius: 12px"
+                            src="https://open.spotify.com/embed/episode/0Xgw37MAKB1R7zGyBKehPe?utm_source=generator&amp;t=0"
+                            allow="
                                 autoplay;
                                 clipboard-write;
                                 encrypted-media;
                                 fullscreen;
                                 picture-in-picture;
                             "
-                            data-loading="lazy"
-                            aria-label="Load podcast episode: Electric Twin and MLOps Community London"
-                        >
-                            <i
-                                class="fab fa-spotify facade-play"
-                                aria-hidden="true"
-                            ></i>
-                            <span class="facade-brand">Spotify</span>
-                            <span class="facade-label"
-                                >Click to load podcast episode</span
-                            >
-                        </button>
+                            width="100%"
+                            height="352"
+                            frameborder="0"
+                            loading="lazy"
+                            allowfullscreen
+                        ></iframe>
                         <div class="card-content">
                             <h3 class="card-title">
                                 Electric Twin &amp; MLOps Community London
@@ -1565,14 +1449,9 @@
                     <!-- Project 8 -->
                     <div class="card">
                         <div class="iframe-container">
-                            <button
-                                type="button"
-                                class="facade"
-                                style="
-                                    background-image: url(&quot;https://i.ytimg.com/vi/Zv5CWN5Dp9A/hqdefault.jpg&quot;);
-                                "
-                                data-src="https://www.youtube.com/embed/Zv5CWN5Dp9A"
-                                data-allow="
+                            <iframe
+                                src="https://www.youtube.com/embed/Zv5CWN5Dp9A"
+                                allow="
                                     accelerometer;
                                     autoplay;
                                     clipboard-write;
@@ -1580,14 +1459,8 @@
                                     gyroscope;
                                     picture-in-picture;
                                 "
-                                data-allowfullscreen=""
-                                aria-label="Play video: Inspired to Build: Live with Gleb Lukicov"
-                            >
-                                <i
-                                    class="fas fa-circle-play facade-play"
-                                    aria-hidden="true"
-                                ></i>
-                            </button>
+                                allowfullscreen
+                            ></iframe>
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">
@@ -1758,12 +1631,10 @@
                         <div
                             class="iframe-container video-embed breakthrough-video mt-3"
                         >
-                            <button
-                                type="button"
-                                class="facade"
-                                data-src="https://www.youtube.com/embed/GyWJ_dLydPE?feature=oembed"
-                                data-title="Muon g-2 wins Breakthrough Prize in Fundamental Physics"
-                                data-allow="
+                            <iframe
+                                src="https://www.youtube.com/embed/GyWJ_dLydPE?feature=oembed"
+                                title="Muon g-2 wins Breakthrough Prize in Fundamental Physics"
+                                allow="
                                     accelerometer;
                                     autoplay;
                                     clipboard-write;
@@ -1772,15 +1643,9 @@
                                     picture-in-picture;
                                     web-share;
                                 "
-                                data-referrerpolicy="strict-origin-when-cross-origin"
-                                data-allowfullscreen=""
-                                aria-label="Play video: Muon g-2 wins Breakthrough Prize in Fundamental Physics"
-                            >
-                                <i
-                                    class="fas fa-circle-play facade-play"
-                                    aria-hidden="true"
-                                ></i>
-                            </button>
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
                         </div>
                     </div>
                 </div>
@@ -2328,48 +2193,6 @@
                     ) {
                         closeNav();
                     }
-                });
-
-                // Click-to-load embed facades
-                document.querySelectorAll(".facade").forEach((btn) => {
-                    btn.addEventListener("click", function () {
-                        const iframe = document.createElement("iframe");
-                        iframe.src = btn.dataset.src;
-                        if (btn.dataset.title) {
-                            iframe.title = btn.dataset.title;
-                        }
-                        if (btn.dataset.allow) {
-                            iframe.setAttribute("allow", btn.dataset.allow);
-                        }
-                        if (btn.dataset.width) {
-                            iframe.setAttribute("width", btn.dataset.width);
-                        }
-                        if (btn.dataset.height) {
-                            iframe.setAttribute("height", btn.dataset.height);
-                        }
-                        if (btn.dataset.frameborder !== undefined) {
-                            iframe.setAttribute(
-                                "frameborder",
-                                btn.dataset.frameborder,
-                            );
-                        }
-                        if (btn.dataset.allowfullscreen !== undefined) {
-                            iframe.setAttribute("allowfullscreen", "");
-                        }
-                        if (btn.dataset.referrerpolicy) {
-                            iframe.setAttribute(
-                                "referrerpolicy",
-                                btn.dataset.referrerpolicy,
-                            );
-                        }
-                        if (btn.dataset.loading) {
-                            iframe.setAttribute("loading", btn.dataset.loading);
-                        }
-                        if (btn.dataset.style) {
-                            iframe.setAttribute("style", btn.dataset.style);
-                        }
-                        btn.replaceWith(iframe);
-                    });
                 });
 
                 // Header scroll effect

@@ -6,8 +6,8 @@ Six things this assembly is carrying that are easy to lose in a re-skin.
    `decoding="async"` and intrinsic `width`/`height`: 7,661 KB → 1,157 KB
    (−85%), no layout shift. The hero animation is animated WebP via
    `image-set()` with the GIF as fallback: 670 KB → 269 KB (−60%).
-2. **Embed facades.** All six embeds (LinkedIn, Spotify, four YouTube) are
-   click-to-load posters. Zero third-party iframes until a user asks for one.
+2. **Embeds load eagerly.** All six embeds (LinkedIn, Spotify, four YouTube)
+   render immediately by owner's choice; revisit facades if load time matters.
 3. **Accessibility.** `:focus-visible` outline, `prefers-reduced-motion`,
    real `alt` text, `aria-expanded`/`aria-controls` on the menu buttons,
    Escape closes the drawer, skip link to main content.

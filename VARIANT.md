@@ -7,8 +7,8 @@ the hero animation restored.**
 accent `#a8b33e`, Inter plus JetBrains Mono for the logo subtitle, footer line,
 code and card buttons. Nav links `nowrap` at 0.4rem padding, six on one line.
 
-**Optimisation (25).** WebP pictures (−85% payload), six click-to-load embed
-facades, IntersectionObserver scroll-spy, skip link, `:focus-visible`,
+**Optimisation (25).** WebP pictures (−85% payload), eager
+embeds (owner's choice), IntersectionObserver scroll-spy, skip link, `:focus-visible`,
 `prefers-reduced-motion`.
 
 **Hero animation (master/23).** Back on `.hero` only, as animated WebP via
