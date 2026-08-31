@@ -933,6 +933,19 @@
                     padding: var(--spacing-lg) 0;
                 }
             }
+
+            /* Themed replacements for emoji */
+            .em-icon {
+                color: var(--accent-color);
+                font-size: 0.85em;
+                margin: 0 0.1em;
+            }
+            .section-title .em-icon {
+                color: var(--accent-color);
+            }
+            span[style*="position: absolute"] > .em-icon {
+                font-size: 0.95em;
+            }
         </style>
     </head>
     <body>
@@ -1037,7 +1050,7 @@
                     projects. In my spare time, I enjoy road cycling and
                     running.
                 </p>
-                Contact me for collaboration ideas or questions ⬇️
+                <span>Contact me for collaboration ideas or questions&nbsp;<i class="fas fa-arrow-down em-icon" aria-hidden="true"></i></span>
                 <div class="social-links hero-social-links">
                     <a
                         href="https://www.linkedin.com/in/glukicov"
@@ -1078,7 +1091,7 @@
         <!-- MLOps Community Section -->
         <section class="section" id="mlops-community">
             <div class="container section-content">
-                <h2 class="section-title">MLOps Community London 🇬🇧</h2>
+                <h2 class="section-title">MLOps Community London <i class="fas fa-location-dot em-icon" aria-hidden="true"></i></h2>
 
                 <div class="grid grid-2 mb-3">
                     <div class="card">
@@ -1108,7 +1121,7 @@
                                 co-host and events organiser. We are putting
                                 regular in-person meetup-ups, for the community
                                 to learn together and discuss latest MLOps
-                                trends over 🍕.
+                                trends over <i class="fas fa-pizza-slice em-icon" aria-hidden="true"></i>.
                             </p>
                             <a
                                 href="https://luma.com/aaif-london"
@@ -1157,7 +1170,7 @@
         <!-- ML Projects Section -->
         <section class="section" id="ml">
             <div class="container section-content">
-                <h2 class="section-title">ML projects and articles 📚</h2>
+                <h2 class="section-title">ML projects and articles <i class="fas fa-book-open em-icon" aria-hidden="true"></i></h2>
 
                 <!-- SlideOps -->
                 <div class="card mb-3">
@@ -1183,7 +1196,7 @@
                     </a>
                     <div class="card-content">
                         <h3 class="card-title">
-                            SlideOps: decks that tell you when they go stale 🎞️
+                            SlideOps: decks that tell you when they go stale <i class="fas fa-film em-icon" aria-hidden="true"></i>
                         </h3>
                         <p class="card-text">
                             Turn a repository into a slide deck that tells you
@@ -1253,11 +1266,11 @@
                         </a>
                         <div class="card-content">
                             <h3 class="card-title">
-                                To MLOps, or not to MLOps? 🤔
+                                To MLOps, or not to MLOps? <i class="fas fa-circle-question em-icon" aria-hidden="true"></i>
                             </h3>
                             <p class="card-text">
                                 That is the question —
-                                <i>the platform is the answer</i> 🚀. How does a
+                                <i>the platform is the answer</i> <i class="fas fa-rocket em-icon" aria-hidden="true"></i>. How does a
                                 correct MLOps strategy enable success for data
                                 science projects in a large organisation? What
                                 is an effective MLOps team?
@@ -1578,7 +1591,7 @@
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">
-                                🎙️ Inspired to Build: Live with Gleb Lukicov
+                                <i class="fas fa-microphone em-icon" aria-hidden="true"></i> Inspired to Build: Live with Gleb Lukicov
                             </h3>
                             <p class="card-text">
                                 Live conversation with Erica Hughberg about
@@ -1613,7 +1626,7 @@
                                 "
                             >
                                 <span style="position: absolute; left: 0"
-                                    >📚</span
+                                    ><i class="fas fa-book em-icon" aria-hidden="true"></i></span
                                 >
                                 <a
                                     href="https://www.packtpub.com/en-us/product/clean-code-in-python-9781800560215"
@@ -1621,7 +1634,7 @@
                                     ><i>Clean Code in Python</i> by Mariano
                                     Anaya</a
                                 >. A modern and practical guide to writing good
-                                code 👌.
+                                code <i class="fas fa-thumbs-up em-icon" aria-hidden="true"></i>.
                             </li>
                             <li
                                 style="
@@ -1631,7 +1644,7 @@
                                 "
                             >
                                 <span style="position: absolute; left: 0"
-                                    >📚</span
+                                    ><i class="fas fa-book em-icon" aria-hidden="true"></i></span
                                 >
                                 <a
                                     href="https://www.packtpub.com/en-gb/product/machine-learning-engineering-with-python-9781837631964"
@@ -1651,7 +1664,7 @@
                                 "
                             >
                                 <span style="position: absolute; left: 0"
-                                    >📚</span
+                                    ><i class="fas fa-book em-icon" aria-hidden="true"></i></span
                                 >
                                 <a
                                     href="https://www.oreilly.com/library/view/ai-engineering/9781098166298/"
@@ -1674,7 +1687,7 @@
                                 "
                             >
                                 <span style="position: absolute; left: 0"
-                                    >📚</span
+                                    ><i class="fas fa-book em-icon" aria-hidden="true"></i></span
                                 >
                                 <a
                                     href="https://www.manning.com/books/build-a-career-in-data-science"
@@ -1698,7 +1711,7 @@
                                 "
                             >
                                 <span style="position: absolute; left: 0">
-                                    ✉️
+                                    <i class="fas fa-envelope em-icon" aria-hidden="true"></i>
                                 </span>
                                 <a
                                     href="https://levelupwithethanevans.substack.com/"
@@ -1717,7 +1730,7 @@
         <!-- Research Section -->
         <section class="section" id="research">
             <div class="container section-content">
-                <h2 class="section-title">Research overview 🔬</h2>
+                <h2 class="section-title">Research overview <i class="fas fa-microscope em-icon" aria-hidden="true"></i></h2>
 
                 <div class="card mb-3">
                     <div class="card-content">
@@ -1886,7 +1899,7 @@
                                     "
                                 >
                                     <span style="position: absolute; left: 0">
-                                        📝
+                                        <i class="fas fa-file-lines em-icon" aria-hidden="true"></i>
                                     </span>
                                     <a
                                         href="files/PhDThesis_Gleb_Lukicov.pdf"
@@ -1902,7 +1915,7 @@
                                     "
                                 >
                                     <span style="position: absolute; left: 0">
-                                        📝</span
+                                        <i class="fas fa-file-lines em-icon" aria-hidden="true"></i></span
                                     >
                                     <a
                                         href="https://arxiv.org/pdf/1909.12900.pdf"
@@ -1919,7 +1932,7 @@
                                     "
                                 >
                                     <span style="position: absolute; left: 0">
-                                        📝</span
+                                        <i class="fas fa-file-lines em-icon" aria-hidden="true"></i></span
                                     >
                                     <a
                                         href="https://indico.cern.ch/event/782953/contributions/3441653/attachments/1885766/3108628/APS_DPF_Gleb_Lukicov.pdf"
@@ -1935,7 +1948,7 @@
                                     "
                                 >
                                     <span style="position: absolute; left: 0">
-                                        📝</span
+                                        <i class="fas fa-file-lines em-icon" aria-hidden="true"></i></span
                                     >
                                     <a
                                         href="https://lss.fnal.gov/archive/2019/poster/fermilab-poster-19-011-e.pdf"
@@ -1951,7 +1964,7 @@
                                     "
                                 >
                                     <span style="position: absolute; left: 0">
-                                        📝</span
+                                        <i class="fas fa-file-lines em-icon" aria-hidden="true"></i></span
                                     >
                                     <a
                                         href="files/Proposal_GlebLukicov.pdf"
@@ -1995,7 +2008,7 @@
         <!-- Education Section -->
         <section class="section" id="outreach">
             <div class="container section-content">
-                <h2 class="section-title">Education projects 🔭</h2>
+                <h2 class="section-title">Education projects <i class="fas fa-graduation-cap em-icon" aria-hidden="true"></i></h2>
 
                 <div class="grid grid-2">
                     <div class="card">
@@ -2017,7 +2030,7 @@
                         <div class="card-content">
                             <p class="card-text">
                                 Delivering an alumni talk at the Woodhouse
-                                College 🎓 about my all-time favourite particle
+                                College <i class="fas fa-graduation-cap em-icon" aria-hidden="true"></i> about my all-time favourite particle
                                 -
                                 <a
                                     href="https://en.wikipedia.org/wiki/Muon"
@@ -2028,18 +2041,18 @@
                                 <a
                                     href="https://www.nature.com/news/cosmic-ray-particles-reveal-secret-chamber-in-egypt-s-great-pyramid-1.22939"
                                     target="_blank"
-                                    >treasure-hunting 👑</a
+                                    >treasure-hunting <i class="fas fa-crown em-icon" aria-hidden="true"></i></a
                                 >,
                                 <a
                                     href="https://cms.cern/content/security-and-environmental-protection"
                                     target="_blank"
-                                    >making borders more secure 👮‍♀️</a
+                                    >making borders more secure <i class="fas fa-shield-halved em-icon" aria-hidden="true"></i></a
                                 >, and
                                 <a
                                     href="https://muon-g-2.fnal.gov/muon-g-2-collaboration-to-solve-mystery.html"
                                     target="_blank"
                                     >unlocking the mysteries of the Universe
-                                    🔎</a
+                                    <i class="fas fa-magnifying-glass em-icon" aria-hidden="true"></i></a
                                 >. I come back to the college every year to
                                 encourage students in pursuing a career in STEM.
                             </p>
@@ -2135,7 +2148,7 @@
                         </picture>
                         <div class="card-content">
                             <p class="card-text">
-                                Explaining spectroscopy 🔭 to primary school
+                                Explaining spectroscopy <i class="fas fa-binoculars em-icon" aria-hidden="true"></i> to primary school
                                 students at the
                                 <a
                                     href="https://www.ucl.ac.uk/youruniverse"
@@ -2162,7 +2175,7 @@
         <!-- Interests Section -->
         <section class="section" id="interests">
             <div class="container section-content">
-                <h2 class="section-title">Personal interests 🚴‍♂️️</h2>
+                <h2 class="section-title">Personal interests <i class="fas fa-person-biking em-icon" aria-hidden="true"></i></h2>
 
                 <div class="grid grid-2">
                     <div class="card">
@@ -2184,8 +2197,8 @@
                         <div class="card-content">
                             <p class="card-text">
                                 As part of a charity fundraising, I ran my first
-                                full marathon 🏃‍♂ (5:31 / 1 km elevation) and
-                                cycled 100 km 🚴 (4:44 / 2 km elevation). This
+                                full marathon <i class="fas fa-person-running em-icon" aria-hidden="true"></i> (5:31 / 1 km elevation) and
+                                cycled 100 km <i class="fas fa-person-biking em-icon" aria-hidden="true"></i> (4:44 / 2 km elevation). This
                                 motivated me all the way (twice!) to the top of
                                 that mountain, and
                                 <a
@@ -2217,8 +2230,8 @@
                         <div class="card-content">
                             <p class="card-text">
                                 Next year, our team was back at it! With a mini
-                                tour-of-Netherlands: 🚴 160 km day 1 (6:28 / 0.8
-                                km elevation) and 🚴 175 km day 2 (6:37 / 1.1 km
+                                tour-of-Netherlands: <i class="fas fa-person-biking em-icon" aria-hidden="true"></i> 160 km day 1 (6:28 / 0.8
+                                km elevation) and <i class="fas fa-person-biking em-icon" aria-hidden="true"></i> 175 km day 2 (6:37 / 1.1 km
                                 elevation). This time,
                                 <a
                                     href="https://www.justgiving.com/team/aads-2023"
@@ -2270,7 +2283,7 @@
                     </a>
                 </div>
                 <p class="footer-text">
-                    Made with 🤠 by Gleb Lukicov · &copy; 2025
+                    Made with <i class="fas fa-hat-cowboy em-icon" aria-hidden="true"></i> by Gleb Lukicov · &copy; 2025
                 </p>
             </div>
         </footer>
