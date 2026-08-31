@@ -1,29 +1,20 @@
-# Variant 25 — noir-refined
+# Final — noir-moss assembly
 
-## What changed
+The shipping build: **variant 24's theme + variant 25's optimisation layer +
+the hero animation restored.**
 
-**Theme (identical tokens to 24-noir-moss).** Ground `#0b0c0e`, cards `#141518`
-(hover `#1a1c20`), hairline `rgba(255,255,255,.08)`, text `#e6e6e6`, muted
-`#9aa0a6`, moss accent `#a8b33e` with a `#c8d64b` hover step. Every olive token
-and the `#ab5249` hover are gone. `bg.gif` is dropped for a flat ground plus
-`radial-gradient(ellipse at top, #15170f, #0b0c0e 60%)`. Buttons are outlined,
-not filled; nav active state is a moss underline. Inter replaces Roboto; JetBrains
-Mono sets the logo subtitle, footer line and inline code.
+**Theme (24).** Noir ground `#0b0c0e`, cards `#141518`, hairline borders, moss
+accent `#a8b33e`, Inter plus JetBrains Mono for the logo subtitle, footer line,
+code and card buttons. Nav links `nowrap` at 0.4rem padding, six on one line.
 
-**Invisible upgrades, on top.** WebP `<picture>` with `loading="lazy"`,
-`decoding="async"` and intrinsic `width`/`height` on all 15 photos; click-to-load
-facades for all six embeds (LinkedIn, Spotify, four YouTube); IntersectionObserver
-scroll-spy replacing the scroll handler; skip link; `:focus-visible` outline;
-`prefers-reduced-motion`. Layout, spacing, markup order and copy are master's.
+**Optimisation (25).** WebP pictures (−85% payload), six click-to-load embed
+facades, IntersectionObserver scroll-spy, skip link, `:focus-visible`,
+`prefers-reduced-motion`.
 
-**Image payload:** 7,661 KB → 1,157 KB (−85%), and the page now loads zero
-third-party iframes until clicked.
+**Hero animation (master/23).** Back on `.hero` only, as animated WebP via
+`image-set()` with the GIF as fallback (670→269 KB), under 23's near-black
+`linear-gradient(135deg, rgba(11,12,14,.82), rgba(11,12,14,.92))` so it ghosts
+through. The footer stays flat noir.
 
-## Principle
-
-A re-skin is the cheapest moment to pay off performance and accessibility debt —
-nobody sees the difference except the browser.
-
-## Keep / drop
-
-**Keep.** Best-of-both: 24's look at a fraction of its weight.
+Plus: strict-HTML fixes, pinch-zoom re-enabled, `theme-color`, Escape closes
+the mobile drawer. See CARRYOVER.md.

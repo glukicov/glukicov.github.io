@@ -21,10 +21,8 @@
             Succeed 🚀
         </title>
         <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, user-scalable=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0b0c0e" />
         <meta
             name="description"
             content="Personal portfolio of Gleb Lukicov, MLOps Engineer and PhD in Physics"
@@ -265,7 +263,7 @@
 
             .logo-subtitle {
                 font-family: "JetBrains Mono", ui-monospace, monospace;
-                font-size: 0.8rem;
+                font-size: 0.85rem;
                 letter-spacing: -0.01em;
                 color: var(--text-muted);
                 opacity: 1;
@@ -288,9 +286,11 @@
             }
 
             .nav-link {
+                display: inline-block;
                 color: var(--text-light);
                 font-weight: 500;
-                padding: var(--spacing-xs) var(--spacing-sm);
+                white-space: nowrap;
+                padding: var(--spacing-xs) 0.4rem;
                 border-radius: var(--border-radius-sm);
                 transition: all var(--transition-fast);
             }
@@ -308,6 +308,29 @@
 
             .nav-link i {
                 margin-right: var(--spacing-xs);
+            }
+
+            /* Between the drawer breakpoint and a comfortable desktop the nav
+               and the logo compete for the same row: tighten the nav so the
+               logo subtitle keeps its single line. */
+            @media (min-width: 769px) {
+                .logo-subtitle {
+                    white-space: nowrap;
+                }
+            }
+
+            @media (min-width: 769px) and (max-width: 1180px) {
+                .nav-item {
+                    margin-left: 0;
+                }
+
+                .nav-link {
+                    padding: var(--spacing-xs) 0.3rem;
+                }
+
+                .nav-link i {
+                    margin-right: 0.3rem;
+                }
             }
 
             .close-menu {
@@ -383,7 +406,12 @@
             /* Hero section */
             .hero {
                 background-color: var(--bg-dark);
-                background-image: var(--surface-gradient);
+                /* Fallback first for browsers without image-set() */
+                background-image: url("./images/bg.gif");
+                background-image: image-set(
+                    url("./images/bg.webp") type("image/webp"),
+                    url("./images/bg.gif") type("image/gif")
+                );
                 background-size: cover;
                 background-position: center;
                 color: var(--text-light);
@@ -393,7 +421,7 @@
                 overflow: hidden;
             }
 
-            /* Very subtle moss bloom over the noir ground */
+            /* Near-black wash so the animation only ghosts through */
             .hero::before {
                 content: "";
                 position: absolute;
@@ -401,10 +429,10 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: radial-gradient(
-                    ellipse at 50% 0%,
-                    rgba(168, 179, 62, 0.06),
-                    rgba(11, 12, 14, 0) 60%
+                background: linear-gradient(
+                    135deg,
+                    rgba(11, 12, 14, 0.82),
+                    rgba(11, 12, 14, 0.92)
                 );
                 z-index: 1;
             }
@@ -628,6 +656,8 @@
 
             .card-link {
                 display: inline-block;
+                font-family: "JetBrains Mono", ui-monospace, monospace;
+                font-size: 0.85rem;
                 padding: var(--spacing-xs) var(--spacing-sm);
                 background-color: transparent;
                 box-shadow: inset 0 0 0 1px var(--accent-color);
@@ -921,12 +951,24 @@
                     </div>
                 </div>
 
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <button
+                    class="mobile-menu-btn"
+                    id="mobile-menu-btn"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                    aria-controls="nav"
+                >
                     <i class="fas fa-bars"></i>
                 </button>
 
                 <nav class="nav" id="nav">
-                    <button class="close-menu" id="close-menu">
+                    <button
+                        class="close-menu"
+                        id="close-menu"
+                        aria-label="Close menu"
+                        aria-expanded="false"
+                        aria-controls="nav"
+                    >
                         <i class="fas fa-times"></i>
                     </button>
                     <ul class="nav-list">
@@ -1406,7 +1448,7 @@
                         </button>
                         <div class="card-content">
                             <h3 class="card-title">
-                                Electric Twin & MLOps Community London
+                                Electric Twin &amp; MLOps Community London
                             </h3>
                             <p class="card-text">
                                 In this podcast, I discuss why your business
@@ -1496,7 +1538,7 @@
                             </h3>
                             <p class="card-text">
                                 Startups move fast, and as it turns out, you can
-                                move fast on security & compliance too!
+                                move fast on security &amp; compliance too!
                             </p>
                             <a
                                 href="https://www.electrictwin.com/blog/electric-twin-is-iso-27001-certified"
@@ -1541,7 +1583,7 @@
                             <p class="card-text">
                                 Live conversation with Erica Hughberg about
                                 scaling MLOps at Electric Twin and what inspired
-                                my journey into data & AI.
+                                my journey into data &amp; AI.
                             </p>
                             <a
                                 href="https://www.youtube.com/live/Zv5CWN5Dp9A"
@@ -2266,20 +2308,36 @@
                 const nav = document.getElementById("nav");
                 const navLinks = document.querySelectorAll(".nav-link");
 
-                // Toggle mobile menu
-                mobileMenuBtn.addEventListener("click", function () {
+                function openNav() {
                     nav.classList.add("active");
-                });
+                    mobileMenuBtn.setAttribute("aria-expanded", "true");
+                    closeMenuBtn.setAttribute("aria-expanded", "true");
+                }
 
-                closeMenuBtn.addEventListener("click", function () {
+                function closeNav() {
                     nav.classList.remove("active");
-                });
+                    mobileMenuBtn.setAttribute("aria-expanded", "false");
+                    closeMenuBtn.setAttribute("aria-expanded", "false");
+                }
+
+                // Toggle mobile menu
+                mobileMenuBtn.addEventListener("click", openNav);
+
+                closeMenuBtn.addEventListener("click", closeNav);
 
                 // Close mobile menu when clicking a link
                 navLinks.forEach((link) => {
-                    link.addEventListener("click", function () {
-                        nav.classList.remove("active");
-                    });
+                    link.addEventListener("click", closeNav);
+                });
+
+                // Close mobile menu on Escape
+                document.addEventListener("keydown", function (event) {
+                    if (
+                        event.key === "Escape" &&
+                        nav.classList.contains("active")
+                    ) {
+                        closeNav();
+                    }
                 });
 
                 // Click-to-load embed facades
