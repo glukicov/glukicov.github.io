@@ -654,6 +654,28 @@
                 word-break: break-word;
             }
 
+            .code-block {
+                background-color: rgba(255, 255, 255, 0.06);
+                box-shadow: inset 0 0 0 1px var(--border-color);
+                color: var(--accent-bright);
+                font-family: "JetBrains Mono", ui-monospace, monospace;
+                font-size: 0.85rem;
+                line-height: 1.5;
+                border-radius: var(--border-radius-sm);
+                padding: var(--spacing-xs) var(--spacing-sm);
+                margin-bottom: var(--spacing-xs);
+                white-space: pre-wrap;
+                overflow-wrap: anywhere;
+            }
+
+            .code-block code {
+                font: inherit;
+                color: inherit;
+                background: none;
+                box-shadow: none;
+                padding: 0;
+            }
+
             .card-link {
                 display: inline-block;
                 font-family: "JetBrains Mono", ui-monospace, monospace;
@@ -1129,11 +1151,22 @@
                         </p>
                         <p class="card-text">
                             The repo is its own plugin marketplace, so in Claude
-                            Code it is two lines:
-                            <code
-                                >/plugin marketplace add glukicov/slideops</code
-                            >, <br />
-                            then <code>/plugin install slideops@slideops</code>.
+                            Code it is two lines: add the marketplace,
+                        </p>
+                        <pre class="code-block"><code>/plugin marketplace add glukicov/slideops</code></pre>
+                        <p class="card-text">then install the plugin from it:</p>
+                        <pre class="code-block"><code>/plugin install slideops@slideops</code></pre>
+                        <p class="card-text">
+                            Any agent with the
+                            <a
+                                href="https://skills.sh"
+                                target="_blank"
+                                >skills CLI</a
+                            >
+                            gets it in one line:
+                        </p>
+                        <pre class="code-block"><code>npx skills add glukicov/slideops</code></pre>
+                        <p class="card-text">
                             It also runs on Codex, Copilot CLI and OpenCode: all
                             three read <code>~/.agents/skills</code>, and
                             <code>./install.sh</code> in a repo puts the skills
