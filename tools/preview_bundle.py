@@ -129,6 +129,8 @@ def bundle(site: Path, cache: Path) -> str:
     """Produce the single-file preview HTML for the site directory."""
     src = (site / "index.html").read_text(encoding="utf-8")
 
+    src = re.sub(r"<!--.*?-->", "", src, flags=re.S)
+    src = re.sub(r"<style\b[^>]*>(.*?)</style>", lambda m: m.group(0).replace(m.group(1), re.sub(r"/\*.*?\*/", "", m.group(1), flags=re.S)), src, flags=re.S)
     src = re.sub(r"<script[^>]*googletagmanager[^>]*></script>\s*<script>.*?gtag\(\"config\"[^<]*</script>", "", src, flags=re.S)
 
     def link_repl(m: re.Match[str]) -> str:
