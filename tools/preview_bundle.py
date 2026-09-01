@@ -125,7 +125,7 @@ def facade(tag: str, cache: Path) -> str:
     return GENERIC_FACADE.format(href=url, h=h, bg="#1a1a1a", fg="#fff", kind="Embedded frame", title=url)
 
 
-def bundle(site: Path, cache: Path) -> str:
+def bundle(site: Path, cache: Path, title: str | None = None) -> str:
     """Produce the single-file preview HTML for the site directory."""
     src = (site / "index.html").read_text(encoding="utf-8")
 
@@ -180,6 +180,20 @@ def bundle(site: Path, cache: Path) -> str:
 
     src = re.sub(r"<picture\b[^>]*>.*?</picture>", picture_repl, src, flags=re.S)
 
+    sprites: dict[str, str] = {}
+
+    def use_repl(m: re.Match[str]) -> str:
+        target = resolve(site, html.unescape(m.group(1)))
+        if not target or target.suffix.lower() != ".svg":
+            return m.group(0)
+        sprites.setdefault(str(target), target.read_text(encoding="utf-8"))
+        return f'href="#{m.group(2)}"'
+
+    src = re.sub(r'(?:xlink:)?href="([^"#]+\.svg)#([^"]+)"', use_repl, src)
+    if sprites:
+        hidden = "".join(re.sub(r"<svg\b", '<svg style="display:none" aria-hidden="true"', t, count=1) for t in sprites.values())
+        src = re.sub(r"(<body\b[^>]*>)", lambda m: m.group(1) + hidden, src, count=1)
+
     def attr_repl(m: re.Match[str]) -> str:
         target = resolve(site, html.unescape(m.group(2)))
         return f'{m.group(1)}="{data_uri(target) if target else m.group(2)}"'
@@ -201,6 +215,8 @@ def bundle(site: Path, cache: Path) -> str:
     src = re.sub(r"<iframe\b[^>]*>\s*</iframe>", lambda m: facade(m.group(0), cache), src, flags=re.S)
     src = re.sub(r'href="((?:\./)?files/[^"]+)"', lambda m: f'href="https://glukicov.github.io/{m.group(1).lstrip("./")}"', src)
     src = re.sub(r"^\s*<!doctype html>\s*", "", src, flags=re.I)
+    if title:
+        src = re.sub(r"<title>.*?</title>", f"<title>{html.escape(title)}</title>", src, count=1, flags=re.S)
     return src
 
 
@@ -210,8 +226,9 @@ def main() -> None:
     ap.add_argument("site", type=Path)
     ap.add_argument("out", type=Path)
     ap.add_argument("--cache", type=Path, default=Path.home() / ".cache" / "preview-bundle")
+    ap.add_argument("--title", help="Replace the page <title> in the preview")
     a = ap.parse_args()
-    out = bundle(a.site, a.cache)
+    out = bundle(a.site, a.cache, a.title)
     a.out.write_text(out, encoding="utf-8")
     print(f"{a.out}: {len(out.encode()) / 1024:.0f} KB")
 
