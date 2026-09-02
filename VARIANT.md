@@ -92,8 +92,34 @@ strip. Zero bytes, the same "lines and nodes" idea, and it needs no
 
 ## Measured
 
-Filled in after the build — page weight and request count before and after,
-and the change in full-page height at 390px.
+Headless Chromium against `index.html` and its own assets served from disk
+(third-party hosts are unreachable from here, so these are first-party bytes
+only; Font Awesome's ~200 KB of CSS + woff2 and the six embeds are extra on
+top of the "before" column in real life).
+
+| | before | after |
+|---|---|---|
+| First paint (no scroll): requests / bytes | 6 / 1,383 KB | 5 / **167 KB** (−88%) |
+| Whole page scrolled: requests / bytes | 19 / 2,470 KB | 18 / **1,253 KB** (−49%) |
+| Third-party requests before `load` | 9 | 3 |
+| `index.html` itself | 93 KB | 91 KB |
+| Page height at 390 px | 16,604 px | **14,573 px** (−12%) |
+| Page height at 1440 px | 11,171 px | 14,437 px (+29%) |
+
+The first-paint saving is `images/icon.png` (478 KB, fetched twice as both
+favicon and 40 px logo) and the 263 KB hero animation going away, replaced by
+a 2 KB `logo.webp` and a 2 KB favicon. Font Awesome disappears from the
+critical path entirely, and Google Fonts no longer blocks render.
+
+The desktop page is 29% taller and that is the deliberate trade: a two-column
+card grid became one editorial column, which is why the phone — where the old
+grid collapsed to one column anyway — gets 12% shorter instead. The sticky
+rail table of contents exists to pay for the extra desktop length.
+
+Checked at 360, 500, 760, 900, 1024, 1100, 1199, 1200 and 1920 px: no
+horizontal overflow at any of them. Drawer opens/closes on button, backdrop
+and Escape; the theme toggle round-trips `data-theme`, `localStorage` and
+`theme-color` in both directions.
 
 ## Deliberately left out
 
