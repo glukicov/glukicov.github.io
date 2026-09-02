@@ -1,2272 +1,3338 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-JZQT6ZZKQV"
-        ></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-
-            gtag("js", new Date());
-            gtag("config", "G-JZQT6ZZKQV");
-        </script>
-        <title>
-            Gleb Lukicov | MLOps Leader | Empowering Data Science Teams to
-            Succeed 🚀
-        </title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0b0c0e" />
-        <meta
-            name="description"
-            content="Personal portfolio of Gleb Lukicov, MLOps Engineer and PhD in Physics"
-        />
-        <meta
-            name="google-site-verification"
-            content="De6CTWP3ivSIWSPEWMinMMljAhdetnwRVDClJOsBiMg"
-        />
-        <link href="./images/icon.png" rel="icon" />
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-            rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap"
-            rel="stylesheet"
-        />
-
-        <style>
-            :root {
-                /* Color scheme — noir ground, moss accent */
-                --primary-color: #a8b33e;
-                --primary-dark: #8f9a32;
-                --primary-light: #a8b33e;
-                --accent-color: #a8b33e;
-                --accent-bright: #c8d64b;
-                --accent-soft: rgba(168, 179, 62, 0.14);
-                --border-color: rgba(255, 255, 255, 0.08);
-                --border-strong: rgba(255, 255, 255, 0.14);
-                --text-light: #e6e6e6;
-                --text-muted: #9aa0a6;
-                --text-dark: #0b0c0e;
-                --bg-dark: #0b0c0e;
-                --bg-light: #f5f5f5;
-                --card-bg: #141518;
-                --card-hover: #1a1c20;
-                --surface-gradient: radial-gradient(
-                    ellipse at top,
-                    #15170f 0%,
-                    #0b0c0e 60%
-                );
-
-                /* Spacing */
-                --spacing-xs: 0.5rem;
-                --spacing-sm: 1rem;
-                --spacing-md: 2rem;
-                --spacing-lg: 3rem;
-                --spacing-xl: 5rem;
-
-                /* Border radius */
-                --border-radius-sm: 4px;
-                --border-radius-md: 8px;
-                --border-radius-lg: 16px;
-
-                /* Transitions */
-                --transition-fast: 0.2s ease;
-                --transition-normal: 0.3s ease;
-                --transition-slow: 0.5s ease;
-            }
-
-            /* Reset and base styles */
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            html {
-                scroll-behavior: smooth;
-            }
-
-            :focus-visible {
-                outline: 3px solid var(--accent-bright);
-                outline-offset: 2px;
-            }
-
-            /* <picture> is a transparent wrapper: keep master's box model */
-            picture {
-                display: contents;
-            }
-
-            @media (prefers-reduced-motion: reduce) {
-                *,
-                *::before,
-                *::after {
-                    animation-duration: 0.01ms !important;
-                    animation-iteration-count: 1 !important;
-                    transition-duration: 0.01ms !important;
-                    scroll-behavior: auto !important;
-                }
-
-                html {
-                    scroll-behavior: auto;
-                }
-            }
-
-            body {
-                font-family:
-                    "Inter",
-                    system-ui,
-                    -apple-system,
-                    "Segoe UI",
-                    sans-serif;
-                font-size: 16px;
-                line-height: 1.6;
-                color: var(--text-light);
-                background-color: var(--bg-dark);
-                overflow-x: hidden;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                font-weight: 700;
-                line-height: 1.2;
-                margin-bottom: var(--spacing-sm);
-                color: var(--text-light);
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            h3 {
-                font-size: 1.75rem;
-            }
-
-            h4 {
-                font-size: 1.5rem;
-            }
-
-            p {
-                margin-bottom: var(--spacing-sm);
-            }
-
-            a {
-                color: var(--primary-light);
-                text-decoration: none;
-                transition: color var(--transition-fast);
-            }
-
-            a:hover,
-            a:active,
-            a:focus {
-                color: var(--accent-bright);
-            }
-
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-
-            ul,
-            ol {
-                margin-left: var(--spacing-md);
-                margin-bottom: var(--spacing-sm);
-            }
-
-            /* Container */
-            .container {
-                width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 var(--spacing-sm);
-            }
-
-            /* Header */
-            .header {
-                background-color: rgba(11, 12, 14, 0.9);
-                backdrop-filter: saturate(140%) blur(10px);
-                -webkit-backdrop-filter: saturate(140%) blur(10px);
-                color: var(--text-light);
-                padding: var(--spacing-sm) 0;
-                position: fixed;
-                width: 100%;
-                top: 0;
-                z-index: 1000;
-                box-shadow:
-                    0 1px 0 var(--border-color),
-                    0 2px 10px rgba(0, 0, 0, 0.6);
-                transition: all var(--transition-normal);
-            }
-
-            .header.scrolled {
-                padding: var(--spacing-xs) 0;
-                background-color: rgba(11, 12, 14, 0.96);
-            }
-
-            .header-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            /* Skip link */
-            .skip-link {
-                position: absolute;
-                left: -9999px;
-                top: 0;
-                background-color: var(--accent-color);
-                color: var(--text-dark);
-                font-weight: 700;
-                padding: var(--spacing-xs) var(--spacing-sm);
-                z-index: 2000;
-                border-radius: var(--border-radius-sm);
-            }
-
-            .skip-link:focus {
-                left: var(--spacing-sm);
-                top: var(--spacing-sm);
-            }
-
-            .logo {
-                display: flex;
-                align-items: center;
-            }
-
-            .logo img {
-                height: 40px;
-                width: auto;
-                margin-right: var(--spacing-xs);
-                border-radius: 50%;
-            }
-
-            .logo-text {
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: var(--text-light);
-            }
-
-            .logo-subtitle {
-                font-family: "JetBrains Mono", ui-monospace, monospace;
-                font-size: 0.85rem;
-                letter-spacing: -0.01em;
-                color: var(--text-muted);
-                opacity: 1;
-            }
-
-            /* Navigation */
-            .nav {
-                display: flex;
-                align-items: center;
-            }
-
-            .nav-list {
-                display: flex;
-                list-style: none;
-                margin: 0;
-            }
-
-            .nav-item {
-                margin-left: var(--spacing-sm);
-            }
-
-            .nav-link {
-                display: inline-block;
-                color: var(--text-light);
-                font-weight: 500;
-                white-space: nowrap;
-                padding: var(--spacing-xs) 0.4rem;
-                border-radius: var(--border-radius-sm);
-                transition: all var(--transition-fast);
-            }
-
-            .nav-link:hover {
-                background-color: var(--accent-color);
-                color: #0b0c0e;
-            }
-
-            .nav-link.active {
-                background-color: transparent;
-                color: var(--accent-color);
-                box-shadow: inset 0 -2px 0 var(--accent-color);
-            }
-
-            .nav-link i {
-                margin-right: var(--spacing-xs);
-            }
-
-            /* Between the drawer breakpoint and a comfortable desktop the nav
-               and the logo compete for the same row: tighten the nav so the
-               logo subtitle keeps its single line. */
-            @media (min-width: 769px) {
-                .logo-subtitle {
-                    white-space: nowrap;
-                }
-            }
-
-            @media (min-width: 769px) and (max-width: 1180px) {
-                .nav-item {
-                    margin-left: 0;
-                }
-
-                .nav-link {
-                    padding: var(--spacing-xs) 0.3rem;
-                }
-
-                .nav-link i {
-                    margin-right: 0.3rem;
-                }
-            }
-
-            .close-menu {
-                display: none; /* Hide close button by default for all screen sizes */
-            }
-
-            .mobile-menu-btn {
-                display: none;
-                background: none;
-                border: none;
-                color: var(--text-light);
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
-
-            @media (max-width: 768px) {
-                .mobile-menu-btn {
-                    display: block;
-                }
-
-                .nav {
-                    position: fixed;
-                    top: 0;
-                    right: -100%;
-                    width: 70%;
-                    height: 100vh;
-                    background-color: var(--bg-dark);
-                    box-shadow: inset 1px 0 0 var(--border-color);
-                    flex-direction: column;
-                    align-items: flex-start;
-                    padding: var(--spacing-xl) var(--spacing-md);
-                    transition: right var(--transition-normal);
-                    z-index: 1001;
-                }
-
-                .nav.active {
-                    right: 0;
-                }
-
-                .nav-list {
-                    flex-direction: column;
-                    width: 100%;
-                }
-
-                .nav-item {
-                    margin: var(--spacing-xs) 0;
-                    width: 100%;
-                }
-
-                .nav-link {
-                    display: block;
-                    padding: var(--spacing-sm);
-                    width: 100%;
-                }
-
-                .close-menu {
-                    position: absolute;
-                    top: var(--spacing-sm);
-                    right: var(--spacing-sm);
-                    background: none;
-                    border: none;
-                    color: var(--text-light);
-                    font-size: 1.5rem;
-                    cursor: pointer;
-                    display: none; /* Hide by default */
-                }
-
-                .nav.active .close-menu {
-                    display: block; /* Only show when nav is active */
-                }
-            }
-
-            /* Hero section */
-            .hero {
-                background-color: var(--bg-dark);
-                /* Fallback first for browsers without image-set() */
-                background-image: url("./images/bg.gif");
-                background-image: image-set(
-                    url("./images/bg.webp") type("image/webp"),
-                    url("./images/bg.gif") type("image/gif")
-                );
-                background-size: cover;
-                background-position: center;
-                color: var(--text-light);
-                padding: calc(var(--spacing-xl) * 2) 0 var(--spacing-xl);
-                margin-top: 60px;
-                position: relative;
-                overflow: hidden;
-            }
-
-            /* Near-black wash so the animation only ghosts through */
-            .hero::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(
-                    135deg,
-                    rgba(11, 12, 14, 0.55),
-                    rgba(11, 12, 14, 0.75)
-                );
-                z-index: 1;
-            }
-
-            .hero-content {
-                position: relative;
-                z-index: 3; /* Ensure content is above both ::before and ::after */
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .hero-img {
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 4px solid rgba(168, 179, 62, 0.55);
-                margin-bottom: var(--spacing-md);
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-                color: var(--text-light);
-                margin-bottom: var(--spacing-xs);
-            }
-
-            .hero-subtitle {
-                font-size: 1.5rem;
-                color: var(--text-light);
-                opacity: 0.9;
-                margin-bottom: var(--spacing-md);
-            }
-
-            .hero-text {
-                max-width: 700px;
-                margin-bottom: var(--spacing-md);
-            }
-
-            .social-links {
-                display: flex;
-                gap: var(--spacing-sm);
-                margin-top: var(--spacing-md);
-            }
-
-            .social-link {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 40px;
-                height: 40px;
-                background-color: transparent;
-                box-shadow: inset 0 0 0 1px var(--accent-color);
-                color: var(--accent-color);
-                border-radius: 50%;
-                transition: all var(--transition-fast);
-            }
-
-            .social-link:hover {
-                background-color: var(--accent-color);
-                box-shadow: inset 0 0 0 1px var(--accent-color);
-                transform: translateY(-3px);
-                color: #0b0c0e;
-            }
-
-            .social-link i {
-                font-size: 1.2rem;
-            }
-
-            /* Hero section social links */
-            .hero-social-links {
-                margin-top: var(--spacing-lg);
-            }
-
-            .hero-social-link {
-                width: 50px;
-                height: 50px;
-                background-color: transparent;
-                box-shadow: inset 0 0 0 1px var(--accent-color);
-                transition: all 0.3s ease;
-                animation: pulse 2s infinite;
-            }
-
-            .hero-social-link i {
-                font-size: 1.5rem;
-            }
-
-            .hero-social-link:hover {
-                transform: translateY(-5px) scale(1.1);
-                background-color: var(--accent-soft);
-                box-shadow:
-                    inset 0 0 0 1px var(--accent-bright),
-                    0 0 15px rgba(200, 214, 75, 0.35);
-                color: var(--accent-bright);
-            }
-
-            @keyframes pulse {
-                0% {
-                    box-shadow:
-                        inset 0 0 0 1px var(--accent-color),
-                        0 0 0 0 rgba(168, 179, 62, 0.5);
-                }
-                70% {
-                    box-shadow:
-                        inset 0 0 0 1px var(--accent-color),
-                        0 0 0 10px rgba(168, 179, 62, 0);
-                }
-                100% {
-                    box-shadow:
-                        inset 0 0 0 1px var(--accent-color),
-                        0 0 0 0 rgba(168, 179, 62, 0);
-                }
-            }
-
-            /* Section styles */
-            .section {
-                padding: var(--spacing-xl) 0;
-                position: relative;
-                overflow: hidden;
-            }
-
-            /* Flat noir ground with a very subtle moss bloom */
-            .section::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: var(--surface-gradient);
-                z-index: 1;
-                pointer-events: none;
-            }
-
-            .section-content {
-                position: relative;
-                z-index: 3;
-            }
-
-            .section-title {
-                text-align: center;
-                margin-bottom: var(--spacing-lg);
-                position: relative;
-                padding-bottom: var(--spacing-sm);
-                color: var(--text-light);
-            }
-
-            .section-title::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80px;
-                height: 4px;
-                background-color: var(--primary-color);
-                border-radius: var(--border-radius-sm);
-            }
-
-            /* Card styles */
-            .card {
-                background-color: var(--card-bg);
-                border-radius: var(--border-radius-md);
-                overflow: hidden;
-                box-shadow:
-                    inset 0 0 0 1px var(--border-color),
-                    0 4px 15px rgba(0, 0, 0, 0.5);
-                transition:
-                    transform var(--transition-normal),
-                    box-shadow var(--transition-normal),
-                    background-color var(--transition-normal);
-                height: 100%;
-                margin-bottom: var(--spacing-sm);
-            }
-
-            .card > img,
-            .card > picture > img {
-                display: block;
-                width: 100%;
-            }
-
-            .card:hover {
-                transform: translateY(-5px);
-                background-color: var(--card-hover);
-                box-shadow:
-                    inset 0 0 0 1px var(--border-strong),
-                    0 10px 25px rgba(0, 0, 0, 0.6);
-            }
-
-            .card-content {
-                padding: var(--spacing-sm);
-            }
-
-            .card > iframe {
-                display: block;
-                width: 100%;
-            }
-
-            .card-title {
-                font-size: 1.25rem;
-                margin-bottom: var(--spacing-xs);
-                color: var(--text-light);
-            }
-
-            .card-text {
-                margin-bottom: var(--spacing-xs);
-                color: var(--text-light);
-            }
-
-            .card-text code {
-                background-color: rgba(255, 255, 255, 0.06);
-                box-shadow: inset 0 0 0 1px var(--border-color);
-                color: var(--accent-bright);
-                font-family: "JetBrains Mono", ui-monospace, monospace;
-                border-radius: var(--border-radius-sm);
-                padding: 2px 6px;
-                font-size: 0.9em;
-                word-break: break-word;
-            }
-
-            .code-block {
-                background-color: rgba(255, 255, 255, 0.06);
-                box-shadow: inset 0 0 0 1px var(--border-color);
-                color: var(--accent-bright);
-                font-family: "JetBrains Mono", ui-monospace, monospace;
-                font-size: 0.85rem;
-                line-height: 1.5;
-                border-radius: var(--border-radius-sm);
-                padding: var(--spacing-xs) var(--spacing-sm);
-                margin-bottom: var(--spacing-xs);
-                white-space: pre-wrap;
-                overflow-wrap: anywhere;
-            }
-
-            .code-block code {
-                font: inherit;
-                color: inherit;
-                background: none;
-                box-shadow: none;
-                padding: 0;
-            }
-
-            .card-link {
-                display: inline-block;
-                font-family: "JetBrains Mono", ui-monospace, monospace;
-                font-size: 0.85rem;
-                padding: var(--spacing-xs) var(--spacing-sm);
-                background-color: transparent;
-                box-shadow: inset 0 0 0 1px var(--accent-color);
-                color: var(--accent-color);
-                border-radius: var(--border-radius-sm);
-                transition: all var(--transition-fast);
-                text-decoration: none;
-                margin-top: var(--spacing-xs);
-            }
-
-            .card-link:hover {
-                background-color: var(--accent-color);
-                box-shadow: inset 0 0 0 1px var(--accent-color);
-                color: #0b0c0e;
-            }
-
-            /* Grid layout */
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(1, 1fr);
-                gap: var(--spacing-md);
-            }
-
-            @media (min-width: 768px) {
-                .grid-2 {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-
-            /* Project styles */
-            .project {
-                margin-bottom: var(--spacing-lg);
-            }
-
-            .project-header {
-                display: flex;
-                align-items: center;
-                margin-bottom: var(--spacing-sm);
-            }
-
-            .project-icon {
-                font-size: 1.5rem;
-                margin-right: var(--spacing-xs);
-                color: var(--primary-color);
-            }
-
-            .project-title {
-                margin-bottom: 0;
-            }
-
-            .project-img {
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            }
-
-            /* Iframe container for responsive embeds */
-            .iframe-container {
-                position: relative;
-                width: 100%;
-                padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-                height: 0;
-                overflow: hidden;
-                margin-bottom: 0;
-            }
-
-            .iframe-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: 0;
-            }
-
-            .video-embed {
-                background-color: #000000;
-                background-position: center;
-                background-size: cover;
-            }
-
-            .breakthrough-video {
-                background-image: url("https://i.ytimg.com/vi/GyWJ_dLydPE/hqdefault.jpg");
-            }
-
-            /* Footer */
-            .footer {
-                background-color: var(--bg-dark);
-                background-image: var(--surface-gradient);
-                background-size: cover;
-                background-position: center;
-                color: var(--text-light);
-                padding: var(--spacing-lg) 0;
-                text-align: center;
-                position: relative;
-            }
-
-            .footer::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: radial-gradient(
-                    ellipse at 50% 100%,
-                    rgba(168, 179, 62, 0.06),
-                    rgba(11, 12, 14, 0) 60%
-                );
-                z-index: 1;
-                pointer-events: none;
-            }
-
-            .footer-content {
-                position: relative;
-                z-index: 2;
-            }
-
-            .footer-social-links {
-                justify-content: center;
-                margin-bottom: var(--spacing-md);
-            }
-
-            .footer-text {
-                font-family: "JetBrains Mono", ui-monospace, monospace;
-                color: var(--text-muted);
-                margin-bottom: var(--spacing-sm);
-            }
-
-            .footer-link {
-                color: var(--primary-light);
-            }
-
-            .footer-link:hover {
-                color: var(--accent-bright);
-                text-decoration: underline;
-            }
-
-            /* Utility classes */
-            .text-center {
-                text-align: center;
-            }
-
-            .mb-0 {
-                margin-bottom: 0;
-            }
-
-            .mb-1 {
-                margin-bottom: var(--spacing-xs);
-            }
-
-            .mb-2 {
-                margin-bottom: var(--spacing-sm);
-            }
-
-            .mb-3 {
-                margin-bottom: var(--spacing-md);
-            }
-
-            .mb-4 {
-                margin-bottom: var(--spacing-lg);
-            }
-
-            .mt-1 {
-                margin-top: var(--spacing-xs);
-            }
-
-            .mt-2 {
-                margin-top: var(--spacing-sm);
-            }
-
-            .mt-3 {
-                margin-top: var(--spacing-md);
-            }
-
-            .mt-4 {
-                margin-top: var(--spacing-lg);
-            }
-
-            /* Animation */
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            .fade-in {
-                animation: fadeIn 0.5s ease forwards;
-            }
-
-            /* Responsive adjustments */
-            @media (max-width: 768px) {
-                .hero-title {
-                    font-size: 2rem;
-                }
-
-                .hero-subtitle {
-                    font-size: 1.25rem;
-                }
-
-                .section {
-                    padding: var(--spacing-lg) 0;
-                }
-            }
-
-            /* Themed replacements for emoji */
-            .em-icon {
-                color: var(--accent-color);
-                font-size: 0.85em;
-                margin: 0 0.1em;
-            }
-            .section-title .em-icon {
-                color: var(--accent-color);
-            }
-            span[style*="position: absolute"] > .em-icon {
-                font-size: 0.95em;
-            }
-        </style>
-    </head>
-    <body>
-        <a class="skip-link" href="#about">Skip to content</a>
-
-        <!-- Header -->
-        <header class="header" id="header">
-            <div class="container header-container">
-                <div class="logo">
-                    <img src="./images/icon.png" alt="Gleb Lukicov" />
-                    <div>
-                        <div class="logo-text">Gleb Lukicov</div>
-                        <div class="logo-subtitle">
-                            MLOps Leader | PhD in Physics
-                        </div>
-                    </div>
-                </div>
-
-                <button
-                    class="mobile-menu-btn"
-                    id="mobile-menu-btn"
-                    aria-label="Open menu"
-                    aria-expanded="false"
-                    aria-controls="nav"
-                >
-                    <i class="fas fa-bars"></i>
-                </button>
-
-                <nav class="nav" id="nav">
-                    <button
-                        class="close-menu"
-                        id="close-menu"
-                        aria-label="Close menu"
-                        aria-expanded="false"
-                        aria-controls="nav"
-                    >
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="#about" class="nav-link"
-                                ><i class="fas fa-user"></i> About me
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#aaif-community" class="nav-link"
-                                ><i class="fas fa-users"></i> MLOps
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#ml" class="nav-link"
-                                ><i class="fas fa-sitemap"></i> ML Projects
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#research" class="nav-link"
-                                ><i class="fas fa-atom"></i> Research
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#outreach" class="nav-link"
-                                ><i class="fas fa-handshake"></i> Outreach
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#interests" class="nav-link"
-                                ><i class="fas fa-bicycle"></i> Interests</a
-                            >
-                        </li>
-                    </ul>
-                </nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      document.documentElement.className += " js";
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JZQT6ZZKQV"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "G-JZQT6ZZKQV");
+    </script>
+
+    <title>
+      Gleb Lukicov | MLOps Leader | Empowering Data Science Teams to
+      Succeed 🚀
+    </title>
+    <meta
+      name="description"
+      content="Personal portfolio of Gleb Lukicov, MLOps Engineer and PhD in Physics"
+    />
+    <meta name="theme-color" content="#0b0b0a" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="google-site-verification"
+      content="De6CTWP3ivSIWSPEWMinMMljAhdetnwRVDClJOsBiMg"
+    />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Gleb Lukicov" />
+    <meta
+      property="og:title"
+      content="Gleb Lukicov — MLOps Leader | PhD in Physics"
+    />
+    <meta
+      property="og:description"
+      content="MLOps engineer, physics PhD and co-host of the Agentic AI Foundation (AAIF) Community London. Projects, articles, research and talks."
+    />
+    <meta property="og:url" content="https://glukicov.github.io/" />
+    <meta
+      property="og:image"
+      content="https://glukicov.github.io/images/gleb-mlops.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="Gleb Lukicov hosting an Agentic AI Foundation Community London meetup"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Gleb Lukicov — MLOps Leader | PhD in Physics"
+    />
+    <meta
+      name="twitter:description"
+      content="MLOps engineer, physics PhD and co-host of the Agentic AI Foundation (AAIF) Community London."
+    />
+    <meta
+      name="twitter:image"
+      content="https://glukicov.github.io/images/gleb-mlops.webp"
+    />
+
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./images/favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ============================================================
+       v06 · Pipeline — strict monochrome ink/paper, one moss accent.
+       Mono = machine-written (prompts, metadata, chips, tags, nav).
+       Sans = human-written (reading text, ~65ch measure).
+       ============================================================ */
+      :root {
+        --ink: #0b0b0a;
+        --ink-1: #131311;
+        --ink-2: #1a1a17;
+        --line: #24241f;
+        --line-2: #34342d;
+        --paper: #e2ded4;
+        --paper-2: #a8a396;
+        --paper-3: #8a8574;
+        --moss: #a8b33e;
+        --moss-hi: #c8d64b;
+        --moss-dim: rgba(168, 179, 62, 0.32);
+        --moss-bg: rgba(168, 179, 62, 0.1);
+        --amber: #e0a63c;
+        --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+          Consolas, monospace;
+        --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+        --hdr: 62px;
+        --r: 6px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      ul,
+      ol,
+      dl,
+      dd,
+      figure {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        color-scheme: dark;
+      }
+
+      body {
+        background: var(--ink);
+        color: var(--paper);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      [id] {
+        scroll-margin-top: calc(var(--hdr) + 18px);
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--moss-hi);
+        outline-offset: 2px;
+        border-radius: 3px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .wrap {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .vh {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .sprite {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+
+      .icon {
+        width: 1em;
+        height: 1em;
+        flex: none;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .skip {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        z-index: 3000;
+        background: var(--moss);
+        color: #0b0b0a;
+        font-family: var(--mono);
+        font-weight: 700;
+        padding: 10px 16px;
+        border-radius: var(--r);
+      }
+
+      .skip:focus {
+        left: 16px;
+        top: 12px;
+      }
+
+      /* ---------- header ---------- */
+      .hdr {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 1000;
+        height: var(--hdr);
+        background: rgba(11, 11, 10, 0.88);
+        backdrop-filter: saturate(140%) blur(10px);
+        -webkit-backdrop-filter: saturate(140%) blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hdr-in {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        height: 100%;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: inherit;
+        margin-right: auto;
+      }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid var(--line-2);
+      }
+
+      .brand-name {
+        display: block;
+        font-size: 0.98rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+      }
+
+      .brand-sub {
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--paper-3);
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+      }
+
+      .btn {
+        font-family: var(--mono);
+        background: none;
+        border: 1px solid var(--line-2);
+        color: var(--paper-2);
+        border-radius: var(--r);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          color 0.15s,
+          border-color 0.15s,
+          background-color 0.15s;
+      }
+
+      .btn:hover {
+        color: var(--paper);
+        border-color: var(--paper-3);
+        background: var(--ink-1);
+      }
+
+      .btn-search {
+        font-size: 0.78rem;
+        padding: 0 10px;
+        height: 36px;
+      }
+
+      .btn-search kbd {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--paper-3);
+        border: 1px solid var(--line-2);
+        border-radius: 4px;
+        padding: 1px 5px;
+      }
+
+      .btn-icon {
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        font-size: 1.15rem;
+        display: none;
+      }
+
+      .nav ul {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        list-style: none;
+      }
+
+      .nav a {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        color: var(--paper-2);
+        text-decoration: none;
+        padding: 8px 9px;
+        border-radius: 4px;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+      }
+
+      .nav a:hover {
+        color: var(--paper);
+        background: var(--ink-1);
+      }
+
+      .nav a.on {
+        color: var(--moss);
+        border-bottom-color: var(--moss);
+      }
+
+      .nav a::before {
+        content: "/";
+        color: var(--line-2);
+        margin-right: 3px;
+      }
+
+      .backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        background: rgba(5, 5, 4, 0.72);
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        padding: calc(var(--hdr) + 44px) 0 8px;
+      }
+
+      .run-tag {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        color: var(--paper-3);
+      }
+
+      .run-tag b {
+        color: var(--moss);
+        font-weight: 500;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 6vw, 3.1rem);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin: 10px 0 8px;
+      }
+
+      .run-sub {
+        font-family: var(--mono);
+        font-size: clamp(0.8rem, 2.4vw, 0.95rem);
+        color: var(--paper-2);
+        max-width: 60ch;
+      }
+
+      /* ---------- the DAG ---------- */
+      .dag {
+        position: relative;
+        margin: 34px 0 38px;
+      }
+
+      .dag-hint {
+        display: none;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        line-height: 1.6;
+        color: var(--paper-3);
+        max-width: 21ch;
+      }
+
+      .js .dag-hint {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 2px;
+      }
+
+      .dag-canvas {
+        display: block;
+        width: 100%;
+        height: 0;
+      }
+
+      .js .dag-canvas {
+        height: 240px;
+      }
+
+      .dag-nodes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .js .dag-nodes {
+        position: absolute;
+        inset: 0;
+        display: block;
+      }
+
+      .node {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        min-height: 40px;
+        padding: 8px 15px;
+        border: 1px solid var(--line-2);
+        border-radius: 999px;
+        background: var(--ink-1);
+        color: var(--paper-2);
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          color 0.15s,
+          border-color 0.15s,
+          background-color 0.15s;
+      }
+
+      .js .node {
+        position: absolute;
+        left: var(--x, 50%);
+        top: var(--y, 50%);
+        transform: translate(-50%, -50%);
+      }
+
+      .node i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--paper-3);
+        flex: none;
+        transition: background-color 0.15s;
+      }
+
+      .node:hover,
+      .node:focus-visible,
+      .node.hot {
+        color: var(--paper);
+        border-color: var(--moss);
+        background: var(--ink-2);
+      }
+
+      .node:hover i,
+      .node:focus-visible i,
+      .node.hot i,
+      .node.on i {
+        background: var(--moss);
+      }
+
+      .node.on {
+        color: var(--paper);
+        border-color: var(--moss-dim);
+      }
+
+      /* ---------- terminal intro ---------- */
+      .hero-grid {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+        padding-bottom: 56px;
+      }
+
+      .term {
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        background: var(--ink-1);
+        overflow: hidden;
+        min-width: 0;
+      }
+
+      .term-bar {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 9px 16px;
+        background: var(--ink-2);
+        border-bottom: 1px solid var(--line);
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--paper-3);
+        letter-spacing: 0.03em;
+      }
+
+      .term-body {
+        padding: 18px 20px 20px;
+      }
+
+      .cmd {
+        font-family: var(--mono);
+        font-size: 0.88rem;
+        color: var(--paper);
+        word-break: break-word;
+      }
+
+      .cmd s {
+        color: var(--moss);
+        margin-right: 9px;
+        text-decoration: none;
+        user-select: none;
+      }
+
+      .out {
+        margin-top: 16px;
+        max-width: 65ch;
+      }
+
+      .out p {
+        color: var(--paper-2);
+        line-height: 1.68;
+        margin-bottom: 14px;
+      }
+
+      .out p:last-child {
+        margin-bottom: 0;
+      }
+
+      .cur {
+        display: inline-block;
+        width: 0.55em;
+        height: 1.02em;
+        background: var(--moss);
+        vertical-align: -0.16em;
+      }
+
+      .typing::after {
+        content: "";
+        display: inline-block;
+        width: 0.55em;
+        height: 1.02em;
+        background: var(--moss);
+        vertical-align: -0.16em;
+        margin-left: 1px;
+      }
+
+      .typing::after,
+      .cmd-next .cur {
+        animation: blink 1.05s steps(1) infinite;
+      }
+
+      .art-body:last-child {
+        padding-bottom: 17px;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .cmd-next {
+        margin-top: 18px;
+      }
+
+      .me {
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        background: var(--ink-1);
+        padding: 16px;
+      }
+
+      .me img {
+        display: block;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        border: 1px solid var(--line-2);
+      }
+
+      .me-note {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--paper-2);
+        margin: 14px 0 12px;
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+      }
+
+      .me-note .icon {
+        color: var(--moss);
+        align-self: center;
+      }
+
+      .links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .links a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 40px;
+        padding: 4px 8px;
+        margin-left: -8px;
+        border-radius: 4px;
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--paper-2);
+        text-decoration: none;
+      }
+
+      .links a:hover {
+        color: var(--moss-hi);
+        background: var(--ink-2);
+      }
+
+      .links .icon {
+        color: var(--paper-3);
+        font-size: 0.85em;
+      }
+
+      /* ---------- stages ---------- */
+      .stage {
+        border-top: 1px solid var(--line);
+        padding: 58px 0 12px;
+      }
+
+      .stage-head {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+      }
+
+      .stage-no {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        color: var(--paper-3);
+        text-transform: uppercase;
+        flex: none;
+      }
+
+      .stage h2 {
+        font-size: clamp(1.3rem, 3.4vw, 1.85rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .chip {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        padding: 4px 10px 4px 8px;
+        border-radius: 999px;
+        border: 1px solid;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        flex: none;
+      }
+
+      .chip::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+      }
+
+      .chip-ok {
+        color: var(--moss);
+        border-color: var(--moss-dim);
+        background: var(--moss-bg);
+      }
+
+      .chip-run {
+        color: var(--amber);
+        border-color: rgba(224, 166, 60, 0.32);
+        background: rgba(224, 166, 60, 0.1);
+      }
+
+      .chip-run::before {
+        animation: pulse 1.9s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        50% {
+          opacity: 0.25;
+        }
+      }
+
+      .meta {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        gap: 3px 18px;
+        margin: 18px 0 26px;
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        line-height: 1.75;
+      }
+
+      .meta dt {
+        color: var(--paper-3);
+        letter-spacing: 0.06em;
+      }
+
+      .meta dd {
+        color: var(--paper-2);
+      }
+
+      .meta dd b {
+        color: var(--paper);
+        font-weight: 500;
+      }
+
+      /* ---------- artifacts ---------- */
+      .arts {
+        display: grid;
+        gap: 20px;
+      }
+
+      .art {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        background: var(--ink-1);
+        overflow: hidden;
+        min-width: 0;
+      }
+
+      .art-top {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        padding: 15px 17px 0;
+      }
+
+      .tag {
+        font-family: var(--mono);
+        font-size: 0.63rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--paper-3);
+        border: 1px solid var(--line-2);
+        border-radius: 3px;
+        padding: 2px 7px;
+        flex: none;
+        position: relative;
+        top: -1px;
+      }
+
+      .art h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.35;
+        letter-spacing: -0.01em;
+      }
+
+      .art-media {
+        display: block;
+        margin-top: 14px;
+        background: var(--ink-2);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .art-media img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .art-media.fit img {
+        object-fit: contain;
+      }
+
+      .art-media.tall img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .art-body {
+        padding: 15px 17px 0;
+        color: var(--paper-2);
+        font-size: 0.95rem;
+        line-height: 1.68;
+        max-width: 68ch;
+      }
+
+      .art-body p + p,
+      .art-body p + h4,
+      .art-body ul + h4 {
+        margin-top: 12px;
+      }
+
+      .art-body h4 {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--paper-3);
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+
+      .art-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 15px 17px 16px;
+        margin-top: auto;
+      }
+
+      .lnk {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 40px;
+        padding: 6px 12px;
+        border: 1px solid var(--moss-dim);
+        border-radius: 4px;
+        background: var(--moss-bg);
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        color: var(--moss);
+        text-decoration: none;
+        transition:
+          color 0.15s,
+          border-color 0.15s;
+      }
+
+      .lnk:hover {
+        color: var(--moss-hi);
+        border-color: var(--moss-hi);
+      }
+
+      a {
+        color: var(--moss);
+      }
+
+      .art-body a,
+      .out a {
+        color: var(--moss);
+        text-decoration-color: var(--moss-dim);
+        text-underline-offset: 2px;
+      }
+
+      .art-body a:hover,
+      .out a:hover {
+        color: var(--moss-hi);
+      }
+
+      .code {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        background: var(--ink);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 10px 12px;
+        margin: 10px 0;
+        overflow-x: auto;
+        color: var(--paper);
+      }
+
+      .art-body code {
+        font-family: var(--mono);
+        font-size: 0.85em;
+        background: var(--ink-2);
+        border-radius: 3px;
+        padding: 1px 5px;
+        color: var(--paper);
+      }
+
+      .art-body .code code {
+        background: none;
+        padding: 0;
+      }
+
+      .refs {
+        list-style: none;
+        display: grid;
+        gap: 4px;
+      }
+
+      .refs li {
+        display: flex;
+        gap: 10px;
+        align-items: baseline;
+        padding: 6px 0;
+      }
+
+      .frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: var(--ink-2);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        margin-top: 14px;
+      }
+
+      .frame.post {
+        aspect-ratio: 1 / 1;
+      }
+
+      .frame.audio {
+        aspect-ratio: 16 / 10;
+      }
+
+      .frame iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* ---------- footer ---------- */
+      .ftr {
+        border-top: 1px solid var(--line);
+        margin-top: 56px;
+        padding: 34px 0 44px;
+      }
+
+      .ftr-in {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px 32px;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .ftr-run {
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        color: var(--paper-3);
+      }
+
+      .ftr-run b {
+        color: var(--moss);
+        font-weight: 500;
+      }
+
+      .ftr .links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px 10px;
+      }
+
+      /* ---------- command palette ---------- */
+      .cmdk {
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 12vh 16px 16px;
+      }
+
+      .cmdk[hidden] {
+        display: none;
+      }
+
+      .cmdk-bg {
+        position: absolute;
+        inset: 0;
+        background: rgba(5, 5, 4, 0.76);
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .cmdk-panel {
+        position: relative;
+        width: 100%;
+        max-width: 640px;
+        max-height: 74vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--ink-1);
+        border: 1px solid var(--line-2);
+        border-radius: 8px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+        overflow: hidden;
+      }
+
+      .cmdk-in {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 14px;
+        border-bottom: 1px solid var(--line);
+        color: var(--moss);
+      }
+
+      .cmdk-in input {
+        flex: 1;
+        min-width: 0;
+        background: none;
+        border: 0;
+        outline: none;
+        color: var(--paper);
+        font-family: var(--mono);
+        font-size: 0.92rem;
+        padding: 15px 0;
+      }
+
+      .cmdk-in input::placeholder {
+        color: var(--paper-3);
+      }
+
+      .cmdk-list {
+        list-style: none;
+        overflow-y: auto;
+        padding: 6px;
+      }
+
+      .cmdk-list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.88rem;
+        color: var(--paper-2);
+      }
+
+      .cmdk-list li[aria-selected="true"] {
+        background: var(--ink-2);
+        color: var(--paper);
+        box-shadow: inset 2px 0 0 var(--moss);
+      }
+
+      .cmdk-list .tag {
+        top: 0;
+      }
+
+      .cmdk-list .k {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .cmdk-list .h {
+        color: var(--moss);
+      }
+
+      .cmdk-list .sub {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--paper-3);
+        flex: none;
+      }
+
+      .cmdk-empty {
+        padding: 22px 16px;
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        color: var(--paper-3);
+      }
+
+      .cmdk-foot {
+        display: flex;
+        gap: 16px;
+        padding: 9px 14px;
+        border-top: 1px solid var(--line);
+        background: var(--ink-2);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--paper-3);
+      }
+
+      .cmdk-foot kbd {
+        font-family: var(--mono);
+        border: 1px solid var(--line-2);
+        border-radius: 3px;
+        padding: 0 4px;
+        margin-right: 5px;
+      }
+
+      /* ---------- breakpoints ---------- */
+      @media (min-width: 860px) {
+        .dag-nodes {
+          display: block;
+        }
+      }
+
+      @media (min-width: 860px) and (max-width: 1140px) {
+        .node {
+          font-size: 0.73rem;
+          padding: 7px 11px;
+          gap: 7px;
+        }
+      }
+
+      @media (max-width: 859px) {
+        .dag {
+          margin: 26px 0 30px;
+        }
+
+        .dag-canvas,
+        .js .dag-hint {
+          display: none;
+        }
+
+        .js .dag-nodes,
+        .dag-nodes {
+          position: static;
+          display: block;
+          border-left: 1px solid var(--line-2);
+          margin-left: 6px;
+          padding-left: 16px;
+        }
+
+        .js .node,
+        .node {
+          position: static;
+          transform: none;
+          display: flex;
+          width: 100%;
+          margin-bottom: 6px;
+          border-radius: var(--r);
+        }
+
+        .node[data-branch]::after {
+          content: "branch";
+          margin-left: auto;
+          font-size: 0.62rem;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--paper-3);
+        }
+      }
+
+      @media (min-width: 760px) {
+        .hero-grid {
+          grid-template-columns: minmax(0, 1fr) 258px;
+        }
+
+        .me img {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 1;
+          border-radius: var(--r);
+        }
+      }
+
+      @media (min-width: 860px) {
+        .arts {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .art.wide {
+          grid-column: 1 / -1;
+        }
+
+        .art.wide .art-body {
+          max-width: none;
+          columns: 2;
+          column-gap: 40px;
+        }
+
+        .art.wide .art-body .code,
+        .art.wide .art-body li,
+        .art.wide .art-body h4 {
+          break-inside: avoid;
+        }
+
+        .art.wide .art-body h4 {
+          break-after: avoid;
+        }
+
+        .art.wide .art-media img {
+          aspect-ratio: 21 / 9;
+        }
+      }
+
+      @media (max-width: 940px) {
+        .brand-sub {
+          display: none;
+        }
+      }
+
+      @media (max-width: 880px) {
+        .btn-icon {
+          display: inline-flex;
+        }
+
+        .btn-search span {
+          display: none;
+        }
+
+        .btn-search {
+          width: 40px;
+          height: 40px;
+          justify-content: center;
+          padding: 0;
+          font-size: 1.05rem;
+        }
+
+        .btn-search kbd {
+          display: none;
+        }
+
+        .nav {
+          position: fixed;
+          top: 0;
+          right: 0;
+          z-index: 1001;
+          width: min(80vw, 320px);
+          height: 100dvh;
+          background: var(--ink-1);
+          border-left: 1px solid var(--line);
+          padding: 68px 18px 18px;
+          transform: translateX(102%);
+          transition: transform 0.28s ease;
+        }
+
+        .nav.open {
+          transform: none;
+        }
+
+        .nav ul {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 4px;
+        }
+
+        .nav a {
+          display: block;
+          padding: 12px 10px;
+          font-size: 0.95rem;
+          border-bottom: 0;
+          border-left: 2px solid transparent;
+        }
+
+        .nav a.on {
+          border-left-color: var(--moss);
+          background: var(--ink-2);
+        }
+
+        #nav-close {
+          position: absolute;
+          top: 12px;
+          right: 14px;
+        }
+      }
+
+      @media (min-width: 881px) {
+        #nav-close,
+        #nav-backdrop {
+          display: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .wrap {
+          padding: 0 16px;
+        }
+
+        .arts {
+          gap: 14px;
+        }
+
+        .stage {
+          padding-top: 44px;
+        }
+
+        .term-body {
+          padding: 15px 15px 17px;
+        }
+
+        .art-top,
+        .art-body {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+
+        .art-links {
+          padding: 14px;
+        }
+
+        .meta {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 0 0;
+        }
+
+        .meta dt {
+          margin-top: 8px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        html {
+          scroll-behavior: auto;
+        }
+
+        .nav {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="i-search" viewBox="0 0 24 24">
+          <circle cx="10.8" cy="10.8" r="6.4" />
+          <path d="M15.6 15.6 20.5 20.5" />
+        </symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </symbol>
+        <symbol id="i-close" viewBox="0 0 24 24">
+          <path d="M6 6 18 18M18 6 6 18" />
+        </symbol>
+        <symbol id="i-down" viewBox="0 0 24 24">
+          <path d="M12 4v14.5M6.5 13 12 18.5 17.5 13" />
+        </symbol>
+        <symbol id="i-ext" viewBox="0 0 24 24">
+          <path
+            d="M14 4h6v6M20 4l-8.6 8.6M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <!-- ============ header ============ -->
+    <header class="hdr">
+      <div class="wrap hdr-in">
+        <a class="brand" href="#about">
+          <img
+            src="./images/logo-80.webp"
+            alt=""
+            width="80"
+            height="80"
+          />
+          <span>
+            <span class="brand-name">Gleb Lukicov</span>
+            <span class="brand-sub"
+              >MLOps Leader | PhD in Physics</span>
+          </span>
+        </a>
+
+        <button
+          class="btn btn-search"
+          id="cmdk-open"
+          aria-label="Search this site"
+        >
+          <svg class="icon"><use href="#i-search"/></svg>
+          <span>Search</span>
+          <kbd>⌘K</kbd>
+        </button>
+
+        <button
+          class="btn btn-icon"
+          id="nav-open"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="nav"
+        >
+          <svg class="icon"><use href="#i-menu"/></svg>
+        </button>
+
+        <nav class="nav" id="nav" aria-label="Pipeline stages">
+          <button
+            class="btn btn-icon"
+            id="nav-close"
+            aria-label="Close menu"
+          >
+            <svg class="icon"><use href="#i-close"/></svg>
+          </button>
+          <ul>
+            <li><a href="#about">about</a></li>
+            <li><a href="#aaif-community">community</a></li>
+            <li><a href="#ml">projects</a></li>
+            <li><a href="#research">research</a></li>
+            <li><a href="#outreach">education</a></li>
+            <li><a href="#interests">interests</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <button class="backdrop" id="nav-backdrop" hidden tabindex="-1" aria-label="Close menu"></button>
+
+    <main id="main">
+      <!-- ============ hero: the DAG ============ -->
+      <section class="hero" id="about">
+        <div class="wrap">
+          <p class="run-tag">
+            dag: <b>gleb-lukicov</b> · 7 nodes · 5 stages
+          </p>
+          <h1>Gleb Lukicov</h1>
+          <p class="run-sub">
+            MLOps Leader — empowering data science teams to succeed
+          </p>
+
+          <div class="dag" id="dag">
+            <p class="dag-hint">
+              // hover a node to trace its edges, click to jump
+            </p>
+            <canvas
+              class="dag-canvas"
+              id="dag-canvas"
+              aria-hidden="true"
+            ></canvas>
+            <div class="dag-nodes" id="dag-nodes">
+              <a
+                class="node"
+                href="#research"
+                data-node="physics"
+                data-x="0.055"
+                data-y="0.5"
+                ><i></i>physics<span class="vh">
+                  — go to Research</span></a>
+              <a
+                class="node"
+                href="#ml"
+                data-node="data"
+                data-x="0.275"
+                data-y="0.5"
+                ><i></i>data<span class="vh">
+                  — go to ML projects</span></a>
+              <a
+                class="node"
+                href="#a-slideops"
+                data-node="platform"
+                data-x="0.5"
+                data-y="0.5"
+                ><i></i>platform<span class="vh">
+                  — go to SlideOps</span></a>
+              <a
+                class="node"
+                href="#aaif-community"
+                data-node="community"
+                data-x="0.725"
+                data-y="0.5"
+                ><i></i>community<span class="vh">
+                  — go to the AAIF community</span></a>
+              <a
+                class="node"
+                href="#a-mlops-article"
+                data-node="writing"
+                data-x="0.945"
+                data-y="0.5"
+                ><i></i>writing<span class="vh">
+                  — go to the articles</span></a>
+              <a
+                class="node"
+                href="#outreach"
+                data-node="outreach"
+                data-branch=""
+                data-x="0.275"
+                data-y="0.84"
+                ><i></i>outreach<span class="vh">
+                  — go to Education projects</span></a>
+              <a
+                class="node"
+                href="#interests"
+                data-node="interests"
+                data-branch=""
+                data-x="0.725"
+                data-y="0.16"
+                ><i></i>interests<span class="vh">
+                  — go to Personal interests</span></a>
             </div>
-        </header>
+          </div>
 
-        <!-- Hero Section -->
-        <section class="hero" id="about">
-            <div class="container hero-content">
-                <picture>
-                    <source srcset="./images/main.webp" type="image/webp" />
-                    <img
-                        src="./images/main.png"
-                        alt="Gleb Lukicov"
-                        class="hero-img"
-                    />
-                </picture>
-                <!--            <h1 class="hero-title">Gleb Lukicov</h1>-->
-                <!--            <h2 class="hero-subtitle">MLOps Leader | Empowering Data Science Teams to Succeed 🚀</h2>-->
-                <p class="hero-text">
-                    Hey there, I'm Gleb, and I'm passionate about empowering
-                    data science teams to succeed by building reliable and
-                    scalable MLOps solutions — because effective MLOps isn't
-                    just about tools; it's about aligning people, processes, and
-                    platforms to solve real business problems.
-                    <br /><br />
-                    Outside of work, I co-organise the Agentic AI Foundation
-                    (AAIF) Community London — Europe's largest AI engineering
-                    meetup — and love sharing what I've learned through blogging
-                    and public speaking.
-                    <br /><br />
-                    Before entering the tech industry, I conducted scientific
-                    research at world-class physics labs in the US and
-                    Switzerland, working on large-scale, multidisciplinary
-                    projects. In my spare time, I enjoy road cycling and
-                    running.
+          <!-- ============ hero: the terminal intro ============ -->
+          <div class="hero-grid">
+            <div class="term" id="term">
+              <div class="term-bar">
+                <span>gleb@pipeline: ~/about</span>
+                <span>zsh</span>
+              </div>
+              <div class="term-body">
+                <p class="cmd">
+                  <s>$</s><span data-tw="cmd"
+                    >gleb --about</span>
                 </p>
-                <span>Contact me for collaboration ideas or questions&nbsp;<i class="fas fa-arrow-down em-icon" aria-hidden="true"></i></span>
-                <div class="social-links hero-social-links">
-                    <a
-                        href="https://www.linkedin.com/in/glukicov"
-                        target="_blank"
-                        class="social-link hero-social-link"
-                        title="LinkedIn"
-                    >
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a
-                        href="https://github.com/glukicov"
-                        target="_blank"
-                        class="social-link hero-social-link"
-                        title="GitHub"
-                    >
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a
-                        href="https://medium.com/@lukicov"
-                        target="_blank"
-                        class="social-link hero-social-link"
-                        title="Medium"
-                    >
-                        <i class="fab fa-medium-m"></i>
-                    </a>
-                    <a
-                        href="https://x.com/gleb_lukicov"
-                        target="_blank"
-                        class="social-link hero-social-link"
-                        title="X (Twitter)"
-                    >
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
+                <div class="out" id="term-out">
+                  <p data-tw="out">
+                    Hey there, I'm Gleb, and I'm passionate
+                    about empowering data science teams to
+                    succeed by building reliable and scalable
+                    MLOps solutions — because effective MLOps
+                    isn't just about tools; it's about
+                    aligning people, processes, and platforms
+                    to solve real business problems.
+                  </p>
+                  <p data-tw="out">
+                    Outside of work, I co-organise the
+                    Agentic AI Foundation (AAIF) Community
+                    London — Europe's largest AI engineering
+                    meetup — and love sharing what I've
+                    learned through blogging and public
+                    speaking.
+                  </p>
+                  <p data-tw="out">
+                    Before entering the tech industry, I
+                    conducted scientific research at
+                    world-class physics labs in the US and
+                    Switzerland, working on large-scale,
+                    multidisciplinary projects. In my spare
+                    time, I enjoy road cycling and running.
+                  </p>
                 </div>
-            </div>
-        </section>
-
-        <!-- AAIF Community Section -->
-        <section class="section" id="aaif-community">
-            <div class="container section-content">
-                <h2 class="section-title">Agentic AI Foundation (AAIF) Community London <i class="fas fa-location-dot em-icon" aria-hidden="true"></i></h2>
-
-                <div class="grid grid-2 mb-3">
-                    <div class="card">
-                        <picture>
-                            <source
-                                srcset="./images/gleb-mlops.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="./images/gleb-mlops.png"
-                                alt="Agentic AI Foundation (AAIF) Community London"
-                                style="width: 100%"
-                                loading="lazy"
-                                decoding="async"
-                                width="773"
-                                height="534"
-                            />
-                        </picture>
-                        <div class="card-content">
-                            <p class="card-text">
-                                I am actively engaged in the
-                                <a
-                                    href="https://luma.com/aaif-london"
-                                    target="_blank"
-                                    >Agentic AI Foundation (AAIF) Community
-                                    London</a
-                                >, the largest AI engineering community in
-                                Europe, as a co-host and events organiser. We are
-                                putting regular in-person meetup-ups, for the
-                                community to learn together and discuss latest
-                                agentic AI trends over pizza.
-                            </p>
-                            <a
-                                href="https://luma.com/aaif-london"
-                                target="_blank"
-                                class="card-link"
-                                >Check our upcoming events in London</a
-                            >
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <iframe
-                            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7311105895734693888"
-                            title="Embedded post"
-                            width="100%"
-                            height="650"
-                            frameborder="0"
-                            allowfullscreen
-                        ></iframe>
-                        <div class="card-content">
-                            <a
-                                href="https://luma.com/aaif-london"
-                                target="_blank"
-                                class="card-link"
-                                >Join the AAIF Community</a
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ML Projects Section -->
-        <section class="section" id="ml">
-            <div class="container section-content">
-                <h2 class="section-title">ML projects and articles <i class="fas fa-book-open em-icon" aria-hidden="true"></i></h2>
-
-                <!-- SlideOps -->
-                <div class="card mb-3">
-                    <a
-                        href="https://github.com/glukicov/slideops"
-                        target="_blank"
-                    >
-                        <picture>
-                            <source
-                                srcset="./images/slideops-card.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="./images/slideops-card.png"
-                                alt="SlideOps: turn a repo into a deck that tells you when it stops matching the code, shown beside the demo deck's title slide"
-                                style="width: 100%"
-                                loading="lazy"
-                                decoding="async"
-                                width="2474"
-                                height="1271"
-                            />
-                        </picture>
-                    </a>
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            SlideOps: decks that tell you when they go stale <i class="fas fa-film em-icon" aria-hidden="true"></i>
-                        </h3>
-                        <p class="card-text">
-                            Turn a repository into a slide deck that tells you
-                            when it stops matching the code. SlideOps is a pair
-                            of Agent Skills: one builds a single-file HTML deck
-                            from a repo, the other checks that deck later. Every
-                            reference in the deck carries the file it came from,
-                            the exact line range, and a hash of those source
-                            lines, so the check is standard-library Python: no
-                            model, no network, zero tokens, milliseconds.
-                        </p>
-                        <p class="card-text">
-                            The repo is its own plugin marketplace, so in Claude
-                            Code it is two lines: add the marketplace,
-                        </p>
-                        <pre class="code-block"><code>/plugin marketplace add glukicov/slideops</code></pre>
-                        <p class="card-text">then install the plugin from it:</p>
-                        <pre class="code-block"><code>/plugin install slideops@slideops</code></pre>
-                        <p class="card-text">
-                            Any agent with the
-                            <a
-                                href="https://skills.sh"
-                                target="_blank"
-                                >skills CLI</a
-                            >
-                            gets it in one line:
-                        </p>
-                        <pre class="code-block"><code>npx skills add glukicov/slideops</code></pre>
-                        <p class="card-text">
-                            It also runs on Codex, Copilot CLI and OpenCode: all
-                            three read <code>~/.agents/skills</code>, and
-                            <code>./install.sh</code> in a repo puts the skills
-                            where each of them looks.
-                        </p>
-                        <a
-                            href="https://github.com/glukicov/slideops"
-                            target="_blank"
-                            class="card-link"
-                            >SlideOps on GitHub</a
-                        >
-                        <a
-                            href="https://medium.com/@lukicov/your-documentation-is-a-build-artifact-start-treating-it-like-one-ab48df61b1e0"
-                            target="_blank"
-                            class="card-link"
-                            >Read on Medium</a
-                        >
-                        <a
-                            href="https://discuss.pytorch.kr/t/slideops/11769?u=9bow"
-                            target="_blank"
-                            class="card-link"
-                            >Read on PyTorch Korea</a
-                        >
-                    </div>
-                </div>
-
-                <div class="grid grid-2">
-                    <!-- Project 1 -->
-                    <div class="card">
-                        <a
-                            href="https://medium.com/@lukicov/to-mlops-or-not-to-mlops-that-is-the-question-the-platform-is-the-answer-e148a8286b90"
-                            target="_blank"
-                        >
-                            <picture>
-                                <source
-                                    srcset="./images/mlops-cover-full.webp"
-                                    type="image/webp"
-                                />
-                                <img
-                                    src="./images/mlops-cover-full.png"
-                                    alt="MLOps Article"
-                                    style="width: 100%"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="1712"
-                                    height="1218"
-                                />
-                            </picture>
-                        </a>
-                        <div class="card-content">
-                            <h3 class="card-title">
-                                To MLOps, or not to MLOps? <i class="fas fa-circle-question em-icon" aria-hidden="true"></i>
-                            </h3>
-                            <p class="card-text">
-                                That is the question —
-                                <i>the platform is the answer</i> <i class="fas fa-rocket em-icon" aria-hidden="true"></i>. How does a
-                                correct MLOps strategy enable success for data
-                                science projects in a large organisation? What
-                                is an effective MLOps team?
-                            </p>
-                            <a
-                                href="https://medium.com/@lukicov/to-mlops-or-not-to-mlops-that-is-the-question-the-platform-is-the-answer-e148a8286b90"
-                                target="_blank"
-                                class="card-link"
-                                >Read on Medium</a
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="card">
-                        <a
-                            href="https://medium.com/@lukicov/ml-pipelines-in-the-age-of-llms-from-local-containers-to-cloud-experiments-1b688dcebee5"
-                            target="_blank"
-                        >
-                            <picture>
-                                <source
-                                    srcset="./images/steps.webp"
-                                    type="image/webp"
-                                />
-                                <img
-                                    src="./images/steps.png"
-                                    alt="ML Pipelines"
-                                    style="width: 100%"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="1716"
-                                    height="1224"
-                                />
-                            </picture>
-                        </a>
-                        <div class="card-content">
-                            <h3 class="card-title">
-                                ML pipelines in the age of LLMs
-                            </h3>
-                            <p class="card-text">
-                                Are you an AI engineer trying to bridge local
-                                development and production deployment of ML
-                                projects? Find out how pipelines enable scalable
-                                experimentation with Docker and uv on Google
-                                Cloud.
-                            </p>
-                            <a
-                                href="https://medium.com/@lukicov/ml-pipelines-in-the-age-of-llms-from-local-containers-to-cloud-experiments-1b688dcebee5"
-                                target="_blank"
-                                class="card-link"
-                                >Read on Medium</a
-                            >
-                            <a
-                                href="https://github.com/glukicov/llm_pipelines_demo"
-                                target="_blank"
-                                class="card-link"
-                                >Demo on GitHub</a
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-2 mt-3">
-                    <!-- Project 3 -->
-                    <div class="card">
-                        <div class="iframe-container">
-                            <iframe
-                                src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
-                                allow="
-                                    accelerometer;
-                                    autoplay;
-                                    clipboard-write;
-                                    encrypted-media;
-                                    gyroscope;
-                                    picture-in-picture;
-                                "
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">
-                                Virgin Media O2: DevOps journey
-                            </h3>
-                            <p class="card-text">
-                                In this video, I share my professional journey
-                                at Virgin Media O2, where we are utilising the
-                                power of Google Cloud to enable us to make
-                                data-driven decisions that improve our
-                                customers' experiences. For this work, our team
-                                won the DevOps award in 2022 and 2023.
-                            </p>
-                            <a
-                                href="https://cloud.google.com/blog/products/devops-sre/devops-awards-2022-winner-vmo2"
-                                target="_blank"
-                                class="card-link"
-                                >More on our DevOps award</a
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="card">
-                        <div class="iframe-container">
-                            <iframe
-                                src="https://www.youtube.com/embed/6cMVcKeBdkI"
-                                allow="
-                                    accelerometer;
-                                    autoplay;
-                                    clipboard-write;
-                                    encrypted-media;
-                                    gyroscope;
-                                    picture-in-picture;
-                                "
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">
-                                Interview with the Royal Statistical Society
-                            </h3>
-                            <p class="card-text">
-                                In this interview, I share my journey from
-                                particle physics to data science and MLOps, and
-                                how I discovered a passion for building data
-                                platforms and helping teams work with data at
-                                scale. I talk about my path into the field, my
-                                proudest moments as an ML engineering manager,
-                                and the importance of good fundamentals,
-                                community, and clean data.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-2 mt-3">
-                    <!-- Project 5 -->
-                    <div class="card">
-                        <iframe
-                            style="border-radius: 12px"
-                            src="https://open.spotify.com/embed/episode/0Xgw37MAKB1R7zGyBKehPe?utm_source=generator&amp;t=0"
-                            allow="
-                                autoplay;
-                                clipboard-write;
-                                encrypted-media;
-                                fullscreen;
-                                picture-in-picture;
-                            "
-                            width="100%"
-                            height="352"
-                            frameborder="0"
-                            loading="lazy"
-                            allowfullscreen
-                        ></iframe>
-                        <div class="card-content">
-                            <h3 class="card-title">
-                                Electric Twin &amp; MLOps Community London
-                            </h3>
-                            <p class="card-text">
-                                In this podcast, I discuss why your business
-                                might benefit from MLOps, MLOps Community London
-                                meetups and the exciting work we do at Electric
-                                Twin on simulating human behaviour in real-time
-                                with AI.
-                            </p>
-                            <a
-                                href="https://www.electrictwin.com"
-                                target="_blank"
-                                class="card-link"
-                                >Learn more about our work on digital
-                                personas</a
-                            >
-                        </div>
-                    </div>
-                    <!-- Project 6 -->
-                    <div class="card">
-                        <a
-                            href="https://medium.com/data-science/set-up-of-a-personal-gpu-server-for-machine-learning-with-ubuntu-20-04-100e787105ad"
-                            target="_blank"
-                        >
-                            <picture>
-                                <source
-                                    srcset="./images/gpu.webp"
-                                    type="image/webp"
-                                />
-                                <img
-                                    src="./images/gpu.jpeg"
-                                    alt="GPU Server"
-                                    style="width: 100%"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="1355"
-                                    height="841"
-                                />
-                            </picture>
-                        </a>
-                        <div class="card-content">
-                            <h3 class="card-title">
-                                Personal GPU server for ML
-                            </h3>
-                            <p class="card-text">
-                                With Ubuntu, CUDA and port-forwarding. I cover
-                                how to set up secure remote access over ssh,
-                                wake-on-LAN feature to switch on your GPU server
-                                remotely and mounting the remote file system on
-                                your laptop.
-                            </p>
-                            <a
-                                href="https://medium.com/data-science/set-up-of-a-personal-gpu-server-for-machine-learning-with-ubuntu-20-04-100e787105ad"
-                                target="_blank"
-                                class="card-link"
-                                >Read on TDS</a
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-2 mt-3">
-                    <!-- Project 7 -->
-                    <div class="card">
-                        <a
-                            href="https://www.electrictwin.com/blog/electric-twin-is-iso-27001-certified"
-                            target="_blank"
-                        >
-                            <picture>
-                                <source
-                                    srcset="./images/iso.webp"
-                                    type="image/webp"
-                                />
-                                <img
-                                    src="./images/iso.png"
-                                    alt="Electric Twin ISO 27001 certification"
-                                    style="width: 100%"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="461"
-                                    height="295"
-                                />
-                            </picture>
-                        </a>
-                        <div class="card-content">
-                            <h3 class="card-title">
-                                Electric Twin is ISO 27001 certified
-                            </h3>
-                            <p class="card-text">
-                                Startups move fast, and as it turns out, you can
-                                move fast on security &amp; compliance too!
-                            </p>
-                            <a
-                                href="https://www.electrictwin.com/blog/electric-twin-is-iso-27001-certified"
-                                target="_blank"
-                                class="card-link"
-                                >Read the announcement</a
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Project 8 -->
-                    <div class="card">
-                        <div class="iframe-container">
-                            <iframe
-                                src="https://www.youtube.com/embed/Zv5CWN5Dp9A"
-                                allow="
-                                    accelerometer;
-                                    autoplay;
-                                    clipboard-write;
-                                    encrypted-media;
-                                    gyroscope;
-                                    picture-in-picture;
-                                "
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">
-                                <i class="fas fa-microphone em-icon" aria-hidden="true"></i> Inspired to Build: Live with Gleb Lukicov
-                            </h3>
-                            <p class="card-text">
-                                Live conversation with Erica Hughberg about
-                                scaling MLOps at Electric Twin and what inspired
-                                my journey into data &amp; AI.
-                            </p>
-                            <a
-                                href="https://www.youtube.com/live/Zv5CWN5Dp9A"
-                                target="_blank"
-                                class="card-link"
-                                >Watch on YouTube</a
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Resources -->
-                <div class="card mt-3">
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            Some great resources that helped me on my data
-                            science and ML journey
-                        </h3>
-                        <p class="card-text"></p>
-                        <b>Technical</b>:
-                        <ul style="list-style-type: none; margin-left: 0">
-                            <li
-                                style="
-                                    margin-bottom: 10px;
-                                    padding-left: 30px;
-                                    position: relative;
-                                "
-                            >
-                                <span style="position: absolute; left: 0"
-                                    ><i class="fas fa-book em-icon" aria-hidden="true"></i></span
-                                >
-                                <a
-                                    href="https://www.packtpub.com/en-us/product/clean-code-in-python-9781800560215"
-                                    target="_blank"
-                                    ><i>Clean Code in Python</i> by Mariano
-                                    Anaya</a
-                                >. A modern and practical guide to writing good
-                                code <i class="fas fa-thumbs-up em-icon" aria-hidden="true"></i>.
-                            </li>
-                            <li
-                                style="
-                                    margin-bottom: 10px;
-                                    padding-left: 30px;
-                                    position: relative;
-                                "
-                            >
-                                <span style="position: absolute; left: 0"
-                                    ><i class="fas fa-book em-icon" aria-hidden="true"></i></span
-                                >
-                                <a
-                                    href="https://www.packtpub.com/en-gb/product/machine-learning-engineering-with-python-9781837631964"
-                                    target="_blank"
-                                    ><i
-                                        >Machine Learning Engineering with
-                                        Python</i
-                                    >
-                                    by Andrew McMahon</a
-                                >. MLOps in action with practical examples.
-                            </li>
-                                                        <li
-                                style="
-                                    margin-bottom: 10px;
-                                    padding-left: 30px;
-                                    position: relative;
-                                "
-                            >
-                                <span style="position: absolute; left: 0"
-                                    ><i class="fas fa-book em-icon" aria-hidden="true"></i></span
-                                >
-                                <a
-                                    href="https://www.oreilly.com/library/view/ai-engineering/9781098166298/"
-                                    target="_blank"
-                                    ><i>AI Engineering</i> by Chip Huyen</a
-                                >, with many rules-of-thumb for building AI
-                                systems. Chip also maintains an excellent
-                                <a
-                                    href="https://huyenchip.com/mlops/"
-                                    target="_blank"
-                                    >collection of MLOps materials</a
-                                >.
-                            </li>
-                            <b>Career:</b>
-                            <li
-                                style="
-                                    margin-bottom: 10px;
-                                    padding-left: 30px;
-                                    position: relative;
-                                "
-                            >
-                                <span style="position: absolute; left: 0"
-                                    ><i class="fas fa-book em-icon" aria-hidden="true"></i></span
-                                >
-                                <a
-                                    href="https://www.manning.com/books/build-a-career-in-data-science"
-                                    target="_blank"
-                                    ><i>Build a Career in Data Science</i> by
-                                    Emily Robinson and Jacqueline Nolis</a
-                                >. This excellent book covers interview
-                                preparation and how to grow in your new data
-                                science role. Emily and Jacqueline also host a
-                                <a
-                                    href="https://podcast.bestbook.cool/"
-                                    target="_blank"
-                                    >podcast on the very same topic!</a
-                                >
-                            </li>
-                            <li
-                                style="
-                                    margin-bottom: 10px;
-                                    padding-left: 30px;
-                                    position: relative;
-                                "
-                            >
-                                <span style="position: absolute; left: 0">
-                                    <i class="fas fa-envelope em-icon" aria-hidden="true"></i>
-                                </span>
-                                <a
-                                    href="https://levelupwithethanevans.substack.com/"
-                                    target="_blank"
-                                    ><i>Level Up</i> by Ethan Evans</a
-                                >. Ethan, an ex-VP at Amazon, shares his
-                                insights into taking control of your career and
-                                how to become an effective leader.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Research Section -->
-        <section class="section" id="research">
-            <div class="container section-content">
-                <h2 class="section-title">Research overview <i class="fas fa-microscope em-icon" aria-hidden="true"></i></h2>
-
-                <div class="card mb-3">
-                    <div class="card-content">
-                        <h3 class="card-title">The experiment</h3>
-                        <p class="card-text">
-                            The <i>g − 2</i> experiment at Fermilab, near
-                            Chicago,
-                            <a
-                                href="https://www.bbc.co.uk/news/science-environment-66407099"
-                                target="_blank"
-                                >discovered a tantalising sign of New Physics (a
-                                new force of nature!)</a
-                            >. This was done by measuring a deviation between
-                            the experimental and theoretically predicted value
-                            of the muon magnetic anomaly. As part of my PhD, I
-                            collaborated on the experiment with 200 scientists
-                            and engineers. In 2026, the experiment was
-                            recognised with the prestigious
-                            <a
-                                href="https://www.ucl.ac.uk/news/2026/apr/ucl-physicists-share-prestigious-breakthrough-prize-muon-experiment"
-                                target="_blank"
-                                >Breakthrough Prize in Fundamental Physics</a
-                            >.
-                        </p>
-                        <div
-                            class="iframe-container video-embed breakthrough-video mt-3"
-                        >
-                            <iframe
-                                src="https://www.youtube.com/embed/GyWJ_dLydPE?feature=oembed"
-                                title="Muon g-2 wins Breakthrough Prize in Fundamental Physics"
-                                allow="
-                                    accelerometer;
-                                    autoplay;
-                                    clipboard-write;
-                                    encrypted-media;
-                                    gyroscope;
-                                    picture-in-picture;
-                                    web-share;
-                                "
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-2">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">Software development</h3>
-                            <p class="card-text">
-                                To accurately measure this anomaly, a
-                                calibration of the tracking detectors is
-                                required. The main project of my PhD involved
-                                <a
-                                    href="https://github.com/glukicov/alignTrack"
-                                    target="_blank"
-                                >
-                                    <i class="fab fa-github"></i> developing,
-                                    testing and deploying the calibration
-                                    software framework </a
-                                >, which increased the yield of data by 3% and
-                                the data quality by 4%. The alignment procedure
-                                is a statistical problem, which involved the
-                                optimisation of the <i>p</i>-values of tracks
-                                via matrix inversion.
-                            </p>
-                            <a
-                                href="https://github.com/glukicov/alignTrack"
-                                target="_blank"
-                                class="card-link"
-                                >View on GitHub</a
-                            >
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">Data analysis</h3>
-                            <p class="card-text">
-                                There is also an additional measurement that
-                                will be made using the tracking detectors:
-                                setting a new limit on the electric dipole
-                                moment (EDM) of the muon, producing a
-                                world-leading result. I have been
-                                <a
-                                    href="https://github.com/glukicov/EDMTracking"
-                                    target="_blank"
-                                >
-                                    <i class="fab fa-github"></i> developing
-                                    algorithms to measure the muon EDM </a
-                                >, by analysing large and complex datasets using
-                                regression and Fourier transform methods.
-                            </p>
-                            <a
-                                href="https://github.com/glukicov/EDMTracking"
-                                target="_blank"
-                                class="card-link"
-                                >View on GitHub</a
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-2 mt-3">
-                    <div class="card">
-                        <picture>
-                            <source
-                                srcset="./images/APS_DPF_2019.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="./images/APS_DPF_2019.JPG"
-                                alt="Presenting at the American Physical Society conference"
-                                style="width: 100%"
-                                loading="lazy"
-                                decoding="async"
-                                width="2448"
-                                height="2033"
-                            />
-                        </picture>
-                        <div class="card-content">
-                            Presenting at the American Physical Society
-                            conference in Boston.
-                            <a
-                                href="https://indico.cern.ch/event/782953/contributions/3441653/attachments/1885766/3108628/APS_DPF_Gleb_Lukicov.pdf"
-                                target="_blank"
-                                >My talk</a
-                            >
-                            highlighted the significance of precise tracking
-                            systems in high-energy physics experiments and their
-                            role in probing fundamental particle properties.
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <picture>
-                            <source
-                                srcset="./images/plot.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="./images/plot.png"
-                                loading="lazy"
-                                decoding="async"
-                                width="1574"
-                                height="1176"
-                            />
-                        </picture>
-                        <div class="card-content">
-                            <h3 class="card-title">Selected written work</h3>
-                            <ul style="list-style-type: none; margin-left: 0">
-                                <li
-                                    style="
-                                        margin-bottom: 10px;
-                                        padding-left: 30px;
-                                        position: relative;
-                                    "
-                                >
-                                    <span style="position: absolute; left: 0">
-                                        <i class="fas fa-file-lines em-icon" aria-hidden="true"></i>
-                                    </span>
-                                    <a
-                                        href="files/PhDThesis_Gleb_Lukicov.pdf"
-                                        target="_blank"
-                                        >PhD thesis</a
-                                    >
-                                </li>
-                                <li
-                                    style="
-                                        margin-bottom: 10px;
-                                        padding-left: 30px;
-                                        position: relative;
-                                    "
-                                >
-                                    <span style="position: absolute; left: 0">
-                                        <i class="fas fa-file-lines em-icon" aria-hidden="true"></i></span
-                                    >
-                                    <a
-                                        href="https://arxiv.org/pdf/1909.12900.pdf"
-                                        target="_blank"
-                                        >Publication: calibration
-                                        (arXiv:1909.12900)</a
-                                    >
-                                </li>
-                                <li
-                                    style="
-                                        margin-bottom: 10px;
-                                        padding-left: 30px;
-                                        position: relative;
-                                    "
-                                >
-                                    <span style="position: absolute; left: 0">
-                                        <i class="fas fa-file-lines em-icon" aria-hidden="true"></i></span
-                                    >
-                                    <a
-                                        href="https://indico.cern.ch/event/782953/contributions/3441653/attachments/1885766/3108628/APS_DPF_Gleb_Lukicov.pdf"
-                                        target="_blank"
-                                        >Conference talk: data analysis</a
-                                    >
-                                </li>
-                                <li
-                                    style="
-                                        margin-bottom: 10px;
-                                        padding-left: 30px;
-                                        position: relative;
-                                    "
-                                >
-                                    <span style="position: absolute; left: 0">
-                                        <i class="fas fa-file-lines em-icon" aria-hidden="true"></i></span
-                                    >
-                                    <a
-                                        href="https://lss.fnal.gov/archive/2019/poster/fermilab-poster-19-011-e.pdf"
-                                        target="_blank"
-                                        >Conference poster: calibration</a
-                                    >
-                                </li>
-                                <li
-                                    style="
-                                        margin-bottom: 10px;
-                                        padding-left: 30px;
-                                        position: relative;
-                                    "
-                                >
-                                    <span style="position: absolute; left: 0">
-                                        <i class="fas fa-file-lines em-icon" aria-hidden="true"></i></span
-                                    >
-                                    <a
-                                        href="files/Proposal_GlebLukicov.pdf"
-                                        target="_blank"
-                                        >Project proposal</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card mt-3">
-                    <div class="card-content">
-                        <h3 class="card-title">Data collection</h3>
-                        <p class="card-text">
-                            An essential component of the experiment is the data
-                            acquisition (DAQ) system, which manages the data
-                            flow from the detector electronics. The experiment
-                            is acquiring raw data at a rate of 20 GB/s. This is
-                            accomplished by employing a parallel data processing
-                            architecture using 28 high-speed GPUs (<i
-                                >NVIDIA Tesla K40</i
-                            >), reducing the recorded data rate to 200 MB/s. To
-                            support the smooth operation of the experiment and
-                            ensure continuous data taking, a team of data
-                            acquisition (DAQ) experts are available for 24/7
-                            support.
-                            <a
-                                href="files/Proposal_GlebLukicov.pdf"
-                                target="_blank"
-                                >I have actively participated as the DAQ on-call
-                                computing expert between 2017 and 2019</a
-                            >.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section class="section" id="outreach">
-            <div class="container section-content">
-                <h2 class="section-title">Education projects <i class="fas fa-graduation-cap em-icon" aria-hidden="true"></i></h2>
-
-                <div class="grid grid-2">
-                    <div class="card">
-                        <picture>
-                            <source
-                                srcset="./images/gleb19.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="./images/gleb19.jpg"
-                                alt="Alumni Talk"
-                                style="width: 100%"
-                                loading="lazy"
-                                decoding="async"
-                                width="640"
-                                height="355"
-                            />
-                        </picture>
-                        <div class="card-content">
-                            <p class="card-text">
-                                Delivering an alumni talk at the Woodhouse
-                                College <i class="fas fa-graduation-cap em-icon" aria-hidden="true"></i> about my all-time favourite particle
-                                -
-                                <a
-                                    href="https://en.wikipedia.org/wiki/Muon"
-                                    target="_blank"
-                                    >the muon</a
-                                >
-                                - and how it can be used for
-                                <a
-                                    href="https://www.nature.com/news/cosmic-ray-particles-reveal-secret-chamber-in-egypt-s-great-pyramid-1.22939"
-                                    target="_blank"
-                                    >treasure-hunting <i class="fas fa-crown em-icon" aria-hidden="true"></i></a
-                                >,
-                                <a
-                                    href="https://cms.cern/content/security-and-environmental-protection"
-                                    target="_blank"
-                                    >making borders more secure <i class="fas fa-shield-halved em-icon" aria-hidden="true"></i></a
-                                >, and
-                                <a
-                                    href="https://muon-g-2.fnal.gov/muon-g-2-collaboration-to-solve-mystery.html"
-                                    target="_blank"
-                                    >unlocking the mysteries of the Universe
-                                    <i class="fas fa-magnifying-glass em-icon" aria-hidden="true"></i></a
-                                >. I come back to the college every year to
-                                encourage students in pursuing a career in STEM.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <picture>
-                            <source
-                                srcset="./images/tour.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="./images/tour.jpg"
-                                alt="Fermilab Tour"
-                                style="width: 100%"
-                                loading="lazy"
-                                decoding="async"
-                                width="1280"
-                                height="720"
-                            />
-                        </picture>
-                        <div class="card-content">
-                            <p class="card-text">
-                                Guiding a public tour of the
-                                <a
-                                    href="https://en.wikipedia.org/wiki/Muon_g-2"
-                                    target="_blank"
-                                    >Fermilab Muon g &mdash; 2 experiment</a
-                                >. The experiment has measured an anomaly in a
-                                property of a fundamental particle, expanding
-                                our knowledge of the Universe and providing
-                                evidence of the existence of new particles.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-2 mt-3">
-                    <div class="card">
-                        <a
-                            href="https://medium.com/p/9f87a8e5f92e"
-                            target="_blank"
-                        >
-                            <picture>
-                                <source
-                                    srcset="./images/spv.webp"
-                                    type="image/webp"
-                                />
-                                <img
-                                    src="./images/spv.png"
-                                    alt="Medium Article"
-                                    style="width: 100%"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="667"
-                                    height="613"
-                                />
-                            </picture>
-                        </a>
-                        <div class="card-content">
-                            <p class="card-text">
-                                I wrote an article about building a personal
-                                Bitcoin access point with Raspberry Pi. Read to
-                                learn about using an Electrum node for
-                                interacting with the decentralised blockchain
-                                network.
-                            </p>
-                            <a
-                                href="https://medium.com/p/9f87a8e5f92e"
-                                target="_blank"
-                                class="card-link"
-                                >Read on Medium</a
-                            >
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <picture>
-                            <source
-                                srcset="./images/gleb2.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="./images/gleb2.png"
-                                alt="Your Universe Festival"
-                                style="width: 100%"
-                                loading="lazy"
-                                decoding="async"
-                                width="1024"
-                                height="565"
-                            />
-                        </picture>
-                        <div class="card-content">
-                            <p class="card-text">
-                                Explaining spectroscopy <i class="fas fa-binoculars em-icon" aria-hidden="true"></i> to primary school
-                                students at the
-                                <a
-                                    href="https://www.ucl.ac.uk/youruniverse"
-                                    target="_blank"
-                                    >Your Universe</a
-                                >
-                                astronomy festival at UCL. I was involved with
-                                the festival between 2010 and 2015. Every year,
-                                I was able to deliver educational activities to
-                                300 pupils. I also had a chance to meet
-                                <a
-                                    href="https://www.findingpatterns.info/about-me"
-                                    target="_blank"
-                                    >Geraldine Cox</a
-                                >
-                                during the festival.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interests Section -->
-        <section class="section" id="interests">
-            <div class="container section-content">
-                <h2 class="section-title">Personal interests <i class="fas fa-person-biking em-icon" aria-hidden="true"></i></h2>
-
-                <div class="grid grid-2">
-                    <div class="card">
-                        <picture>
-                            <source
-                                srcset="./images/gleb-big-ride.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="./images/gleb-big-ride.JPEG"
-                                alt="Charity Marathon"
-                                style="width: 100%"
-                                loading="lazy"
-                                decoding="async"
-                                width="1870"
-                                height="1248"
-                            />
-                        </picture>
-                        <div class="card-content">
-                            <p class="card-text">
-                                As part of a charity fundraising, I ran my first
-                                full marathon <i class="fas fa-person-running em-icon" aria-hidden="true"></i> (5:31 / 1 km elevation) and
-                                cycled 100 km <i class="fas fa-person-biking em-icon" aria-hidden="true"></i> (4:44 / 2 km elevation). This
-                                motivated me all the way (twice!) to the top of
-                                that mountain, and
-                                <a
-                                    href="https://www.justgiving.com/team/aads-vmo2"
-                                    target="_blank"
-                                    >our team manged to fundraise £2.3K for
-                                    Street Child</a
-                                >.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <picture>
-                            <source
-                                srcset="./images/gleb-big-ride-2.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="./images/gleb-big-ride-2.JPEG"
-                                alt="Charity Cycling"
-                                style="width: 100%"
-                                loading="lazy"
-                                decoding="async"
-                                width="1142"
-                                height="763"
-                            />
-                        </picture>
-                        <div class="card-content">
-                            <p class="card-text">
-                                Next year, our team was back at it! With a mini
-                                tour-of-Netherlands: <i class="fas fa-person-biking em-icon" aria-hidden="true"></i> 160 km day 1 (6:28 / 0.8
-                                km elevation) and <i class="fas fa-person-biking em-icon" aria-hidden="true"></i> 175 km day 2 (6:37 / 1.1 km
-                                elevation). This time,
-                                <a
-                                    href="https://www.justgiving.com/team/aads-2023"
-                                    target="_blank"
-                                    >we have raised £3.8K for Street Child</a
-                                >.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container footer-content">
-                <div class="social-links footer-social-links">
-                    <a
-                        href="https://www.linkedin.com/in/glukicov"
-                        target="_blank"
-                        class="social-link"
-                        title="LinkedIn"
-                    >
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a
-                        href="https://github.com/glukicov"
-                        target="_blank"
-                        class="social-link"
-                        title="GitHub"
-                    >
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a
-                        href="https://medium.com/@lukicov"
-                        target="_blank"
-                        class="social-link"
-                        title="Medium"
-                    >
-                        <i class="fab fa-medium-m"></i>
-                    </a>
-                    <a
-                        href="https://x.com/gleb_lukicov"
-                        target="_blank"
-                        class="social-link"
-                        title="X (Twitter)"
-                    >
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                </div>
-                <p class="footer-text">
-                    Made with <i class="fas fa-hat-cowboy em-icon" aria-hidden="true"></i> by Gleb Lukicov · &copy; 2025
+                <p class="cmd cmd-next">
+                  <s>$</s><span class="cur"></span>
                 </p>
+              </div>
             </div>
-        </footer>
 
-        <!-- Scripts -->
-        <script>
-            // Mobile menu toggle
-            document.addEventListener("DOMContentLoaded", function () {
-                const mobileMenuBtn =
-                    document.getElementById("mobile-menu-btn");
-                const closeMenuBtn = document.getElementById("close-menu");
-                const nav = document.getElementById("nav");
-                const navLinks = document.querySelectorAll(".nav-link");
+            <aside class="me">
+              <img
+                src="./images/main.webp"
+                alt="Gleb Lukicov"
+                width="512"
+                height="512"
+                decoding="async"
+              />
+              <p class="me-note">
+                <svg class="icon"><use href="#i-down"/></svg>
+                Contact me for collaboration ideas or questions
+              </p>
+              <ul class="links">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/glukicov"
+                    target="_blank"
+                    rel="noopener"
+                    >linkedin/glukicov<svg class="icon"><use href="#i-ext"/></svg></a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/glukicov"
+                    target="_blank"
+                    rel="noopener"
+                    >github/glukicov<svg class="icon"><use href="#i-ext"/></svg></a>
+                </li>
+                <li>
+                  <a
+                    href="https://medium.com/@lukicov"
+                    target="_blank"
+                    rel="noopener"
+                    >medium/@lukicov<svg class="icon"><use href="#i-ext"/></svg></a>
+                </li>
+                <li>
+                  <a
+                    href="https://x.com/gleb_lukicov"
+                    target="_blank"
+                    rel="noopener"
+                    >x/gleb_lukicov<svg class="icon"><use href="#i-ext"/></svg></a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
 
-                function openNav() {
-                    nav.classList.add("active");
-                    mobileMenuBtn.setAttribute("aria-expanded", "true");
-                    closeMenuBtn.setAttribute("aria-expanded", "true");
-                }
+      <!-- ============ stage 01 · community ============ -->
+      <section class="stage" id="aaif-community">
+        <div class="wrap">
+          <div class="stage-head">
+            <span class="stage-no">stage 01</span>
+            <h2>Agentic AI Foundation (AAIF) Community London</h2>
+            <span class="chip chip-run">running</span>
+          </div>
+          <dl class="meta">
+            <dt>inputs</dt>
+            <dd>agentic AI trends · pizza</dd>
+            <dt>outputs</dt>
+            <dd>regular in-person meet-ups in London</dd>
+            <dt>role</dt>
+            <dd>
+              co-host and events organiser ·
+              <b>largest AI engineering community in Europe</b>
+            </dd>
+          </dl>
 
-                function closeNav() {
-                    nav.classList.remove("active");
-                    mobileMenuBtn.setAttribute("aria-expanded", "false");
-                    closeMenuBtn.setAttribute("aria-expanded", "false");
-                }
+          <div class="arts">
+            <article class="art" data-art data-type="photo">
+              <div class="art-top">
+                <span class="tag">photo</span>
+                <h3>Co-hosting AAIF London</h3>
+              </div>
+              <span class="art-media">
+                <img
+                  src="./images/gleb-mlops.webp"
+                  alt="Agentic AI Foundation (AAIF) Community London"
+                  width="773"
+                  height="534"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <div class="art-body">
+                <p>
+                  I am actively engaged in the
+                  <a
+                    href="https://luma.com/aaif-london"
+                    target="_blank"
+                    rel="noopener"
+                    >Agentic AI Foundation (AAIF) Community
+                    London</a>, the largest AI engineering community in
+                  Europe, as a co-host and events organiser. We
+                  are putting regular in-person meetup-ups, for
+                  the community to learn together and discuss
+                  latest agentic AI trends over pizza.
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://luma.com/aaif-london"
+                  target="_blank"
+                  rel="noopener"
+                  >Check our upcoming events in London<svg
+                    class="icon"
+                  >
+                    <use href="#i-ext" /></svg></a>
+              </p>
+            </article>
 
-                // Toggle mobile menu
-                mobileMenuBtn.addEventListener("click", openNav);
+            <article class="art" data-art data-type="post">
+              <div class="art-top">
+                <span class="tag">post</span>
+                <h3>The community, on LinkedIn</h3>
+              </div>
+              <div class="frame post">
+                <iframe
+                  src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7311105895734693888"
+                  title="Embedded post"
+                  loading="lazy"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://luma.com/aaif-london"
+                  target="_blank"
+                  rel="noopener"
+                  >Join the AAIF Community<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-                closeMenuBtn.addEventListener("click", closeNav);
+      <!-- ============ stage 02 · projects ============ -->
+      <section class="stage" id="ml">
+        <div class="wrap">
+          <div class="stage-head">
+            <span class="stage-no">stage 02</span>
+            <h2>ML projects and articles</h2>
+            <span class="chip chip-run">running</span>
+          </div>
+          <dl class="meta">
+            <dt>inputs</dt>
+            <dd>
+              repositories · ML pipelines · GPUs · Docker, uv,
+              Google Cloud
+            </dd>
+            <dt>outputs</dt>
+            <dd>
+              <b>2 open-source projects</b> · 4 articles · 3 videos
+              · 1 podcast
+            </dd>
+            <dt>awards</dt>
+            <dd>Google Cloud DevOps award, 2022 and 2023</dd>
+          </dl>
 
-                // Close mobile menu when clicking a link
-                navLinks.forEach((link) => {
-                    link.addEventListener("click", closeNav);
-                });
+          <div class="arts">
+            <article
+              class="art wide"
+              id="a-slideops"
+              data-art
+              data-type="repo"
+            >
+              <div class="art-top">
+                <span class="tag">repo</span>
+                <h3>
+                  SlideOps: decks that tell you when they go
+                  stale
+                </h3>
+              </div>
+              <a
+                class="art-media"
+                href="https://github.com/glukicov/slideops"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="./images/slideops-card.webp"
+                  alt="SlideOps: turn a repo into a deck that tells you when it stops matching the code, shown beside the demo deck's title slide"
+                  width="2474"
+                  height="1271"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class="art-body">
+                <p>
+                  Turn a repository into a slide deck that
+                  tells you when it stops matching the code.
+                  SlideOps is a pair of Agent Skills: one
+                  builds a single-file HTML deck from a repo,
+                  the other checks that deck later. Every
+                  reference in the deck carries the file it
+                  came from, the exact line range, and a hash
+                  of those source lines, so the check is
+                  standard-library Python: no model, no
+                  network, zero tokens, milliseconds.
+                </p>
+                <p>
+                  The repo is its own plugin marketplace, so in
+                  Claude Code it is two lines: add the
+                  marketplace,
+                </p>
+                <pre class="code"><code>/plugin marketplace add glukicov/slideops</code></pre>
+                <p>then install the plugin from it:</p>
+                <pre class="code"><code>/plugin install slideops@slideops</code></pre>
+                <p>
+                  Any agent with the
+                  <a
+                    href="https://skills.sh"
+                    target="_blank"
+                    rel="noopener"
+                    >skills CLI</a>
+                  gets it in one line:
+                </p>
+                <pre class="code"><code>npx skills add glukicov/slideops</code></pre>
+                <p>
+                  It also runs on Codex, Copilot CLI and
+                  OpenCode: all three read
+                  <code>~/.agents/skills</code>, and
+                  <code>./install.sh</code> in a repo puts the
+                  skills where each of them looks.
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://github.com/glukicov/slideops"
+                  target="_blank"
+                  rel="noopener"
+                  >SlideOps on GitHub<svg class="icon"><use href="#i-ext"/></svg></a>
+                <a
+                  class="lnk"
+                  href="https://medium.com/@lukicov/your-documentation-is-a-build-artifact-start-treating-it-like-one-ab48df61b1e0"
+                  target="_blank"
+                  rel="noopener"
+                  >Read on Medium<svg class="icon"><use href="#i-ext"/></svg></a>
+                <a
+                  class="lnk"
+                  href="https://discuss.pytorch.kr/t/slideops/11769?u=9bow"
+                  target="_blank"
+                  rel="noopener"
+                  >Read on PyTorch Korea<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
 
-                // Close mobile menu on Escape
-                document.addEventListener("keydown", function (event) {
-                    if (
-                        event.key === "Escape" &&
-                        nav.classList.contains("active")
-                    ) {
-                        closeNav();
-                    }
-                });
+            <article
+              class="art"
+              id="a-mlops-article"
+              data-art
+              data-type="article"
+            >
+              <div class="art-top">
+                <span class="tag">article</span>
+                <h3>To MLOps, or not to MLOps?</h3>
+              </div>
+              <a
+                class="art-media"
+                href="https://medium.com/@lukicov/to-mlops-or-not-to-mlops-that-is-the-question-the-platform-is-the-answer-e148a8286b90"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="./images/mlops-cover-full.webp"
+                  alt="MLOps Article"
+                  width="1712"
+                  height="1218"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class="art-body">
+                <p>
+                  That is the question —
+                  <i>the platform is the answer</i>. How does a
+                  correct MLOps strategy enable success for
+                  data science projects in a large
+                  organisation? What is an effective MLOps
+                  team?
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://medium.com/@lukicov/to-mlops-or-not-to-mlops-that-is-the-question-the-platform-is-the-answer-e148a8286b90"
+                  target="_blank"
+                  rel="noopener"
+                  >Read on Medium<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
 
-                // Header scroll effect
-                const header = document.getElementById("header");
-                window.addEventListener("scroll", function () {
-                    if (window.scrollY > 50) {
-                        header.classList.add("scrolled");
-                    } else {
-                        header.classList.remove("scrolled");
-                    }
-                });
+            <article class="art" data-art data-type="article">
+              <div class="art-top">
+                <span class="tag">article</span>
+                <h3>ML pipelines in the age of LLMs</h3>
+              </div>
+              <a
+                class="art-media"
+                href="https://medium.com/@lukicov/ml-pipelines-in-the-age-of-llms-from-local-containers-to-cloud-experiments-1b688dcebee5"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="./images/steps.webp"
+                  alt="ML Pipelines"
+                  width="1716"
+                  height="1224"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class="art-body">
+                <p>
+                  Are you an AI engineer trying to bridge local
+                  development and production deployment of ML
+                  projects? Find out how pipelines enable
+                  scalable experimentation with Docker and uv
+                  on Google Cloud.
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://medium.com/@lukicov/ml-pipelines-in-the-age-of-llms-from-local-containers-to-cloud-experiments-1b688dcebee5"
+                  target="_blank"
+                  rel="noopener"
+                  >Read on Medium<svg class="icon"><use href="#i-ext"/></svg></a>
+                <a
+                  class="lnk"
+                  href="https://github.com/glukicov/llm_pipelines_demo"
+                  target="_blank"
+                  rel="noopener"
+                  >Demo on GitHub<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
 
-                // Active nav link, driven by IntersectionObserver
-                const sections = document.querySelectorAll("section[id]");
+            <article class="art" data-art data-type="video">
+              <div class="art-top">
+                <span class="tag">video</span>
+                <h3>Virgin Media O2: DevOps journey</h3>
+              </div>
+              <div class="frame">
+                <iframe
+                  src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
+                  title="Virgin Media O2: DevOps journey"
+                  loading="lazy"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="art-body">
+                <p>
+                  In this video, I share my professional
+                  journey at Virgin Media O2, where we are
+                  utilising the power of Google Cloud to enable
+                  us to make data-driven decisions that improve
+                  our customers' experiences. For this work,
+                  our team won the DevOps award in 2022 and
+                  2023.
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://cloud.google.com/blog/products/devops-sre/devops-awards-2022-winner-vmo2"
+                  target="_blank"
+                  rel="noopener"
+                  >More on our DevOps award<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
 
-                const setActiveLink = (id) => {
-                    navLinks.forEach((link) => {
-                        link.classList.toggle(
-                            "active",
-                            link.getAttribute("href").substring(1) === id,
-                        );
-                    });
-                };
+            <article class="art" data-art data-type="video">
+              <div class="art-top">
+                <span class="tag">video</span>
+                <h3>
+                  Interview with the Royal Statistical Society
+                </h3>
+              </div>
+              <div class="frame">
+                <iframe
+                  src="https://www.youtube.com/embed/6cMVcKeBdkI"
+                  title="Interview with the Royal Statistical Society"
+                  loading="lazy"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="art-body">
+                <p>
+                  In this interview, I share my journey from
+                  particle physics to data science and MLOps,
+                  and how I discovered a passion for building
+                  data platforms and helping teams work with
+                  data at scale. I talk about my path into the
+                  field, my proudest moments as an ML
+                  engineering manager, and the importance of
+                  good fundamentals, community, and clean data.
+                </p>
+              </div>
+            </article>
 
-                const sectionObserver = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                setActiveLink(entry.target.getAttribute("id"));
-                            }
-                        });
-                    },
-                    { rootMargin: "-40% 0px -55% 0px" },
-                );
+            <article class="art" data-art data-type="podcast">
+              <div class="art-top">
+                <span class="tag">podcast</span>
+                <h3>Electric Twin &amp; MLOps Community London</h3>
+              </div>
+              <div class="frame audio">
+                <iframe
+                  src="https://open.spotify.com/embed/episode/0Xgw37MAKB1R7zGyBKehPe?utm_source=generator&amp;t=0"
+                  title="Podcast: Electric Twin and MLOps Community London"
+                  loading="lazy"
+                  allow="
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    fullscreen;
+                    picture-in-picture;
+                  "
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="art-body">
+                <p>
+                  In this podcast, I discuss why your business
+                  might benefit from MLOps, MLOps Community
+                  London meetups and the exciting work we do at
+                  Electric Twin on simulating human behaviour
+                  in real-time with AI.
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://www.electrictwin.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Learn more about our work on digital
+                  personas<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
 
-                sections.forEach((section) => {
-                    sectionObserver.observe(section);
-                });
-            });
-        </script>
-    </body>
+            <article class="art" data-art data-type="article">
+              <div class="art-top">
+                <span class="tag">article</span>
+                <h3>Personal GPU server for ML</h3>
+              </div>
+              <a
+                class="art-media"
+                href="https://medium.com/data-science/set-up-of-a-personal-gpu-server-for-machine-learning-with-ubuntu-20-04-100e787105ad"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="./images/gpu.webp"
+                  alt="GPU Server"
+                  width="1355"
+                  height="841"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class="art-body">
+                <p>
+                  With Ubuntu, CUDA and port-forwarding. I
+                  cover how to set up secure remote access over
+                  ssh, wake-on-LAN feature to switch on your
+                  GPU server remotely and mounting the remote
+                  file system on your laptop.
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://medium.com/data-science/set-up-of-a-personal-gpu-server-for-machine-learning-with-ubuntu-20-04-100e787105ad"
+                  target="_blank"
+                  rel="noopener"
+                  >Read on TDS<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
+
+            <article class="art" data-art data-type="post">
+              <div class="art-top">
+                <span class="tag">post</span>
+                <h3>Electric Twin is ISO 27001 certified</h3>
+              </div>
+              <a
+                class="art-media"
+                href="https://www.electrictwin.com/blog/electric-twin-is-iso-27001-certified"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="./images/iso.webp"
+                  alt="Electric Twin ISO 27001 certification"
+                  width="461"
+                  height="295"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class="art-body">
+                <p>
+                  Startups move fast, and as it turns out, you
+                  can move fast on security &amp; compliance
+                  too!
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://www.electrictwin.com/blog/electric-twin-is-iso-27001-certified"
+                  target="_blank"
+                  rel="noopener"
+                  >Read the announcement<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
+
+            <article class="art" data-art data-type="video">
+              <div class="art-top">
+                <span class="tag">video</span>
+                <h3>
+                  Inspired to Build: Live with Gleb Lukicov
+                </h3>
+              </div>
+              <div class="frame">
+                <iframe
+                  src="https://www.youtube.com/embed/Zv5CWN5Dp9A"
+                  title="Inspired to Build: Live with Gleb Lukicov"
+                  loading="lazy"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="art-body">
+                <p>
+                  Live conversation with Erica Hughberg about
+                  scaling MLOps at Electric Twin and what
+                  inspired my journey into data &amp; AI.
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://www.youtube.com/live/Zv5CWN5Dp9A"
+                  target="_blank"
+                  rel="noopener"
+                  >Watch on YouTube<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
+
+            <article class="art wide" data-art data-type="reading">
+              <div class="art-top">
+                <span class="tag">reading</span>
+                <h3>
+                  Some great resources that helped me on my
+                  data science and ML journey
+                </h3>
+              </div>
+              <div class="art-body">
+                <h4>Technical</h4>
+                <ul class="refs">
+                  <li>
+                    <span class="tag">book</span>
+                    <span
+                      ><a
+                        href="https://www.packtpub.com/en-us/product/clean-code-in-python-9781800560215"
+                        target="_blank"
+                        rel="noopener"
+                        ><i>Clean Code in Python</i> by
+                        Mariano Anaya</a>. A modern and practical guide to
+                      writing good code.</span>
+                  </li>
+                  <li>
+                    <span class="tag">book</span>
+                    <span
+                      ><a
+                        href="https://www.packtpub.com/en-gb/product/machine-learning-engineering-with-python-9781837631964"
+                        target="_blank"
+                        rel="noopener"
+                        ><i
+                          >Machine Learning Engineering
+                          with Python</i>
+                        by Andrew McMahon</a>. MLOps in action with practical
+                      examples.</span>
+                  </li>
+                  <li>
+                    <span class="tag">book</span>
+                    <span
+                      ><a
+                        href="https://www.oreilly.com/library/view/ai-engineering/9781098166298/"
+                        target="_blank"
+                        rel="noopener"
+                        ><i>AI Engineering</i> by Chip
+                        Huyen</a>, with many rules-of-thumb for
+                      building AI systems. Chip also
+                      maintains an excellent
+                      <a
+                        href="https://huyenchip.com/mlops/"
+                        target="_blank"
+                        rel="noopener"
+                        >collection of MLOps
+                        materials</a>.</span>
+                  </li>
+                </ul>
+                <h4>Career</h4>
+                <ul class="refs">
+                  <li>
+                    <span class="tag">book</span>
+                    <span
+                      ><a
+                        href="https://www.manning.com/books/build-a-career-in-data-science"
+                        target="_blank"
+                        rel="noopener"
+                        ><i
+                          >Build a Career in Data
+                          Science</i>
+                        by Emily Robinson and Jacqueline
+                        Nolis</a>. This excellent book covers
+                      interview preparation and how to grow
+                      in your new data science role. Emily
+                      and Jacqueline also host a
+                      <a
+                        href="https://podcast.bestbook.cool/"
+                        target="_blank"
+                        rel="noopener"
+                        >podcast on the very same
+                        topic!</a></span>
+                  </li>
+                  <li>
+                    <span class="tag">letter</span>
+                    <span
+                      ><a
+                        href="https://levelupwithethanevans.substack.com/"
+                        target="_blank"
+                        rel="noopener"
+                        ><i>Level Up</i> by Ethan
+                        Evans</a>. Ethan, an ex-VP at Amazon, shares
+                      his insights into taking control of
+                      your career and how to become an
+                      effective leader.</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ stage 03 · research ============ -->
+      <section class="stage" id="research">
+        <div class="wrap">
+          <div class="stage-head">
+            <span class="stage-no">stage 03</span>
+            <h2>Research overview</h2>
+            <span class="chip chip-ok">succeeded</span>
+          </div>
+          <dl class="meta">
+            <dt>inputs</dt>
+            <dd>
+              <b>200 collaborators</b> · 20 GB/s of raw detector
+              data · 28 NVIDIA Tesla K40 GPUs
+            </dd>
+            <dt>outputs</dt>
+            <dd>
+              PhD thesis · arXiv:1909.12900 · alignTrack ·
+              EDMTracking · APS DPF talk
+            </dd>
+            <dt>metrics</dt>
+            <dd>
+              +3% data yield · +4% data quality · 200 MB/s
+              recorded
+            </dd>
+            <dt>duration</dt>
+            <dd>DAQ on-call, <b>2017–2019</b></dd>
+          </dl>
+
+          <div class="arts">
+            <article class="art wide" data-art data-type="video">
+              <div class="art-top">
+                <span class="tag">video</span>
+                <h3>The experiment</h3>
+              </div>
+              <div class="art-body">
+                <p>
+                  The <i>g − 2</i> experiment at Fermilab, near
+                  Chicago,
+                  <a
+                    href="https://www.bbc.co.uk/news/science-environment-66407099"
+                    target="_blank"
+                    rel="noopener"
+                    >discovered a tantalising sign of New
+                    Physics (a new force of nature!)</a>. This was done by measuring a deviation
+                  between the experimental and theoretically
+                  predicted value of the muon magnetic anomaly.
+                  As part of my PhD, I collaborated on the
+                  experiment with 200 scientists and engineers.
+                  In 2026, the experiment was recognised with
+                  the prestigious
+                  <a
+                    href="https://www.ucl.ac.uk/news/2026/apr/ucl-physicists-share-prestigious-breakthrough-prize-muon-experiment"
+                    target="_blank"
+                    rel="noopener"
+                    >Breakthrough Prize in Fundamental
+                    Physics</a>.
+                </p>
+              </div>
+              <div class="frame">
+                <iframe
+                  src="https://www.youtube.com/embed/GyWJ_dLydPE?feature=oembed"
+                  title="Muon g-2 wins Breakthrough Prize in Fundamental Physics"
+                  loading="lazy"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </article>
+
+            <article class="art" data-art data-type="repo">
+              <div class="art-top">
+                <span class="tag">repo</span>
+                <h3>Software development</h3>
+              </div>
+              <div class="art-body">
+                <p>
+                  To accurately measure this anomaly, a
+                  calibration of the tracking detectors is
+                  required. The main project of my PhD involved
+                  <a
+                    href="https://github.com/glukicov/alignTrack"
+                    target="_blank"
+                    rel="noopener"
+                    >developing, testing and deploying the
+                    calibration software framework</a>, which increased the yield of data by 3%
+                  and the data quality by 4%. The alignment
+                  procedure is a statistical problem, which
+                  involved the optimisation of the <i>p</i>-values of tracks via matrix inversion.
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://github.com/glukicov/alignTrack"
+                  target="_blank"
+                  rel="noopener"
+                  >alignTrack on GitHub<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
+
+            <article class="art" data-art data-type="repo">
+              <div class="art-top">
+                <span class="tag">repo</span>
+                <h3>Data analysis</h3>
+              </div>
+              <div class="art-body">
+                <p>
+                  There is also an additional measurement that
+                  will be made using the tracking detectors:
+                  setting a new limit on the electric dipole
+                  moment (EDM) of the muon, producing a
+                  world-leading result. I have been
+                  <a
+                    href="https://github.com/glukicov/EDMTracking"
+                    target="_blank"
+                    rel="noopener"
+                    >developing algorithms to measure the
+                    muon EDM</a>, by analysing large and complex datasets
+                  using regression and Fourier transform
+                  methods.
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://github.com/glukicov/EDMTracking"
+                  target="_blank"
+                  rel="noopener"
+                  >EDMTracking on GitHub<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
+
+            <article class="art" data-art data-type="talk">
+              <div class="art-top">
+                <span class="tag">talk</span>
+                <h3>American Physical Society, Boston</h3>
+              </div>
+              <span class="art-media">
+                <img
+                  src="./images/APS_DPF_2019.webp"
+                  alt="Presenting at the American Physical Society conference"
+                  width="2448"
+                  height="2033"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <div class="art-body">
+                <p>
+                  Presenting at the American Physical Society
+                  conference in Boston.
+                  <a
+                    href="https://indico.cern.ch/event/782953/contributions/3441653/attachments/1885766/3108628/APS_DPF_Gleb_Lukicov.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >My talk</a>
+                  highlighted the significance of precise
+                  tracking systems in high-energy physics
+                  experiments and their role in probing
+                  fundamental particle properties.
+                </p>
+              </div>
+            </article>
+
+            <article class="art" data-art data-type="paper">
+              <div class="art-top">
+                <span class="tag">paper</span>
+                <h3>Selected written work</h3>
+              </div>
+              <span class="art-media fit tall">
+                <img
+                  src="./images/plot.webp"
+                  alt="Plot of the muon precession frequency fit from the g − 2 analysis"
+                  width="1574"
+                  height="1176"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <div class="art-body">
+                <ul class="refs">
+                  <li>
+                    <span class="tag">thesis</span>
+                    <a
+                      href="files/PhDThesis_Gleb_Lukicov.pdf"
+                      target="_blank"
+                      rel="noopener"
+                      >PhD thesis</a>
+                  </li>
+                  <li>
+                    <span class="tag">paper</span>
+                    <a
+                      href="https://arxiv.org/pdf/1909.12900.pdf"
+                      target="_blank"
+                      rel="noopener"
+                      >Publication: calibration
+                      (arXiv:1909.12900)</a>
+                  </li>
+                  <li>
+                    <span class="tag">talk</span>
+                    <a
+                      href="https://indico.cern.ch/event/782953/contributions/3441653/attachments/1885766/3108628/APS_DPF_Gleb_Lukicov.pdf"
+                      target="_blank"
+                      rel="noopener"
+                      >Conference talk: data analysis</a>
+                  </li>
+                  <li>
+                    <span class="tag">poster</span>
+                    <a
+                      href="https://lss.fnal.gov/archive/2019/poster/fermilab-poster-19-011-e.pdf"
+                      target="_blank"
+                      rel="noopener"
+                      >Conference poster: calibration</a>
+                  </li>
+                  <li>
+                    <span class="tag">proposal</span>
+                    <a
+                      href="files/Proposal_GlebLukicov.pdf"
+                      target="_blank"
+                      rel="noopener"
+                      >Project proposal</a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="art wide" data-art data-type="ops">
+              <div class="art-top">
+                <span class="tag">ops</span>
+                <h3>Data collection</h3>
+              </div>
+              <div class="art-body">
+                <p>
+                  An essential component of the experiment is
+                  the data acquisition (DAQ) system, which
+                  manages the data flow from the detector
+                  electronics. The experiment is acquiring raw
+                  data at a rate of 20 GB/s. This is
+                  accomplished by employing a parallel data
+                  processing architecture using 28 high-speed
+                  GPUs (<i>NVIDIA Tesla K40</i>), reducing the
+                  recorded data rate to 200 MB/s. To support
+                  the smooth operation of the experiment and
+                  ensure continuous data taking, a team of data
+                  acquisition (DAQ) experts are available for
+                  24/7 support.
+                  <a
+                    href="files/Proposal_GlebLukicov.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >I have actively participated as the DAQ
+                    on-call computing expert between 2017 and
+                    2019</a>.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ stage 04 · education ============ -->
+      <section class="stage" id="outreach">
+        <div class="wrap">
+          <div class="stage-head">
+            <span class="stage-no">stage 04</span>
+            <h2>Education projects</h2>
+            <span class="chip chip-run">running</span>
+          </div>
+          <dl class="meta">
+            <dt>inputs</dt>
+            <dd>muons · spectroscopy · Raspberry Pi</dd>
+            <dt>outputs</dt>
+            <dd>
+              alumni talks · public tours of Muon g − 2 · 1 article
+            </dd>
+            <dt>reach</dt>
+            <dd>
+              <b>300 pupils a year</b> · Your Universe, 2010–2015 ·
+              Woodhouse College, annually
+            </dd>
+          </dl>
+
+          <div class="arts">
+            <article class="art" data-art data-type="talk">
+              <div class="art-top">
+                <span class="tag">talk</span>
+                <h3>Alumni talk at Woodhouse College</h3>
+              </div>
+              <span class="art-media">
+                <img
+                  src="./images/gleb19.webp"
+                  alt="Alumni Talk"
+                  width="640"
+                  height="355"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <div class="art-body">
+                <p>
+                  Delivering an alumni talk at the Woodhouse
+                  College about my all-time favourite particle
+                  -
+                  <a
+                    href="https://en.wikipedia.org/wiki/Muon"
+                    target="_blank"
+                    rel="noopener"
+                    >the muon</a>
+                  - and how it can be used for
+                  <a
+                    href="https://www.nature.com/news/cosmic-ray-particles-reveal-secret-chamber-in-egypt-s-great-pyramid-1.22939"
+                    target="_blank"
+                    rel="noopener"
+                    >treasure-hunting</a>,
+                  <a
+                    href="https://cms.cern/content/security-and-environmental-protection"
+                    target="_blank"
+                    rel="noopener"
+                    >making borders more secure</a>, and
+                  <a
+                    href="https://muon-g-2.fnal.gov/muon-g-2-collaboration-to-solve-mystery.html"
+                    target="_blank"
+                    rel="noopener"
+                    >unlocking the mysteries of the
+                    Universe</a>. I come back to the college every year to
+                  encourage students in pursuing a career in
+                  STEM.
+                </p>
+              </div>
+            </article>
+
+            <article class="art" data-art data-type="photo">
+              <div class="art-top">
+                <span class="tag">photo</span>
+                <h3>
+                  Public tour of the Muon g − 2 experiment
+                </h3>
+              </div>
+              <span class="art-media">
+                <img
+                  src="./images/tour.webp"
+                  alt="Fermilab Tour"
+                  width="1280"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <div class="art-body">
+                <p>
+                  Guiding a public tour of the
+                  <a
+                    href="https://en.wikipedia.org/wiki/Muon_g-2"
+                    target="_blank"
+                    rel="noopener"
+                    >Fermilab Muon g &mdash; 2 experiment</a>. The experiment has measured an anomaly in
+                  a property of a fundamental particle,
+                  expanding our knowledge of the Universe and
+                  providing evidence of the existence of new
+                  particles.
+                </p>
+              </div>
+            </article>
+
+            <article class="art" data-art data-type="article">
+              <div class="art-top">
+                <span class="tag">article</span>
+                <h3>
+                  A personal Bitcoin access point with
+                  Raspberry Pi
+                </h3>
+              </div>
+              <a
+                class="art-media tall fit"
+                href="https://medium.com/p/9f87a8e5f92e"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="./images/spv.webp"
+                  alt="Medium Article"
+                  width="667"
+                  height="613"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class="art-body">
+                <p>
+                  I wrote an article about building a personal
+                  Bitcoin access point with Raspberry Pi. Read
+                  to learn about using an Electrum node for
+                  interacting with the decentralised blockchain
+                  network.
+                </p>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://medium.com/p/9f87a8e5f92e"
+                  target="_blank"
+                  rel="noopener"
+                  >Read on Medium<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
+
+            <article class="art" data-art data-type="photo">
+              <div class="art-top">
+                <span class="tag">photo</span>
+                <h3>Your Universe festival, UCL</h3>
+              </div>
+              <span class="art-media">
+                <img
+                  src="./images/gleb2.webp"
+                  alt="Your Universe Festival"
+                  width="1024"
+                  height="565"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <div class="art-body">
+                <p>
+                  Explaining spectroscopy to primary school
+                  students at the
+                  <a
+                    href="https://www.ucl.ac.uk/youruniverse"
+                    target="_blank"
+                    rel="noopener"
+                    >Your Universe</a>
+                  astronomy festival at UCL. I was involved
+                  with the festival between 2010 and 2015.
+                  Every year, I was able to deliver educational
+                  activities to 300 pupils. I also had a chance
+                  to meet
+                  <a
+                    href="https://www.findingpatterns.info/about-me"
+                    target="_blank"
+                    rel="noopener"
+                    >Geraldine Cox</a>
+                  during the festival.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ stage 05 · interests ============ -->
+      <section class="stage" id="interests">
+        <div class="wrap">
+          <div class="stage-head">
+            <span class="stage-no">stage 05</span>
+            <h2>Personal interests</h2>
+            <span class="chip chip-ok">succeeded</span>
+          </div>
+          <dl class="meta">
+            <dt>inputs</dt>
+            <dd>
+              1 marathon · 435 km cycled · 4.9 km of elevation
+            </dd>
+            <dt>outputs</dt>
+            <dd><b>£6.1K raised</b> for Street Child</dd>
+            <dt>duration</dt>
+            <dd>two years, back to back</dd>
+          </dl>
+
+          <div class="arts">
+            <article class="art" data-art data-type="photo">
+              <div class="art-top">
+                <span class="tag">photo</span>
+                <h3>
+                  First marathon and a 100 km ride for Street
+                  Child
+                </h3>
+              </div>
+              <span class="art-media">
+                <img
+                  src="./images/gleb-big-ride.webp"
+                  alt="Charity Marathon"
+                  width="1870"
+                  height="1248"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <div class="art-body">
+                <p>
+                  As part of a charity fundraising, I ran my
+                  first full marathon (5:31 / 1 km elevation)
+                  and cycled 100 km (4:44 / 2 km elevation).
+                  This motivated me all the way (twice!) to the
+                  top of that mountain, and
+                  <a
+                    href="https://www.justgiving.com/team/aads-vmo2"
+                    target="_blank"
+                    rel="noopener"
+                    >our team manged to fundraise £2.3K for
+                    Street Child</a>.
+                </p>
+              </div>
+            </article>
+
+            <article class="art" data-art data-type="photo">
+              <div class="art-top">
+                <span class="tag">photo</span>
+                <h3>
+                  A mini tour of the Netherlands for Street
+                  Child
+                </h3>
+              </div>
+              <span class="art-media">
+                <img
+                  src="./images/gleb-big-ride-2.webp"
+                  alt="Charity Cycling"
+                  width="1142"
+                  height="763"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <div class="art-body">
+                <p>
+                  Next year, our team was back at it! With a
+                  mini tour-of-Netherlands: 160 km day 1 (6:28
+                  / 0.8 km elevation) and 175 km day 2 (6:37 /
+                  1.1 km elevation). This time,
+                  <a
+                    href="https://www.justgiving.com/team/aads-2023"
+                    target="_blank"
+                    rel="noopener"
+                    >we have raised £3.8K for Street
+                    Child</a>.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ footer ============ -->
+    <footer class="ftr">
+      <div class="wrap ftr-in">
+        <div>
+          <p class="ftr-run">
+            pipeline <b>gleb-lukicov</b> · 5 stages · 2 succeeded ·
+            3 running
+          </p>
+          <p class="ftr-run">
+            made with a cowboy hat by Gleb Lukicov · &copy;
+            <span id="yr">2026</span>
+          </p>
+        </div>
+        <ul class="links">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/glukicov"
+              target="_blank"
+              rel="noopener"
+              >linkedin<svg class="icon"><use href="#i-ext"/></svg></a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/glukicov"
+              target="_blank"
+              rel="noopener"
+              >github<svg class="icon"><use href="#i-ext"/></svg></a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/@lukicov"
+              target="_blank"
+              rel="noopener"
+              >medium<svg class="icon"><use href="#i-ext"/></svg></a>
+          </li>
+          <li>
+            <a
+              href="https://x.com/gleb_lukicov"
+              target="_blank"
+              rel="noopener"
+              >x<svg class="icon"><use href="#i-ext"/></svg></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- ============ command palette ============ -->
+    <div class="cmdk" id="cmdk" hidden>
+      <button class="cmdk-bg" id="cmdk-bg" tabindex="-1" aria-label="Close search"></button>
+      <div
+        class="cmdk-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Search this site"
+      >
+        <div class="cmdk-in">
+          <svg class="icon"><use href="#i-search"/></svg>
+          <input
+            id="cmdk-q"
+            type="text"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="stages, artifacts, links…"
+            role="combobox"
+            aria-expanded="true"
+            aria-controls="cmdk-list"
+            aria-autocomplete="list"
+          />
+        </div>
+        <ul class="cmdk-list" id="cmdk-list" role="listbox" aria-label="Results"></ul>
+        <p class="cmdk-foot">
+          <span><kbd>↑↓</kbd>move</span><span><kbd>↵</kbd>open</span><span><kbd>esc</kbd>close</span>
+        </p>
+      </div>
+    </div>
+
+    <script>
+(function () {
+  var d = document,
+    mq = matchMedia("(prefers-reduced-motion: reduce)"),
+    $ = function (s, r) {
+      return (r || d).querySelector(s);
+    },
+    $$ = function (s, r) {
+      return [].slice.call((r || d).querySelectorAll(s));
+    };
+
+  /* ---------- copyright year ---------- */
+  $("#yr").textContent = new Date().getFullYear();
+
+  /* ---------- shortcut hint ---------- */
+  var mac = /Mac|iPhone|iPad|iPod/.test(navigator.platform || "");
+  if (!mac) $(".btn-search kbd").textContent = "Ctrl K";
+
+  /* ---------- nav drawer ---------- */
+  var nav = $("#nav"),
+    navOpen = $("#nav-open"),
+    navClose = $("#nav-close"),
+    backdrop = $("#nav-backdrop");
+
+  function drawer(on, back) {
+    nav.classList.toggle("open", on);
+    navOpen.setAttribute("aria-expanded", on ? "true" : "false");
+    backdrop.hidden = !on;
+    if (on) navClose.focus();
+    else if (back) navOpen.focus();
+  }
+  navOpen.addEventListener("click", function () {
+    drawer(true);
+  });
+  navClose.addEventListener("click", function () {
+    drawer(false, 1);
+  });
+  backdrop.addEventListener("click", function () {
+    drawer(false, 1);
+  });
+  $$("#nav a").forEach(function (a) {
+    a.addEventListener("click", function () {
+      if (nav.classList.contains("open")) drawer(false);
+    });
+  });
+
+  /* ---------- the DAG ---------- */
+  var cv = $("#dag-canvas"),
+    box = $("#dag"),
+    nodes = $$(".node"),
+    EDGES = [
+      ["physics", "data"],
+      ["data", "platform"],
+      ["platform", "community"],
+      ["community", "writing"],
+      ["physics", "outreach"],
+      ["outreach", "community"],
+      ["platform", "interests"],
+    ],
+    pos = {},
+    W = 0,
+    H = 0,
+    dash = 0,
+    hot = null,
+    live = false,
+    ctx = cv.getContext && cv.getContext("2d");
+
+  function flat() {
+    return getComputedStyle(cv).display === "none";
+  }
+
+  function layout() {
+    if (!ctx || flat()) return false;
+    W = box.clientWidth;
+    H = cv.clientHeight || 240;
+    nodes.forEach(function (n) {
+      var w = n.offsetWidth,
+        h = n.offsetHeight,
+        x = +n.dataset.x * W,
+        y = +n.dataset.y * H;
+      x = Math.min(Math.max(x, w / 2 + 1), W - w / 2 - 1);
+      y = Math.min(Math.max(y, h / 2 + 1), H - h / 2 - 1);
+      n.style.setProperty("--x", x + "px");
+      n.style.setProperty("--y", y + "px");
+      pos[n.dataset.node] = { x: x, y: y, w: w, h: h };
+    });
+    var r = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = Math.round(W * r);
+    cv.height = Math.round(H * r);
+    ctx.setTransform(r, 0, 0, r, 0, 0);
+    return true;
+  }
+
+  function draw() {
+    if (!ctx || flat()) return;
+    ctx.clearRect(0, 0, W, H);
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    EDGES.forEach(function (e) {
+      var a = pos[e[0]],
+        b = pos[e[1]];
+      if (!a || !b) return;
+      var lit = hot && (e[0] === hot || e[1] === hot),
+        col = lit ? "#a8b33e" : hot ? "#26261f" : "#3a3a32",
+        x1 = a.x + a.w / 2 + 3,
+        y1 = a.y,
+        x2 = b.x - b.w / 2 - 5,
+        y2 = b.y,
+        k = Math.max(30, (x2 - x1) * 0.5);
+      ctx.strokeStyle = col;
+      ctx.lineWidth = lit ? 1.9 : 1.2;
+      ctx.setLineDash([5, 7]);
+      ctx.lineDashOffset = -dash;
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.bezierCurveTo(x1 + k, y1, x2 - k, y2, x2, y2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.beginPath();
+      ctx.moveTo(x2 - 6, y2 - 3.6);
+      ctx.lineTo(x2, y2);
+      ctx.lineTo(x2 - 6, y2 + 3.6);
+      ctx.lineWidth = 1.4;
+      ctx.stroke();
+    });
+  }
+
+  function tick() {
+    if (!live) return;
+    dash = (dash + 0.34) % 12;
+    draw();
+    requestAnimationFrame(tick);
+  }
+
+  function start() {
+    if (live || mq.matches || flat()) return;
+    live = true;
+    requestAnimationFrame(tick);
+  }
+
+  function stop() {
+    live = false;
+  }
+
+  function relayout() {
+    stop();
+    if (layout()) {
+      draw();
+      start();
+    }
+  }
+
+  nodes.forEach(function (n) {
+    var id = n.dataset.node;
+    ["mouseenter", "focus"].forEach(function (t) {
+      n.addEventListener(t, function () {
+        hot = id;
+        draw();
+      });
+    });
+    ["mouseleave", "blur"].forEach(function (t) {
+      n.addEventListener(t, function () {
+        hot = null;
+        draw();
+      });
+    });
+  });
+
+  if (ctx) {
+    relayout();
+    addEventListener("resize", relayout);
+    if (window.ResizeObserver)
+      new ResizeObserver(relayout).observe(box);
+    if (window.IntersectionObserver)
+      new IntersectionObserver(function (es) {
+        es[0].isIntersecting ? start() : stop();
+      }).observe(box);
+    if (d.fonts && d.fonts.ready)
+      d.fonts.ready.then(relayout).catch(function () {});
+  }
+
+  /* ---------- terminal typing (first ~1.6s only) ---------- */
+  (function () {
+    if (mq.matches) return;
+    var out = $("#term-out"),
+      items = [$('[data-tw="cmd"]')].concat(
+        $$('[data-tw="out"]'),
+      ),
+      text = items.map(function (el) {
+        return el.textContent.replace(/\s+/g, " ").trim();
+      }),
+      total = text.join("").length,
+      per = Math.ceil(total / 88),
+      i = 0,
+      j = 0,
+      over = false;
+    out.style.minHeight = out.offsetHeight + "px";
+    function finish() {
+      if (over) return;
+      over = true;
+      items.forEach(function (el, k) {
+        el.textContent = text[k];
+        el.classList.remove("typing");
+      });
+      out.style.minHeight = "";
+    }
+    var guard = setTimeout(finish, 2000);
+    items.forEach(function (el) {
+      el.textContent = "";
+    });
+    function step() {
+      if (over) return;
+      var n = per;
+      while (n > 0 && i < items.length) {
+        var t = text[i],
+          take = Math.min(n, t.length - j);
+        j += take;
+        n -= take;
+        items[i].textContent = t.slice(0, j);
+        items[i].classList.add("typing");
+        if (j >= t.length) {
+          items[i].classList.remove("typing");
+          i++;
+          j = 0;
+        }
+      }
+      if (i >= items.length) {
+        clearTimeout(guard);
+        finish();
+        return;
+      }
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  })();
+
+  /* ---------- scroll spy ---------- */
+  var links = $$("#nav a"),
+    byHash = {};
+  nodes.concat(links).forEach(function (a) {
+    var h = a.getAttribute("href");
+    (byHash[h] = byHash[h] || []).push(a);
+  });
+  if (window.IntersectionObserver) {
+    var spy = new IntersectionObserver(
+      function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var on = byHash["#" + e.target.id] || [];
+          links.concat(nodes).forEach(function (a) {
+            a.classList.toggle(
+              "on",
+              on.indexOf(a) > -1,
+            );
+          });
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+    $$("main section[id]").forEach(function (s) {
+      spy.observe(s);
+    });
+  }
+
+  /* ---------- command palette ---------- */
+  var pal = $("#cmdk"),
+    q = $("#cmdk-q"),
+    listEl = $("#cmdk-list"),
+    idx = [],
+    hits = [],
+    sel = 0,
+    prev = null,
+    built = false;
+
+  function esc(s) {
+    return s
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function build() {
+    if (built) return;
+    built = true;
+    var seen = {},
+      n = 0;
+    $$(".stage").forEach(function (s) {
+      idx.push({
+        t: $("h2", s).textContent.replace(/\s+/g, " ").trim(),
+        k: "stage",
+        el: s,
+        sub: $(".chip", s).textContent.trim(),
+      });
+    });
+    $$("[data-art]").forEach(function (a) {
+      var h = $("h3", a);
+      if (!h) return;
+      if (!a.id) a.id = "art-" + ++n;
+      idx.push({
+        t: h.textContent.replace(/\s+/g, " ").trim(),
+        k: a.dataset.type,
+        el: a,
+        sub: "artifact",
+      });
+    });
+    $$('main a[href^="http"]').forEach(function (a) {
+      var t = a.textContent.replace(/\s+/g, " ").trim();
+      if (t.length < 3) return;
+      var key = t.toLowerCase() + "|" + a.href;
+      if (seen[key]) return;
+      seen[key] = 1;
+      idx.push({
+        t: t,
+        k: "link",
+        href: a.href,
+        sub: a.hostname.replace(/^www\./, ""),
+      });
+    });
+  }
+
+  function match(t, qs) {
+    var s = t.toLowerCase(),
+      i = 0,
+      sc = 0,
+      run = 0,
+      hit = [];
+    for (var k = 0; k < qs.length; k++) {
+      var p = s.indexOf(qs[k], i);
+      if (p < 0) return null;
+      sc +=
+        p === 0 || /[^a-z0-9]/.test(s.charAt(p - 1)) ? 7 : 1;
+      if (p === i && k) sc += ++run * 2;
+      else run = 0;
+      hit.push(p);
+      i = p + 1;
+    }
+    return { sc: sc - i * 0.04, hit: hit };
+  }
+
+  function mark(t, hit) {
+    var o = "",
+      p = 0;
+    hit.forEach(function (h) {
+      o += esc(t.slice(p, h)) + '<span class="h">' + esc(t.charAt(h)) + "</span>";
+      p = h + 1;
+    });
+    return o + esc(t.slice(p));
+  }
+
+  function render() {
+    var s = q.value.replace(/\s+/g, "").toLowerCase();
+    hits = [];
+    idx.forEach(function (it) {
+      if (!s) {
+        if (it.k === "stage") hits.push({ it: it, hit: [] });
+        return;
+      }
+      var m = match(it.t, s);
+      if (m) hits.push({ it: it, hit: m.hit, sc: m.sc });
+    });
+    if (s)
+      hits.sort(function (a, b) {
+        return b.sc - a.sc;
+      });
+    hits = hits.slice(0, 14);
+    sel = 0;
+    if (!hits.length) {
+      listEl.innerHTML =
+        '<li class="cmdk-empty" role="presentation">no match</li>';
+      q.removeAttribute("aria-activedescendant");
+      return;
+    }
+    listEl.innerHTML = hits
+      .map(function (h, i) {
+        return (
+          '<li role="option" id="cmdk-o' +
+          i +
+          '" aria-selected="' +
+          (i === 0) +
+          '"><span class="tag">' +
+          esc(h.it.k) +
+          '</span><span class="k">' +
+          mark(h.it.t, h.hit) +
+          '</span><span class="sub">' +
+          esc(h.it.sub || "") +
+          "</span></li>"
+        );
+      })
+      .join("");
+    q.setAttribute("aria-activedescendant", "cmdk-o0");
+  }
+
+  function move(n) {
+    var li = listEl.children;
+    if (!hits.length) return;
+    if (li[sel]) li[sel].setAttribute("aria-selected", "false");
+    sel = (sel + n + hits.length) % hits.length;
+    li[sel].setAttribute("aria-selected", "true");
+    li[sel].scrollIntoView({ block: "nearest" });
+    q.setAttribute("aria-activedescendant", "cmdk-o" + sel);
+  }
+
+  function go(h) {
+    if (!h) return;
+    close();
+    if (h.it.href) {
+      window.open(h.it.href, "_blank", "noopener");
+      return;
+    }
+    var el = h.it.el;
+    el.scrollIntoView({
+      block: "start",
+      behavior: mq.matches ? "auto" : "smooth",
+    });
+    el.setAttribute("tabindex", "-1");
+    el.focus({ preventScroll: true });
+  }
+
+  function open() {
+    build();
+    prev = d.activeElement;
+    pal.hidden = false;
+    q.value = "";
+    render();
+    q.focus();
+  }
+
+  function close() {
+    if (pal.hidden) return;
+    pal.hidden = true;
+    if (prev && prev.focus) prev.focus();
+  }
+
+  $("#cmdk-open").addEventListener("click", open);
+  $("#cmdk-bg").addEventListener("click", close);
+  q.addEventListener("input", render);
+  listEl.addEventListener("click", function (e) {
+    var li = e.target.closest("li[role=option]");
+    if (li) go(hits[[].indexOf.call(listEl.children, li)]);
+  });
+  pal.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      close();
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      move(1);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      move(-1);
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      go(hits[sel]);
+    } else if (e.key === "Tab") {
+      e.preventDefault();
+      q.focus();
+    }
+  });
+  d.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && nav.classList.contains("open"))
+      drawer(false, 1);
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      pal.hidden ? open() : close();
+    }
+  });
+})();
+</script>
+  </body>
 </html>
