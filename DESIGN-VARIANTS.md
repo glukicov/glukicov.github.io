@@ -146,3 +146,50 @@ turns any variant's `index.html` into a single self-contained file (images
 inlined, embeds replaced by poster facades because the private preview host
 blocks third-party frames) which is what the private preview links show.
 The real branch keeps the live embeds.
+
+## Results
+
+All seven are built, committed and pushed. Each preview is a private,
+self-contained page: images inlined, Font Awesome inlined where the variant
+still uses it, and the six third-party embeds replaced by poster facades that
+link out, because the preview host admits only the page's own bytes. The
+branches keep the real live embeds.
+
+Baseline, the current site bundled the same way for like-for-like comparison:
+https://claude.ai/code/artifact/be581439-5435-40a5-a175-0597ee4e4148
+
+| Variant | Branch suffix | First load | Preview |
+|---|---|---|---|
+| v01 Tune-up | `-v01-tune-up` | 1,250 → 492 KB (−61 % above the fold) | https://claude.ai/code/artifact/8f02c677-77a5-4c43-a028-0a8cee595924 |
+| v02 Motion | `-v02-motion` | 905 → 448 KB (−49 %) | https://claude.ai/code/artifact/c6d466d5-4a66-4d6e-b277-2d7955d77e21 |
+| v03 Editorial | `-v03-editorial` | 1,383 → 167 KB (−88 %) | https://claude.ai/code/artifact/59e03d3d-363b-4729-8719-d07d2b0b1659 |
+| v04 Bento | `-v04-bento` | 1,383 → 221 KB (−84 %) | https://claude.ai/code/artifact/4ad255ce-b9bb-468a-b547-30b4a8cde02b |
+| v05 Timeline | `-v05-timeline` | 1,383 → 235 KB (−83 %) | https://claude.ai/code/artifact/b1b04918-f986-4f6d-9cde-84d145f13e6a |
+| v06 Pipeline | `-v06-pipeline` | 927 → 173 KB (−81 %) | https://claude.ai/code/artifact/16cb20b8-9e22-4424-86db-24fc14faa26c |
+| v07 Muon | `-v07-muon` | 2,039 → 1,323 KB whole page (−35 %) | https://claude.ai/code/artifact/00c4ce57-5232-45ba-b750-539d75e45a2b |
+
+Branches are `claude/website-design-variants-ff49ga` + the suffix above. Each
+carries its own `VARIANT.md` with the design plan, the change list, measured
+numbers and the exclusions its author chose.
+
+First-load figures come from each variant's own measurement of first-party
+bytes with third-party embeds excluded, so they are comparable within a
+variant's before/after pair rather than across rows: the baselines differ
+(some agents measured at 1440 px desktop, some counted the animated hero
+background differently). The direction and rough magnitude hold everywhere.
+
+### Things worth knowing whichever variant wins
+
+- The 489 KB `images/icon.png` serving a 40 px logo is the single biggest
+  easy win, and every variant removes it.
+- The sticky header's `backdrop-filter` makes the header the containing block
+  for its own fixed-position descendants, so the mobile drawer opens clipped
+  to the header strip. Three variants hit this independently and fixed it by
+  moving the frosted layer to a `::before`. It is worth checking on the live
+  site.
+- The `.card { height: 100% }` rule is harmless in standards mode but clips
+  content in quirks mode. It only matters if a page ever loses its doctype,
+  which is what happened in an early build of `tools/preview_bundle.py`.
+- Nothing here has been seen with its real display faces. The build
+  environment cannot reach `fonts.googleapis.com`, so every screenshot fell
+  back to system fonts. Check the type once the variants are served for real.
