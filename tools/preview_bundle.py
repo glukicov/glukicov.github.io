@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Bundle a variant's index.html into one self-contained preview file.
 
+The doctype is kept: without it the page renders in quirks mode, where a
+percentage height on an auto-height parent resolves against the viewport and
+silently clips tall cards that are fine on the real site.
+
 The private preview host only admits the page's own bytes, Google Fonts and a
 few script CDNs, so this script inlines every local image, stylesheet and
 script as data URIs or inline blocks, inlines Font Awesome (CSS plus woff2)
@@ -214,7 +218,6 @@ def bundle(site: Path, cache: Path, title: str | None = None) -> str:
     src = re.sub(r'srcset="([^"]+)"', srcset_repl, src)
     src = re.sub(r"<iframe\b[^>]*>\s*</iframe>", lambda m: facade(m.group(0), cache), src, flags=re.S)
     src = re.sub(r'href="((?:\./)?files/[^"]+)"', lambda m: f'href="https://glukicov.github.io/{m.group(1).lstrip("./")}"', src)
-    src = re.sub(r"^\s*<!doctype html>\s*", "", src, flags=re.I)
     if title:
         src = re.sub(r"<title>.*?</title>", f"<title>{html.escape(title)}</title>", src, count=1, flags=re.S)
     return src
