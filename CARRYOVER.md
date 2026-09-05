@@ -7,8 +7,11 @@ Six things this assembly is carrying that are easy to lose in a re-skin.
    (−85%), no layout shift. v06 serves them as bare `<img src="…webp">`
    rather than `<picture>` with a PNG/JPEG fallback — WebP has been
    universally supported since 2020 — so the raster fallbacks in `images/`
-   are no longer requested by the page. The 269 KB animated-WebP hero
-   background is gone: v06's hero is a canvas-drawn DAG that weighs nothing.
+   have been deleted, along with the unused HTML5 UP template in `assets/`
+   (50 files, 11.6 MB in total). The 269 KB animated-WebP hero background is
+   gone too: the hero is a canvas-drawn DAG that weighs nothing. A redesign
+   that wants a raster fallback or a background image must add it back
+   deliberately; there is no longer a spare copy on disk.
 2. **Embeds are live, and lazy.** All six embeds (LinkedIn, Spotify, four
    YouTube) are still real iframes in the page, but v06 marks them
    `loading="lazy"` so they are off the critical path. Do not swap them for

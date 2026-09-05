@@ -46,6 +46,20 @@ stage 03, so it is re-cut for that job:
   anything under three characters, and the new button reads "X". It now
   falls back to the link's `title` when the text is too short to search on.
 
+### Dead assets removed
+
+v06 left the repository's unused files in place, on the grounds that the page
+never requests them. Ported from v01 here: the HTML5 UP "Prologue" template
+in `assets/` (33 files, 2.9 MB) and the PNG/JPEG fallbacks behind images the
+page now serves as bare WebP (17 files, 8.7 MB), including the 489 KB
+`icon.png` and the 269 KB animated hero background that the canvas DAG
+replaced. 50 files, 11.6 MB.
+
+Nothing served changes: transfer is byte-identical before and after
+(197,275 B at load, 1,309,841 B fully scrolled), with no 404s and no broken
+images at either width — which is the proof that none of it was reachable.
+`LICENSE.txt` and `contact.html` stay, as they do in v01.
+
 ## Measured
 
 Own-origin bytes at 1440×900, third-party embeds and web fonts excluded,
@@ -215,9 +229,6 @@ current site's 17,053 px measured the same way.
   different variant's idea (v03 has it).
 - **No scroll-triggered reveals.** Every stage is fully rendered at rest, so
   the page reads in a static screenshot and in print.
-- **The dead HTML5 UP template in `assets/` and the PNG/JPEG fallbacks are
-  still on disk.** The page no longer requests any of them, so they cost a
-  visitor nothing; deleting them is v01's job and would only add noise here.
 - **Node positions are hand-placed, not auto-laid-out.** Seven nodes do not
   need a Sugiyama implementation, and hand placement is what guarantees the
   labels never collide.
