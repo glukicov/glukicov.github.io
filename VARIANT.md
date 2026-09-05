@@ -1,4 +1,87 @@
-# v06 · Pipeline
+# v08 · Pipeline, refined
+
+**The portfolio as an MLOps pipeline, with the picks from the variant
+review folded in.** v06's hero DAG, terminal intro, pipeline stages and ⌘K
+palette are unchanged; the navigation becomes v04's segmented control, the
+social links become buttons, the DAG's run tag is gone, and v07's g−2
+storage-ring simulation opens the research stage as a figure.
+
+## What changed from v06
+
+| Ask | Change |
+|---|---|
+| Drop the underline under the selected nav item | The nav is now a segmented control: one pill track, the current section a filled pill with a moss icon. No underline, and no `/` prefix. |
+| Take the menu arrangement from v04 | v04's pill geometry and active treatment, carrying v06's mono lowercase stage names and their icons. |
+| Drop `dag: gleb-lukicov · 7 nodes · 5 stages` | Removed, with its CSS. The `<h1>` now opens the page. |
+| Social links as buttons | The hero and footer lists are pill buttons with brand marks and labels, replacing the mono `linkedin/glukicov` text list. |
+| Keep the pipeline DAG | Untouched. |
+| Keep the ⌘K palette | Untouched, apart from one fix below. |
+| Put v07's ring in the research section | `ring.js` opens stage 03 as a captioned figure. |
+
+### The ring, moved and re-toned
+
+In v07 the simulation was the hero background, sized to clear a text column
+and painted in the experiment's own blues. Here it is a figure that opens
+stage 03, so it is re-cut for that job:
+
+- **Geometry.** Centred in its own panel rather than offset behind text,
+  with the radius set from the panel's short side so the whole ring and the
+  spin arrows stay in frame. 16:7 on desktop, 4:3.4 on phones.
+- **Palette.** Re-toned from v07's ink-blue to this site's tokens: `--ink-1`
+  ground, `--paper-3` magnet, `--paper` muons, `--amber` spin arrows,
+  positrons and calorimeters, and the ideal orbit dashed in `--moss`.
+- **Caption.** A monospace figure caption explains what is being drawn. It
+  swaps its last sentence under `prefers-reduced-motion`, because the live
+  copy promises pointer interaction a still frame cannot give.
+- **Cost control kept from v07.** The loop pauses when the figure leaves the
+  viewport or the tab is hidden, and draws a single settled frame under
+  reduced motion.
+
+### Fixed while building
+
+- **The pill nav is wider than v06's text nav**, and overflowed the header
+  between 881 and 1023 px. The drawer breakpoint moved from 880 to 1024 px,
+  so that band gets the drawer instead of a broken bar.
+- **The palette lost the X profile.** It indexes link text and skips
+  anything under three characters, and the new button reads "X". It now
+  falls back to the link's `title` when the text is too short to search on.
+
+## Measured
+
+Own-origin bytes at 1440×900, third-party embeds and web fonts excluded,
+every response body awaited before the count.
+
+| | Requests | Bytes |
+|---|---|---|
+| master, first load | 6 | 1,416,462 (1,383 KB) |
+| v06, first load | 5 | 173,215 (169 KB) |
+| **v08, first load** | **6** | **197,275 (193 KB)** |
+| master, fully scrolled | 19 | 2,529,028 (2,470 KB) |
+| v06, fully scrolled | 18 | 1,285,781 (1,256 KB) |
+| **v08, fully scrolled** | **19** | **1,309,841 (1,279 KB)** |
+
+Against the current site that is −86% at first load and −48% for the whole
+page. Against v06 it is +24,060 B: `ring.js` at 14,345 B and 9,715 B of
+added sprite glyphs for the nav and brand icons. Nothing else grew.
+
+Also checked: no horizontal overflow and the header fits at 360, 390, 700,
+860, 900, 1023, 1024, 1100, 1280, 1440 and 1920 px; the drawer opens
+full-height with a backdrop and closes on outside tap; the ring animates on
+desktop, is byte-identical frame to frame under reduced motion, and its
+caption swaps; the palette still finds every stage, artifact and link,
+including X.
+
+## Verified unchanged from v06
+
+The DAG and its canvas, the terminal intro, the five stages with their
+status chips and metadata, all 24 artifacts, all six live embeds, every
+link and every `alt`, the scroll-spy, the skip link and the focus styles.
+
+---
+
+Everything below is v06's design plan, which this variant still follows.
+
+## v06 · Pipeline — the original plan
 
 **The portfolio as an MLOps pipeline.** The hero is an interactive DAG whose
 nodes are the navigation — physics → data → platform → community → writing,
