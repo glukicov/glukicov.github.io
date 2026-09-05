@@ -53,27 +53,25 @@ stage 03, so it is re-cut for that job:
   role has not left the page: "MLOps Leader | PhD in Physics" sits beside
   the name in the header, and now stays there on phones too, shrinking a
   step at 940 px and again at 430 px rather than being hidden.
-- **The phone graph is a real vertical pipeline.** v06 gave phones a flat
-  rail of chips with the canvas switched off, which lost the graph. Below
-  860 px the canvas is now a 56 px left gutter and the flow runs top to
-  bottom, git-log style: the spine is lane 0, `outreach` takes the outer
-  lane 2 because its line is the long one (it leaves `physics` at the top
-  and merges into `community` near the bottom), and `interests` takes lane 1
-  as a short stub off `platform`. With those lane assignments no two branch
-  lines cross. Nodes stack full width beside the gutter and keep their
-  44 px targets; the canvas draws each node's dot on its lane, so the pill's
-  own dot is hidden there.
+- **The phone graph is a vertical flowchart.** v06 gave phones a flat rail
+  of chips with the canvas switched off, which lost the graph entirely.
+  Below 860 px the nodes now stack as a centred column with the canvas
+  behind them, and the arrows run from the bottom edge of one node to the
+  top edge of the next, so the connector reads as flow. The two branches
+  step out to opposite sides — `outreach` left, `interests` right — which is
+  what keeps each branch's edge clear of the other's node.
 
-  Two things this needed. The DOM order changed to the topological reading
+  Three things this needed. The DOM order changed to the topological reading
   order — physics, outreach, data, platform, interests, community, writing —
-  so the stack tells the story in the right sequence; desktop positions the
-  nodes absolutely from `data-x`/`data-y`, so its layout is untouched. And
-  the edges are drawn as elbows rather than one long cubic: a cubic's
-  x-curve is fixed by its endpoints regardless of the control weights, so a
-  branch drifted across the whole run and appeared to touch every node it
-  passed. Each edge now holds one lane and turns with a single rounded
-  corner — out at the top when it diverges, in at the bottom when it merges
-  — so the arrow always arrives pointing down.
+  so the stack tells the story in sequence; desktop positions its nodes
+  absolutely from `data-x`/`data-y`, so its layout is untouched. Where two
+  edges leave or arrive at the same node they are pulled 18 px apart, so a
+  fork reads as two connectors rather than one thick line. And the branch
+  that rejoins several rows further down is drawn as an elbow rather than a
+  curve: a cubic's horizontal path is fixed by its endpoints whatever the
+  control weights, so that edge drifted across the column and clipped the
+  nodes it passed. It now holds its own side and turns in just above the
+  node it feeds.
 - **The footer's four links sit on one row** at any width, as 44 px brand
   marks with the label kept as the accessible name; four labelled pills
   wrapped to two rows on a phone.
