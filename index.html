@@ -3092,7 +3092,6 @@
       ["platform", "community"],
       ["community", "writing"],
       ["physics", "outreach"],
-      ["outreach", "community"],
       ["platform", "interests"],
     ],
     pos = {},
@@ -3175,24 +3174,7 @@
       ctx.setLineDash(branch ? [3, 5] : []);
       ctx.lineDashOffset = -dash;
       ctx.beginPath();
-      if (a.branch) {
-        // Outreach rejoins community along the outside rail, clear of
-        // interests. The final segment approaches from the empty row gap.
-        var rail = a.x + a.w / 2 + 10,
-          turn = b.y - b.h / 2 - 8;
-        x = b.x + b.w / 2 + 4;
-        y = b.y;
-        direction = Math.PI;
-        ctx.moveTo(a.x + a.w / 2 + 3, a.y);
-        ctx.lineTo(rail - 4, a.y);
-        ctx.quadraticCurveTo(rail, a.y, rail, a.y + 4);
-        ctx.lineTo(rail, turn - 4);
-        ctx.quadraticCurveTo(rail, turn, rail - 4, turn);
-        ctx.lineTo(x + 8, turn);
-        ctx.quadraticCurveTo(x + 4, turn, x + 4, turn + 4);
-        ctx.lineTo(x + 4, y - 4);
-        ctx.quadraticCurveTo(x + 4, y, x, y);
-      } else if (b.branch) {
+      if (b.branch) {
         x = b.x - b.w / 2 - 4;
         y = b.y;
         direction = 0;

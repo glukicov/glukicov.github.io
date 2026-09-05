@@ -2,7 +2,7 @@
 
 Live-site baseline and local proposal captured on 5 September 2026.
 The proposal keeps the existing pipeline identity, all seven destinations,
-and all seven connections. GitHub Pages still deploys from `master`.
+and six connections. GitHub Pages still deploys from `master`.
 
 ## Mobile — 390 × 844
 
@@ -11,8 +11,8 @@ and all seven connections. GitHub Pages still deploys from `master`.
 | ![Live mobile site](mobile-before.png) | ![Compact mobile route map](mobile-after.png) |
 
 The five main nodes share one vertical column; branches sit beside their
-source nodes. Outreach returns to community around the outside of the map,
-without crossing interests. Solid moss connectors distinguish the main path
+source nodes. Outreach and interests terminate as independent branches.
+Solid moss connectors distinguish the main path
 from dashed branches. Every node has a minimum 44px touch target.
 
 At 390px, the graph including its new frame and instruction is 352px high
