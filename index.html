@@ -247,9 +247,11 @@
         text-decoration: none;
         color: inherit;
         margin-right: auto;
+        min-width: 0;
       }
 
       .brand img {
+        flex-shrink: 0;
         width: 34px;
         height: 34px;
         border-radius: 50%;
@@ -274,6 +276,7 @@
       }
 
       .btn {
+        flex-shrink: 0;
         font-family: var(--mono);
         background: none;
         border: 1px solid var(--line-2);
@@ -403,32 +406,36 @@
       .dag {
         position: relative;
         margin: 34px 0 38px;
+        padding: 16px;
+        border: 1px solid var(--line-2);
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--ink-1), var(--ink));
       }
 
       .dag-hint {
-        display: none;
+        display: block;
         font-family: var(--mono);
         font-size: 0.72rem;
         line-height: 1.6;
         color: var(--paper-3);
-        max-width: 21ch;
+        margin-bottom: 16px;
       }
 
       .js .dag-hint {
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 2px;
+        position: relative;
       }
 
       .dag-canvas {
-        display: block;
-        width: 100%;
-        height: 0;
+        display: none;
       }
 
       .js .dag-canvas {
-        height: 240px;
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
       }
 
       .dag-nodes {
@@ -438,8 +445,8 @@
       }
 
       .js .dag-nodes {
-        position: absolute;
-        inset: 0;
+        position: relative;
+        height: 196px;
         display: block;
       }
 
@@ -447,7 +454,7 @@
         display: inline-flex;
         align-items: center;
         gap: 9px;
-        min-height: 40px;
+        min-height: 44px;
         padding: 8px 15px;
         border: 1px solid var(--line-2);
         border-radius: 999px;
@@ -468,6 +475,15 @@
         left: var(--x, 50%);
         top: var(--y, 50%);
         transform: translate(-50%, -50%);
+      }
+
+      .node:not([data-branch]) {
+        border-color: var(--moss-dim);
+        color: var(--paper);
+      }
+
+      .node:not([data-branch]) i {
+        background: var(--moss);
       }
 
       .node i {
@@ -496,7 +512,8 @@
 
       .node.on {
         color: var(--paper);
-        border-color: var(--moss-dim);
+        border-color: var(--moss);
+        background: var(--moss-bg);
       }
 
       /* ---------- terminal intro ---------- */
@@ -1204,12 +1221,6 @@
       }
 
       /* ---------- breakpoints ---------- */
-      @media (min-width: 860px) {
-        .dag-nodes {
-          display: block;
-        }
-      }
-
       @media (min-width: 860px) and (max-width: 1140px) {
         .node {
           font-size: 0.73rem;
@@ -1218,38 +1229,26 @@
         }
       }
 
-      /* Phones turn the graph on its side: a centred flowchart column with
-         the flow running top to bottom, the two branches stepped out to
-         either side so neither one's edge crosses the other's node. */
+      /* A five-stop spine with branches in a separate lane. Grid reserves
+         the same space before JS/fonts load and keeps every link usable. */
       @media (max-width: 859px) {
         .dag {
-          margin: 26px 0 30px;
-        }
-
-        .dag-canvas,
-        .js .dag-hint {
-          display: none;
-        }
-
-        .js .dag-canvas {
-          display: block;
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
+          margin: 24px 0;
+          padding: 16px 12px;
         }
 
         .js .dag-nodes,
         .dag-nodes {
           position: relative;
           z-index: 1;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 30px;
-          border: 0;
-          margin-left: 0;
-          padding-left: 0;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          grid-template-rows: repeat(5, auto);
+          gap: 16px 26px;
+          height: auto;
+          padding-right: 16px;
+          max-width: 460px;
+          margin: 0 auto;
         }
 
         .js .node,
@@ -1257,28 +1256,43 @@
           position: static;
           transform: none;
           display: inline-flex;
-          width: auto;
+          width: 100%;
           max-width: 100%;
-          margin-bottom: 0;
+          padding: 8px;
+          gap: 7px;
+          font-size: 0.8rem;
+          justify-content: center;
+          grid-column: 1;
         }
 
-        .js .node[data-side="l"],
-        .node[data-side="l"] {
-          align-self: flex-start;
+        .node[data-node="physics"] {
+          grid-row: 1;
         }
 
-        .js .node[data-side="r"],
-        .node[data-side="r"] {
-          align-self: flex-end;
+        .node[data-node="data"] {
+          grid-row: 2;
         }
 
-        .node[data-branch]::after {
-          content: "branch";
-          margin-left: 4px;
-          font-size: 0.58rem;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: var(--paper-3);
+        .node[data-node="platform"] {
+          grid-row: 3;
+        }
+
+        .node[data-node="community"] {
+          grid-row: 4;
+        }
+
+        .node[data-node="writing"] {
+          grid-row: 5;
+        }
+
+        .node[data-node="outreach"] {
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        .node[data-node="interests"] {
+          grid-column: 2;
+          grid-row: 3;
         }
       }
 
@@ -1334,12 +1348,17 @@
       }
 
       @media (max-width: 430px) {
+        .hdr-in {
+          gap: 8px;
+        }
+
         .brand-name {
           font-size: 0.98rem;
         }
 
         .brand-sub {
           font-size: 0.56rem;
+          white-space: normal;
         }
       }
 
@@ -1602,9 +1621,9 @@
             Empowering data science teams to succeed
           </p>
 
-          <div class="dag" id="dag">
+          <nav class="dag" id="dag" aria-label="Explore my work">
             <p class="dag-hint">
-              // hover a node to trace its edges, click to jump
+              Explore the connections · select a node
             </p>
             <canvas
               class="dag-canvas"
@@ -1623,7 +1642,7 @@
               <a
                 class="node"
                 href="#outreach"
-                data-node="outreach" data-branch="" data-side="l"
+                data-node="outreach" data-branch=""
                 data-x="0.275"
                 data-y="0.84"
                 ><i></i>outreach<span class="vh">
@@ -1647,7 +1666,7 @@
               <a
                 class="node"
                 href="#interests"
-                data-node="interests" data-branch="" data-side="r"
+                data-node="interests" data-branch=""
                 data-x="0.725"
                 data-y="0.16"
                 ><i></i>interests<span class="vh">
@@ -1669,7 +1688,7 @@
                 ><i></i>writing<span class="vh">
                   — go to the articles</span></a>
             </div>
-          </div>
+          </nav>
 
           <!-- ============ hero: the terminal intro ============ -->
           <div class="hero-grid">
@@ -3082,6 +3101,9 @@
     dash = 0,
     hot = null,
     live = false,
+    visible = true,
+    raf = 0,
+    last = 0,
     ctx = cv.getContext && cv.getContext("2d");
 
   var vmq = window.matchMedia("(max-width: 859px)");
@@ -3090,104 +3112,103 @@
     return getComputedStyle(cv).display === "none";
   }
 
-  /* Phones draw the same graph as a centred flowchart running downwards.
-     Arrows leave the bottom edge of a node and arrive at the top edge of the
-     next, so the connector is read as flow rather than as decoration. */
-  function layoutV() {
-    var bb = box.getBoundingClientRect();
-    W = cv.clientWidth || box.clientWidth;
-    H = cv.clientHeight || box.clientHeight;
+  /* Read actual link bounds in both layouts: canvas paths stay aligned
+     with grid sizing, font loading and browser text scaling. */
+  function layout() {
+    if (!ctx || flat()) return false;
+    var layer = $("#dag-nodes"),
+      bb = cv.getBoundingClientRect();
+    W = cv.clientWidth;
+    H = cv.clientHeight;
     nodes.forEach(function (n) {
+      if (vmq.matches) {
+        n.style.removeProperty("--x");
+        n.style.removeProperty("--y");
+      } else {
+        var w = n.offsetWidth,
+          x = +n.dataset.x * layer.clientWidth;
+        x = Math.min(Math.max(x, w / 2), layer.clientWidth - w / 2);
+        n.style.setProperty("--x", x + "px");
+        n.style.setProperty("--y", +n.dataset.y * layer.clientHeight + "px");
+      }
       var r = n.getBoundingClientRect();
-      n.style.removeProperty("--x");
-      n.style.removeProperty("--y");
       pos[n.dataset.node] = {
-        cx: r.left - bb.left + r.width / 2,
-        top: r.top - bb.top,
-        bottom: r.bottom - bb.top,
-        side: n.dataset.side || "",
+        x: r.left - bb.left + r.width / 2,
+        y: r.top - bb.top + r.height / 2,
+        w: r.width,
+        h: r.height,
+        branch: n.hasAttribute("data-branch"),
       };
     });
-    var r2 = Math.min(window.devicePixelRatio || 1, 2);
-    cv.width = Math.round(W * r2);
-    cv.height = Math.round(H * r2);
-    ctx.setTransform(r2, 0, 0, r2, 0, 0);
+    var ratio = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = Math.round(W * ratio);
+    cv.height = Math.round(H * ratio);
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
     return true;
   }
 
-  function arrow(x, y) {
+  function arrow(x, y, direction) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(direction);
     ctx.beginPath();
-    ctx.moveTo(x - 4.5, y - 7);
-    ctx.lineTo(x, y);
-    ctx.lineTo(x + 4.5, y - 7);
-    ctx.lineWidth = 1.6;
+    ctx.moveTo(-4, -4);
+    ctx.lineTo(0, 0);
+    ctx.lineTo(-4, 4);
+    ctx.lineWidth = 1.5;
     ctx.stroke();
+    ctx.restore();
   }
 
   function drawV() {
     ctx.clearRect(0, 0, W, H);
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
-    EDGES.forEach(function (e) {
-      var a = pos[e[0]],
-        b = pos[e[1]];
+    EDGES.forEach(function (edge) {
+      var a = pos[edge[0]], b = pos[edge[1]];
       if (!a || !b) return;
-      var lit = hot && (e[0] === hot || e[1] === hot),
-        col = lit ? "#a8b33e" : hot ? "#26261f" : "#4a4a40",
-        // Two edges leaving or arriving at the same node are pulled apart so
-        // the fork and the merge each read as two separate connectors.
-        x1 = a.cx + (b.side ? (b.side === "l" ? -18 : 18) : 0),
-        y1 = a.bottom + 3,
-        x2 = b.cx + (a.side ? (a.side === "l" ? -18 : 18) : 0),
-        y2 = b.top - 9,
-        dy = y2 - y1,
-        k = Math.max(16, dy * 0.42),
-        e = 16;
-      ctx.strokeStyle = col;
-      ctx.lineWidth = lit ? 2.2 : 1.5;
-      ctx.setLineDash([5, 7]);
+      var lit = hot && (edge[0] === hot || edge[1] === hot),
+        branch = a.branch || b.branch,
+        x, y, direction;
+      ctx.strokeStyle = lit ? "#c8d64b" : hot ? "#656151" : branch ? "#8a8574" : "#a8b33e";
+      ctx.lineWidth = lit ? 2 : 1.5;
+      ctx.setLineDash(branch ? [3, 5] : []);
       ctx.lineDashOffset = -dash;
       ctx.beginPath();
-      ctx.moveTo(x1, y1);
-      if (x1 === x2) {
-        ctx.lineTo(x2, y2);
-      } else if (dy > 140) {
-        // A branch that rejoins several rows down would drift across the
-        // column and clip the nodes it passes, so it keeps to its own side
-        // and turns in with one elbow just above the node it feeds.
-        ctx.lineTo(x1, y2 - 2 * e);
-        ctx.quadraticCurveTo(x1, y2 - e, x2, y2 - e);
-        ctx.lineTo(x2, y2);
+      if (a.branch) {
+        // Outreach rejoins community along the outside rail, clear of
+        // interests. The final segment approaches from the empty row gap.
+        var rail = a.x + a.w / 2 + 10,
+          turn = b.y - b.h / 2 - 8;
+        x = b.x + b.w / 2 + 4;
+        y = b.y;
+        direction = Math.PI;
+        ctx.moveTo(a.x + a.w / 2 + 3, a.y);
+        ctx.lineTo(rail - 4, a.y);
+        ctx.quadraticCurveTo(rail, a.y, rail, a.y + 4);
+        ctx.lineTo(rail, turn - 4);
+        ctx.quadraticCurveTo(rail, turn, rail - 4, turn);
+        ctx.lineTo(x + 8, turn);
+        ctx.quadraticCurveTo(x + 4, turn, x + 4, turn + 4);
+        ctx.lineTo(x + 4, y - 4);
+        ctx.quadraticCurveTo(x + 4, y, x, y);
+      } else if (b.branch) {
+        x = b.x - b.w / 2 - 4;
+        y = b.y;
+        direction = 0;
+        ctx.moveTo(a.x + a.w / 2 + 4, a.y);
+        ctx.lineTo(x, y);
       } else {
-        ctx.bezierCurveTo(x1, y1 + k, x2, y2 - k, x2, y2);
+        x = b.x;
+        y = b.y - b.h / 2 - 4;
+        direction = Math.PI / 2;
+        ctx.moveTo(a.x, a.y + a.h / 2 + 4);
+        ctx.lineTo(x, y);
       }
       ctx.stroke();
       ctx.setLineDash([]);
-      arrow(x2, y2);
+      arrow(x, y, direction);
     });
-  }
-
-  function layout() {
-    if (!ctx || flat()) return false;
-    if (vmq.matches) return layoutV();
-    W = box.clientWidth;
-    H = cv.clientHeight || 240;
-    nodes.forEach(function (n) {
-      var w = n.offsetWidth,
-        h = n.offsetHeight,
-        x = +n.dataset.x * W,
-        y = +n.dataset.y * H;
-      x = Math.min(Math.max(x, w / 2 + 1), W - w / 2 - 1);
-      y = Math.min(Math.max(y, h / 2 + 1), H - h / 2 - 1);
-      n.style.setProperty("--x", x + "px");
-      n.style.setProperty("--y", y + "px");
-      pos[n.dataset.node] = { x: x, y: y, w: w, h: h };
-    });
-    var r = Math.min(window.devicePixelRatio || 1, 2);
-    cv.width = Math.round(W * r);
-    cv.height = Math.round(H * r);
-    ctx.setTransform(r, 0, 0, r, 0, 0);
-    return true;
   }
 
   function draw() {
@@ -3201,7 +3222,7 @@
         b = pos[e[1]];
       if (!a || !b) return;
       var lit = hot && (e[0] === hot || e[1] === hot),
-        col = lit ? "#a8b33e" : hot ? "#26261f" : "#3a3a32",
+        col = lit ? "#c8d64b" : hot ? "#656151" : "#8a8574",
         x1 = a.x + a.w / 2 + 3,
         y1 = a.y,
         x2 = b.x - b.w / 2 - 5,
@@ -3225,21 +3246,26 @@
     });
   }
 
-  function tick() {
+  function tick(time) {
     if (!live) return;
-    dash = (dash + 0.34) % 12;
+    if (last) dash = (dash + Math.min(time - last, 50) * 0.02) % 24;
+    last = time;
     draw();
-    requestAnimationFrame(tick);
+    raf = requestAnimationFrame(tick);
   }
 
   function start() {
-    if (live || mq.matches || flat()) return;
+    if (live || !visible || d.hidden || mq.matches || flat()) return;
     live = true;
-    requestAnimationFrame(tick);
+    last = 0;
+    raf = requestAnimationFrame(tick);
   }
 
   function stop() {
     live = false;
+    cancelAnimationFrame(raf);
+    raf = 0;
+    last = 0;
   }
 
   function relayout() {
@@ -3273,8 +3299,13 @@
       new ResizeObserver(relayout).observe(box);
     if (window.IntersectionObserver)
       new IntersectionObserver(function (es) {
-        es[0].isIntersecting ? start() : stop();
+        visible = es[0].isIntersecting;
+        visible ? start() : stop();
       }).observe(box);
+    d.addEventListener("visibilitychange", function () {
+      d.hidden ? stop() : start();
+    });
+    if (mq.addEventListener) mq.addEventListener("change", relayout);
     if (vmq.addEventListener) vmq.addEventListener("change", relayout);
     if (d.fonts && d.fonts.ready)
       d.fonts.ready.then(relayout).catch(function () {});
