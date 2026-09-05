@@ -46,6 +46,41 @@ stage 03, so it is re-cut for that job:
   anything under three characters, and the new button reads "X". It now
   falls back to the link's `title` when the text is too short to search on.
 
+### Second review pass
+
+- **The tagline drops the role.** `MLOps Leader — empowering data science
+  teams to succeed` becomes `Empowering data science teams to succeed`. The
+  role has not left the page: "MLOps Leader | PhD in Physics" sits beside
+  the name in the header, and now stays there on phones too, shrinking a
+  step at 940 px and again at 430 px rather than being hidden.
+- **The phone graph is a real vertical pipeline.** v06 gave phones a flat
+  rail of chips with the canvas switched off, which lost the graph. Below
+  860 px the canvas is now a 56 px left gutter and the flow runs top to
+  bottom, git-log style: the spine is lane 0, `outreach` takes the outer
+  lane 2 because its line is the long one (it leaves `physics` at the top
+  and merges into `community` near the bottom), and `interests` takes lane 1
+  as a short stub off `platform`. With those lane assignments no two branch
+  lines cross. Nodes stack full width beside the gutter and keep their
+  44 px targets; the canvas draws each node's dot on its lane, so the pill's
+  own dot is hidden there.
+
+  Two things this needed. The DOM order changed to the topological reading
+  order — physics, outreach, data, platform, interests, community, writing —
+  so the stack tells the story in the right sequence; desktop positions the
+  nodes absolutely from `data-x`/`data-y`, so its layout is untouched. And
+  the edges are drawn as elbows rather than one long cubic: a cubic's
+  x-curve is fixed by its endpoints regardless of the control weights, so a
+  branch drifted across the whole run and appeared to touch every node it
+  passed. Each edge now holds one lane and turns with a single rounded
+  corner — out at the top when it diverges, in at the bottom when it merges
+  — so the arrow always arrives pointing down.
+- **The footer's four links sit on one row** at any width, as 44 px brand
+  marks with the label kept as the accessible name; four labelled pills
+  wrapped to two rows on a phone.
+- **The cowboy hat is an icon again.** v06 had spelled the emoji out as the
+  words "a cowboy hat" when it dropped Font Awesome; it is now the
+  `hat-cowboy` glyph in the sprite, with "a cowboy hat" as its label.
+
 ### Dead assets removed
 
 v06 left the repository's unused files in place, on the grounds that the page
