@@ -23,13 +23,10 @@
       gtag("config", "G-JZQT6ZZKQV");
     </script>
 
-    <title>
-      Gleb Lukicov | MLOps Leader | Empowering Data Science Teams to
-      Succeed 🚀
-    </title>
+    <title>Gleb Lukicov — MLOps &amp; AI Engineering Leader</title>
     <meta
       name="description"
-      content="Personal portfolio of Gleb Lukicov, MLOps Engineer and PhD in Physics"
+      content="Gleb Lukicov is an MLOps and AI engineering leader, physics PhD, speaker and co-host of the AAIF Community London."
     />
     <meta name="theme-color" content="#0b0b0a" />
     <meta name="color-scheme" content="dark" />
@@ -402,6 +399,10 @@
         max-width: 60ch;
       }
 
+      .hero-intro {
+        margin-top: 34px;
+      }
+
       /* ---------- the DAG ---------- */
       .dag {
         position: relative;
@@ -522,7 +523,7 @@
         gap: 22px;
         grid-template-columns: minmax(0, 1fr);
         align-items: start;
-        padding-bottom: 56px;
+        padding-bottom: 0;
       }
 
       .term {
@@ -835,6 +836,8 @@
         background: var(--ink-1);
         overflow: hidden;
         min-width: 0;
+        content-visibility: auto;
+        contain-intrinsic-block-size: auto 620px;
       }
 
       .art-top {
@@ -1037,6 +1040,75 @@
         height: 100%;
         border: 0;
         color-scheme: light;
+      }
+
+      .embed-gate {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        border: 0;
+        background:
+          radial-gradient(circle at 50% 42%, var(--moss-bg), transparent 42%),
+          var(--ink-2);
+        color: var(--paper);
+        cursor: pointer;
+        display: grid;
+        place-content: center;
+        justify-items: center;
+        gap: 8px;
+        padding: 22px;
+        text-align: center;
+        transition:
+          background-color 0.15s ease,
+          color 0.15s ease;
+      }
+
+      .embed-gate:hover {
+        color: var(--moss-hi);
+        background-color: #20201c;
+      }
+
+      .embed-play {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid var(--moss-dim);
+        border-radius: 50%;
+        background: var(--moss-bg);
+        color: var(--moss);
+        font-size: 1.05rem;
+        line-height: 1;
+        padding-left: 3px;
+      }
+
+      .embed-label {
+        font-weight: 600;
+      }
+
+      .embed-note {
+        max-width: 38ch;
+        color: var(--paper-3);
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        line-height: 1.5;
+      }
+
+      .frame.audio .embed-play {
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+      }
+
+      .frame noscript a {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        color: var(--moss);
+        font-family: var(--mono);
+        text-align: center;
       }
 
       /* ---------- footer ---------- */
@@ -1247,7 +1319,7 @@
          the same space before JS/fonts load and keeps every link usable. */
       @media (max-width: 859px) {
         .dag {
-          margin: 24px 0;
+          margin: 24px 0 38px;
           padding: 16px 12px;
         }
 
@@ -1462,6 +1534,10 @@
           gap: 14px;
         }
 
+        .hero-intro {
+          margin-top: 24px;
+        }
+
         .stage {
           padding-top: 44px;
         }
@@ -1635,6 +1711,85 @@
             Empowering data science teams to succeed
           </p>
 
+          <!-- ============ hero: the terminal intro ============ -->
+          <div class="hero-grid hero-intro">
+            <div class="term" id="term">
+              <div class="term-bar">
+                <span>gleb@pipeline: ~/about</span>
+                <span>zsh</span>
+              </div>
+              <div class="term-body">
+                <p class="cmd">
+                  <s>$</s><span data-tw="cmd"
+                    >gleb --about</span>
+                </p>
+                <div class="out" id="term-out">
+                  <p data-tw="out">
+                    Hey there, I'm Gleb, and I'm passionate
+                    about empowering data science teams to
+                    succeed by building reliable and scalable
+                    MLOps solutions — because effective MLOps
+                    isn't just about tools; it's about
+                    aligning people, processes, and platforms
+                    to solve real business problems.
+                  </p>
+                  <p data-tw="out">
+                    Outside of work, I co-organise the
+                    Agentic AI Foundation (AAIF) Community
+                    London — Europe's largest AI engineering
+                    meetup — and love sharing what I've
+                    learned through blogging and public
+                    speaking.
+                  </p>
+                  <p data-tw="out">
+                    Before entering the tech industry, I
+                    conducted scientific research at
+                    world-class physics labs in the US and
+                    Switzerland, working on large-scale,
+                    multidisciplinary projects. In my spare
+                    time, I enjoy road cycling and running.
+                  </p>
+                </div>
+                <p class="cmd cmd-next">
+                  <s>$</s><span class="cur"></span>
+                </p>
+              </div>
+            </div>
+
+            <aside class="me">
+              <img
+                src="./images/main.webp"
+                alt="Gleb Lukicov"
+                width="512"
+                height="512"
+                fetchpriority="high"
+                decoding="async"
+              />
+              <p class="me-note">
+                <svg class="icon"><use href="#i-down"/></svg>
+                Contact me for collaboration ideas or questions
+              </p>
+              <ul class="social">
+                <li>
+                  <a href="https://www.linkedin.com/in/glukicov" target="_blank" rel="noopener" title="LinkedIn"
+                    ><svg class="icon icon-f"><use href="#i-linkedin-in"/></svg><span>LinkedIn</span></a>
+                </li>
+                <li>
+                  <a href="https://github.com/glukicov" target="_blank" rel="noopener" title="GitHub"
+                    ><svg class="icon icon-f"><use href="#i-github"/></svg><span>GitHub</span></a>
+                </li>
+                <li>
+                  <a href="https://medium.com/@lukicov" target="_blank" rel="noopener" title="Medium"
+                    ><svg class="icon icon-f"><use href="#i-medium"/></svg><span>Medium</span></a>
+                </li>
+                <li>
+                  <a href="https://x.com/gleb_lukicov" target="_blank" rel="noopener" title="X (Twitter)"
+                    ><svg class="icon icon-f"><use href="#i-x-twitter"/></svg><span>X</span></a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+
           <nav class="dag" id="dag" aria-label="Explore my work">
             <p class="dag-hint">
               Explore the connections · select a node
@@ -1703,84 +1858,6 @@
                   — go to the articles</span></a>
             </div>
           </nav>
-
-          <!-- ============ hero: the terminal intro ============ -->
-          <div class="hero-grid">
-            <div class="term" id="term">
-              <div class="term-bar">
-                <span>gleb@pipeline: ~/about</span>
-                <span>zsh</span>
-              </div>
-              <div class="term-body">
-                <p class="cmd">
-                  <s>$</s><span data-tw="cmd"
-                    >gleb --about</span>
-                </p>
-                <div class="out" id="term-out">
-                  <p data-tw="out">
-                    Hey there, I'm Gleb, and I'm passionate
-                    about empowering data science teams to
-                    succeed by building reliable and scalable
-                    MLOps solutions — because effective MLOps
-                    isn't just about tools; it's about
-                    aligning people, processes, and platforms
-                    to solve real business problems.
-                  </p>
-                  <p data-tw="out">
-                    Outside of work, I co-organise the
-                    Agentic AI Foundation (AAIF) Community
-                    London — Europe's largest AI engineering
-                    meetup — and love sharing what I've
-                    learned through blogging and public
-                    speaking.
-                  </p>
-                  <p data-tw="out">
-                    Before entering the tech industry, I
-                    conducted scientific research at
-                    world-class physics labs in the US and
-                    Switzerland, working on large-scale,
-                    multidisciplinary projects. In my spare
-                    time, I enjoy road cycling and running.
-                  </p>
-                </div>
-                <p class="cmd cmd-next">
-                  <s>$</s><span class="cur"></span>
-                </p>
-              </div>
-            </div>
-
-            <aside class="me">
-              <img
-                src="./images/main.webp"
-                alt="Gleb Lukicov"
-                width="512"
-                height="512"
-                decoding="async"
-              />
-              <p class="me-note">
-                <svg class="icon"><use href="#i-down"/></svg>
-                Contact me for collaboration ideas or questions
-              </p>
-              <ul class="social">
-                <li>
-                  <a href="https://www.linkedin.com/in/glukicov" target="_blank" rel="noopener" title="LinkedIn"
-                    ><svg class="icon icon-f"><use href="#i-linkedin-in"/></svg><span>LinkedIn</span></a>
-                </li>
-                <li>
-                  <a href="https://github.com/glukicov" target="_blank" rel="noopener" title="GitHub"
-                    ><svg class="icon icon-f"><use href="#i-github"/></svg><span>GitHub</span></a>
-                </li>
-                <li>
-                  <a href="https://medium.com/@lukicov" target="_blank" rel="noopener" title="Medium"
-                    ><svg class="icon icon-f"><use href="#i-medium"/></svg><span>Medium</span></a>
-                </li>
-                <li>
-                  <a href="https://x.com/gleb_lukicov" target="_blank" rel="noopener" title="X (Twitter)"
-                    ><svg class="icon icon-f"><use href="#i-x-twitter"/></svg><span>X</span></a>
-                </li>
-              </ul>
-            </aside>
-          </div>
         </div>
       </section>
 
@@ -1830,8 +1907,8 @@
                     >Agentic AI Foundation (AAIF) Community
                     London</a>, the largest AI engineering community in
                   Europe, as a co-host and events organiser. We
-                  are putting regular in-person meetup-ups, for
-                  the community to learn together and discuss
+                  run regular in-person meet-ups where the
+                  community learns together and discusses the
                   latest agentic AI trends over pizza.
                 </p>
               </div>
@@ -1854,13 +1931,20 @@
                 <h3>The community, on LinkedIn</h3>
               </div>
               <div class="frame post">
-                <iframe
-                  src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7311105895734693888"
-                  title="Embedded post"
-                  loading="lazy"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
+                <button
+                  class="embed-gate"
+                  type="button"
+                  data-embed-src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7311105895734693888"
+                  data-embed-title="AAIF Community London post on LinkedIn"
+                  data-embed-provider="LinkedIn"
+                >
+                  <span class="embed-play" aria-hidden="true">↗</span>
+                  <span class="embed-label">Load LinkedIn post</span>
+                  <span class="embed-note">Third-party content loads on request</span>
+                </button>
+                <noscript>
+                  <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7311105895734693888">View the post on LinkedIn</a>
+                </noscript>
               </div>
               <p class="art-links">
                 <a
@@ -2084,20 +2168,20 @@
                 <h3>Virgin Media O2: DevOps journey</h3>
               </div>
               <div class="frame">
-                <iframe
-                  src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
-                  title="Virgin Media O2: DevOps journey"
-                  loading="lazy"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                  "
-                  allowfullscreen
-                ></iframe>
+                <button
+                  class="embed-gate"
+                  type="button"
+                  data-embed-src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
+                  data-embed-title="Virgin Media O2: DevOps journey"
+                  data-embed-provider="YouTube"
+                >
+                  <span class="embed-play" aria-hidden="true">▶</span>
+                  <span class="embed-label">Load video</span>
+                  <span class="embed-note">YouTube player loads on request</span>
+                </button>
+                <noscript>
+                  <a href="https://www.youtube.com/watch?v=bYUjAz_Q1Gs">Watch on YouTube</a>
+                </noscript>
               </div>
               <div class="art-body">
                 <p>
@@ -2128,20 +2212,20 @@
                 </h3>
               </div>
               <div class="frame">
-                <iframe
-                  src="https://www.youtube.com/embed/6cMVcKeBdkI"
-                  title="Interview with the Royal Statistical Society"
-                  loading="lazy"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                  "
-                  allowfullscreen
-                ></iframe>
+                <button
+                  class="embed-gate"
+                  type="button"
+                  data-embed-src="https://www.youtube.com/embed/6cMVcKeBdkI"
+                  data-embed-title="Interview with the Royal Statistical Society"
+                  data-embed-provider="YouTube"
+                >
+                  <span class="embed-play" aria-hidden="true">▶</span>
+                  <span class="embed-label">Load video</span>
+                  <span class="embed-note">YouTube player loads on request</span>
+                </button>
+                <noscript>
+                  <a href="https://www.youtube.com/watch?v=6cMVcKeBdkI">Watch on YouTube</a>
+                </noscript>
               </div>
               <div class="art-body">
                 <p>
@@ -2163,20 +2247,20 @@
                 <h3>Electric Twin &amp; MLOps Community London</h3>
               </div>
               <div class="frame audio">
-                <iframe
-                  src="https://open.spotify.com/embed/episode/0Xgw37MAKB1R7zGyBKehPe?utm_source=generator&amp;t=0"
-                  title="Podcast: Electric Twin and MLOps Community London"
-                  loading="lazy"
-                  allow="
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    fullscreen;
-                    picture-in-picture;
-                  "
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
+                <button
+                  class="embed-gate"
+                  type="button"
+                  data-embed-src="https://open.spotify.com/embed/episode/0Xgw37MAKB1R7zGyBKehPe?utm_source=generator&amp;t=0"
+                  data-embed-title="Podcast: Electric Twin and MLOps Community London"
+                  data-embed-provider="Spotify"
+                >
+                  <span class="embed-play" aria-hidden="true">▶</span>
+                  <span class="embed-label">Load podcast player</span>
+                  <span class="embed-note">Spotify player loads on request</span>
+                </button>
+                <noscript>
+                  <a href="https://open.spotify.com/episode/0Xgw37MAKB1R7zGyBKehPe">Listen on Spotify</a>
+                </noscript>
               </div>
               <div class="art-body">
                 <p>
@@ -2282,20 +2366,20 @@
                 </h3>
               </div>
               <div class="frame">
-                <iframe
-                  src="https://www.youtube.com/embed/Zv5CWN5Dp9A"
-                  title="Inspired to Build: Live with Gleb Lukicov"
-                  loading="lazy"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                  "
-                  allowfullscreen
-                ></iframe>
+                <button
+                  class="embed-gate"
+                  type="button"
+                  data-embed-src="https://www.youtube.com/embed/Zv5CWN5Dp9A"
+                  data-embed-title="Inspired to Build: Live with Gleb Lukicov"
+                  data-embed-provider="YouTube"
+                >
+                  <span class="embed-play" aria-hidden="true">▶</span>
+                  <span class="embed-label">Load video</span>
+                  <span class="embed-note">YouTube player loads on request</span>
+                </button>
+                <noscript>
+                  <a href="https://www.youtube.com/watch?v=Zv5CWN5Dp9A">Watch on YouTube</a>
+                </noscript>
               </div>
               <div class="art-body">
                 <p>
@@ -2492,22 +2576,20 @@
                 </p>
               </div>
               <div class="frame">
-                <iframe
-                  src="https://www.youtube.com/embed/GyWJ_dLydPE?feature=oembed"
-                  title="Muon g-2 wins Breakthrough Prize in Fundamental Physics"
-                  loading="lazy"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                    web-share;
-                  "
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
+                <button
+                  class="embed-gate"
+                  type="button"
+                  data-embed-src="https://www.youtube.com/embed/GyWJ_dLydPE?feature=oembed"
+                  data-embed-title="Muon g-2 wins Breakthrough Prize in Fundamental Physics"
+                  data-embed-provider="YouTube"
+                >
+                  <span class="embed-play" aria-hidden="true">▶</span>
+                  <span class="embed-label">Load video</span>
+                  <span class="embed-note">YouTube player loads on request</span>
+                </button>
+                <noscript>
+                  <a href="https://www.youtube.com/watch?v=GyWJ_dLydPE">Watch on YouTube</a>
+                </noscript>
               </div>
             </article>
 
@@ -2930,7 +3012,7 @@
               </span>
               <div class="art-body">
                 <p>
-                  As part of a charity fundraising, I ran my
+                  As part of a charity fundraiser, I ran my
                   first full marathon (5:31 / 1 km elevation)
                   and cycled 100 km (4:44 / 2 km elevation).
                   This motivated me all the way (twice!) to the
@@ -2939,7 +3021,7 @@
                     href="https://www.justgiving.com/team/aads-vmo2"
                     target="_blank"
                     rel="noopener"
-                    >our team manged to fundraise £2.3K for
+                    >our team managed to raise £2.3K for
                     Street Child</a>.
                 </p>
               </div>
@@ -2973,7 +3055,7 @@
                     href="https://www.justgiving.com/team/aads-2023"
                     target="_blank"
                     rel="noopener"
-                    >we have raised £3.8K for Street
+                    >we raised £3.8K for Street
                     Child</a>.
                 </p>
               </div>
@@ -3093,6 +3175,27 @@
   $$("#nav a").forEach(function (a) {
     a.addEventListener("click", function () {
       if (nav.classList.contains("open")) drawer(false);
+    });
+  });
+
+  /* ---------- privacy-friendly embeds ---------- */
+  $$(".embed-gate").forEach(function (gate) {
+    gate.addEventListener("click", function () {
+      var frame = d.createElement("iframe"),
+        provider = gate.dataset.embedProvider;
+      frame.src = gate.dataset.embedSrc;
+      frame.title = gate.dataset.embedTitle;
+      frame.loading = "eager";
+      frame.referrerPolicy = "strict-origin-when-cross-origin";
+      frame.allowFullscreen = true;
+      if (provider === "YouTube") {
+        frame.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      } else if (provider === "Spotify") {
+        frame.allow =
+          "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+      }
+      gate.replaceWith(frame);
     });
   });
 
