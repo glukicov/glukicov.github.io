@@ -399,10 +399,6 @@
         max-width: 60ch;
       }
 
-      .hero-intro {
-        margin-top: 34px;
-      }
-
       /* ---------- the DAG ---------- */
       .dag {
         position: relative;
@@ -523,7 +519,7 @@
         gap: 22px;
         grid-template-columns: minmax(0, 1fr);
         align-items: start;
-        padding-bottom: 0;
+        padding-bottom: 56px;
       }
 
       .term {
@@ -1250,7 +1246,7 @@
          the same space before JS/fonts load and keeps every link usable. */
       @media (max-width: 859px) {
         .dag {
-          margin: 24px 0 38px;
+          margin: 24px 0;
           padding: 16px 12px;
         }
 
@@ -1465,10 +1461,6 @@
           gap: 14px;
         }
 
-        .hero-intro {
-          margin-top: 24px;
-        }
-
         .stage {
           padding-top: 44px;
         }
@@ -1642,8 +1634,77 @@
             Empowering data science teams to succeed
           </p>
 
+          <nav class="dag" id="dag" aria-label="Explore my work">
+            <p class="dag-hint">
+              Explore the connections · select a node
+            </p>
+            <canvas
+              class="dag-canvas"
+              id="dag-canvas"
+              aria-hidden="true"
+            ></canvas>
+            <div class="dag-nodes" id="dag-nodes">
+              <a
+                class="node"
+                href="#research"
+                data-node="physics"
+                data-x="0.055"
+                data-y="0.5"
+                ><i></i>physics<span class="vh">
+                  — go to Research</span></a>
+              <a
+                class="node"
+                href="#outreach"
+                data-node="outreach" data-branch=""
+                data-x="0.275"
+                data-y="0.84"
+                ><i></i>outreach<span class="vh">
+                  — go to Education projects</span></a>
+              <a
+                class="node"
+                href="#ml"
+                data-node="data"
+                data-x="0.275"
+                data-y="0.5"
+                ><i></i>data<span class="vh">
+                  — go to ML projects</span></a>
+              <a
+                class="node"
+                href="#a-slideops"
+                data-node="platform"
+                data-x="0.5"
+                data-y="0.5"
+                ><i></i>platform<span class="vh">
+                  — go to SlideOps</span></a>
+              <a
+                class="node"
+                href="#interests"
+                data-node="interests" data-branch=""
+                data-x="0.725"
+                data-y="0.16"
+                ><i></i>interests<span class="vh">
+                  — go to Personal interests</span></a>
+              <a
+                class="node"
+                href="#aaif-community"
+                data-node="community"
+                data-x="0.725"
+                data-y="0.5"
+                ><i></i>community<span class="vh">
+                  — go to the AAIF community</span></a>
+              <a
+                class="node"
+                href="#a-mlops-article"
+                data-node="writing"
+                data-x="0.945"
+                data-y="0.5"
+                ><i></i>writing<span class="vh">
+                  — go to the articles</span></a>
+            </div>
+          </nav>
+
           <!-- ============ hero: the terminal intro ============ -->
-          <div class="hero-grid hero-intro">
+          <div class="hero-grid">
             <div class="term" id="term">
               <div class="term-bar">
                 <span>gleb@pipeline: ~/about</span>
@@ -1720,75 +1781,6 @@
               </ul>
             </aside>
           </div>
-
-          <nav class="dag" id="dag" aria-label="Explore my work">
-            <p class="dag-hint">
-              Explore the connections · select a node
-            </p>
-            <canvas
-              class="dag-canvas"
-              id="dag-canvas"
-              aria-hidden="true"
-            ></canvas>
-            <div class="dag-nodes" id="dag-nodes">
-              <a
-                class="node"
-                href="#research"
-                data-node="physics"
-                data-x="0.055"
-                data-y="0.5"
-                ><i></i>physics<span class="vh">
-                  — go to Research</span></a>
-              <a
-                class="node"
-                href="#outreach"
-                data-node="outreach" data-branch=""
-                data-x="0.275"
-                data-y="0.84"
-                ><i></i>outreach<span class="vh">
-                  — go to Education projects</span></a>
-              <a
-                class="node"
-                href="#ml"
-                data-node="data"
-                data-x="0.275"
-                data-y="0.5"
-                ><i></i>data<span class="vh">
-                  — go to ML projects</span></a>
-              <a
-                class="node"
-                href="#a-slideops"
-                data-node="platform"
-                data-x="0.5"
-                data-y="0.5"
-                ><i></i>platform<span class="vh">
-                  — go to SlideOps</span></a>
-              <a
-                class="node"
-                href="#interests"
-                data-node="interests" data-branch=""
-                data-x="0.725"
-                data-y="0.16"
-                ><i></i>interests<span class="vh">
-                  — go to Personal interests</span></a>
-              <a
-                class="node"
-                href="#aaif-community"
-                data-node="community"
-                data-x="0.725"
-                data-y="0.5"
-                ><i></i>community<span class="vh">
-                  — go to the AAIF community</span></a>
-              <a
-                class="node"
-                href="#a-mlops-article"
-                data-node="writing"
-                data-x="0.945"
-                data-y="0.5"
-                ><i></i>writing<span class="vh">
-                  — go to the articles</span></a>
-            </div>
-          </nav>
         </div>
       </section>
 
