@@ -1042,75 +1042,6 @@
         color-scheme: light;
       }
 
-      .embed-gate {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        border: 0;
-        background:
-          radial-gradient(circle at 50% 42%, var(--moss-bg), transparent 42%),
-          var(--ink-2);
-        color: var(--paper);
-        cursor: pointer;
-        display: grid;
-        place-content: center;
-        justify-items: center;
-        gap: 8px;
-        padding: 22px;
-        text-align: center;
-        transition:
-          background-color 0.15s ease,
-          color 0.15s ease;
-      }
-
-      .embed-gate:hover {
-        color: var(--moss-hi);
-        background-color: #20201c;
-      }
-
-      .embed-play {
-        display: grid;
-        place-items: center;
-        width: 48px;
-        height: 48px;
-        border: 1px solid var(--moss-dim);
-        border-radius: 50%;
-        background: var(--moss-bg);
-        color: var(--moss);
-        font-size: 1.05rem;
-        line-height: 1;
-        padding-left: 3px;
-      }
-
-      .embed-label {
-        font-weight: 600;
-      }
-
-      .embed-note {
-        max-width: 38ch;
-        color: var(--paper-3);
-        font-family: var(--mono);
-        font-size: 0.7rem;
-        line-height: 1.5;
-      }
-
-      .frame.audio .embed-play {
-        width: 38px;
-        height: 38px;
-        font-size: 0.9rem;
-      }
-
-      .frame noscript a {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        padding: 20px;
-        color: var(--moss);
-        font-family: var(--mono);
-        text-align: center;
-      }
-
       /* ---------- footer ---------- */
       .ftr {
         border-top: 1px solid var(--line);
@@ -1931,20 +1862,12 @@
                 <h3>The community, on LinkedIn</h3>
               </div>
               <div class="frame post">
-                <button
-                  class="embed-gate"
-                  type="button"
-                  data-embed-src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7311105895734693888"
-                  data-embed-title="AAIF Community London post on LinkedIn"
-                  data-embed-provider="LinkedIn"
-                >
-                  <span class="embed-play" aria-hidden="true">↗</span>
-                  <span class="embed-label">Load LinkedIn post</span>
-                  <span class="embed-note">Third-party content loads on request</span>
-                </button>
-                <noscript>
-                  <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7311105895734693888">View the post on LinkedIn</a>
-                </noscript>
+                <iframe
+                  src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7311105895734693888"
+                  title="Embedded post"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
               </div>
               <p class="art-links">
                 <a
@@ -2168,20 +2091,19 @@
                 <h3>Virgin Media O2: DevOps journey</h3>
               </div>
               <div class="frame">
-                <button
-                  class="embed-gate"
-                  type="button"
-                  data-embed-src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
-                  data-embed-title="Virgin Media O2: DevOps journey"
-                  data-embed-provider="YouTube"
-                >
-                  <span class="embed-play" aria-hidden="true">▶</span>
-                  <span class="embed-label">Load video</span>
-                  <span class="embed-note">YouTube player loads on request</span>
-                </button>
-                <noscript>
-                  <a href="https://www.youtube.com/watch?v=bYUjAz_Q1Gs">Watch on YouTube</a>
-                </noscript>
+                <iframe
+                  src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
+                  title="Virgin Media O2: DevOps journey"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
               </div>
               <div class="art-body">
                 <p>
@@ -2212,20 +2134,19 @@
                 </h3>
               </div>
               <div class="frame">
-                <button
-                  class="embed-gate"
-                  type="button"
-                  data-embed-src="https://www.youtube.com/embed/6cMVcKeBdkI"
-                  data-embed-title="Interview with the Royal Statistical Society"
-                  data-embed-provider="YouTube"
-                >
-                  <span class="embed-play" aria-hidden="true">▶</span>
-                  <span class="embed-label">Load video</span>
-                  <span class="embed-note">YouTube player loads on request</span>
-                </button>
-                <noscript>
-                  <a href="https://www.youtube.com/watch?v=6cMVcKeBdkI">Watch on YouTube</a>
-                </noscript>
+                <iframe
+                  src="https://www.youtube.com/embed/6cMVcKeBdkI"
+                  title="Interview with the Royal Statistical Society"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
               </div>
               <div class="art-body">
                 <p>
@@ -2247,20 +2168,19 @@
                 <h3>Electric Twin &amp; MLOps Community London</h3>
               </div>
               <div class="frame audio">
-                <button
-                  class="embed-gate"
-                  type="button"
-                  data-embed-src="https://open.spotify.com/embed/episode/0Xgw37MAKB1R7zGyBKehPe?utm_source=generator&amp;t=0"
-                  data-embed-title="Podcast: Electric Twin and MLOps Community London"
-                  data-embed-provider="Spotify"
-                >
-                  <span class="embed-play" aria-hidden="true">▶</span>
-                  <span class="embed-label">Load podcast player</span>
-                  <span class="embed-note">Spotify player loads on request</span>
-                </button>
-                <noscript>
-                  <a href="https://open.spotify.com/episode/0Xgw37MAKB1R7zGyBKehPe">Listen on Spotify</a>
-                </noscript>
+                <iframe
+                  src="https://open.spotify.com/embed/episode/0Xgw37MAKB1R7zGyBKehPe?utm_source=generator&amp;t=0"
+                  title="Podcast: Electric Twin and MLOps Community London"
+                  allow="
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    fullscreen;
+                    picture-in-picture;
+                  "
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
               </div>
               <div class="art-body">
                 <p>
@@ -2366,20 +2286,19 @@
                 </h3>
               </div>
               <div class="frame">
-                <button
-                  class="embed-gate"
-                  type="button"
-                  data-embed-src="https://www.youtube.com/embed/Zv5CWN5Dp9A"
-                  data-embed-title="Inspired to Build: Live with Gleb Lukicov"
-                  data-embed-provider="YouTube"
-                >
-                  <span class="embed-play" aria-hidden="true">▶</span>
-                  <span class="embed-label">Load video</span>
-                  <span class="embed-note">YouTube player loads on request</span>
-                </button>
-                <noscript>
-                  <a href="https://www.youtube.com/watch?v=Zv5CWN5Dp9A">Watch on YouTube</a>
-                </noscript>
+                <iframe
+                  src="https://www.youtube.com/embed/Zv5CWN5Dp9A"
+                  title="Inspired to Build: Live with Gleb Lukicov"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
               </div>
               <div class="art-body">
                 <p>
@@ -2576,20 +2495,21 @@
                 </p>
               </div>
               <div class="frame">
-                <button
-                  class="embed-gate"
-                  type="button"
-                  data-embed-src="https://www.youtube.com/embed/GyWJ_dLydPE?feature=oembed"
-                  data-embed-title="Muon g-2 wins Breakthrough Prize in Fundamental Physics"
-                  data-embed-provider="YouTube"
-                >
-                  <span class="embed-play" aria-hidden="true">▶</span>
-                  <span class="embed-label">Load video</span>
-                  <span class="embed-note">YouTube player loads on request</span>
-                </button>
-                <noscript>
-                  <a href="https://www.youtube.com/watch?v=GyWJ_dLydPE">Watch on YouTube</a>
-                </noscript>
+                <iframe
+                  src="https://www.youtube.com/embed/GyWJ_dLydPE?feature=oembed"
+                  title="Muon g-2 wins Breakthrough Prize in Fundamental Physics"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
               </div>
             </article>
 
@@ -3175,27 +3095,6 @@
   $$("#nav a").forEach(function (a) {
     a.addEventListener("click", function () {
       if (nav.classList.contains("open")) drawer(false);
-    });
-  });
-
-  /* ---------- privacy-friendly embeds ---------- */
-  $$(".embed-gate").forEach(function (gate) {
-    gate.addEventListener("click", function () {
-      var frame = d.createElement("iframe"),
-        provider = gate.dataset.embedProvider;
-      frame.src = gate.dataset.embedSrc;
-      frame.title = gate.dataset.embedTitle;
-      frame.loading = "eager";
-      frame.referrerPolicy = "strict-origin-when-cross-origin";
-      frame.allowFullscreen = true;
-      if (provider === "YouTube") {
-        frame.allow =
-          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-      } else if (provider === "Spotify") {
-        frame.allow =
-          "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
-      }
-      gate.replaceWith(frame);
     });
   });
 
