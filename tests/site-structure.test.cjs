@@ -12,16 +12,11 @@ test("the introduction appears before the portfolio map", () => {
   );
 });
 
-test("third-party embeds are opt-in", () => {
+test("third-party embeds load without an interaction gate", () => {
   const iframeSources = [...html.matchAll(/<iframe\b[^>]*\bsrc=/g)];
-  const embedGates = [
-    ...html.matchAll(
-      /<button\b[^>]*class="embed-gate"[^>]*data-embed-src="[^"]+"[^>]*data-embed-title="[^"]+"[^>]*data-embed-provider="[^"]+"/g,
-    ),
-  ];
-
-  assert.equal(iframeSources.length, 0, "No iframe should load on page startup");
-  assert.equal(embedGates.length, 6, "Every external player should have a load gate");
+  assert.equal(iframeSources.length, 6, "Every external player should have a source");
+  assert.doesNotMatch(html, /class="embed-gate"/);
+  assert.doesNotMatch(html, /<iframe\b[^>]*loading="lazy"/);
 });
 
 test("below-the-fold cards use rendering containment", () => {
