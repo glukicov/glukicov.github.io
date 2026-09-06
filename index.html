@@ -1013,8 +1013,11 @@
         aspect-ratio: 1 / 1;
       }
 
+      /* Spotify's compact episode player has a fixed 152px height, so an
+         aspect ratio leaves an empty white band below it on narrow screens. */
       .frame.audio {
-        aspect-ratio: 16 / 10;
+        aspect-ratio: auto;
+        height: 152px;
       }
 
       .frame iframe {
