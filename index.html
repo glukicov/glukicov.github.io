@@ -1013,9 +1013,13 @@
         aspect-ratio: 1 / 1;
       }
 
-      /* Spotify's compact episode player has a fixed 152px height, so an
-         aspect ratio leaves an empty white band below it on narrow screens. */
+      /* Spotify picks its player layout from the iframe's viewport height
+         (80px at <=151px, 152px at <=231px, 232px at <=351px, else 352px).
+         The frame's 1px borders must not eat into that height, otherwise a
+         152px box yields a 150px iframe and Spotify falls back to the 80px
+         player with a white band below it. Size the content box exactly. */
       .frame.audio {
+        box-sizing: content-box;
         aspect-ratio: auto;
         height: 152px;
       }
