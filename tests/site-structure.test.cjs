@@ -5,10 +5,10 @@ const test = require("node:test");
 
 const html = readFileSync(join(__dirname, "..", "index.html"), "utf8");
 
-test("the introduction appears before the portfolio map", () => {
+test("the portfolio map appears before the introduction", () => {
   assert.ok(
-    html.indexOf('class="hero-grid hero-intro"') < html.indexOf('id="dag"'),
-    "Visitors should meet Gleb before exploring the portfolio map",
+    html.indexOf('id="dag"') < html.indexOf('class="hero-grid"'),
+    "Visitors should explore the pipeline before reading the about panel",
   );
 });
 
