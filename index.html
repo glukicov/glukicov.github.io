@@ -74,6 +74,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://i.ytimg.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"
       rel="stylesheet"
@@ -1038,6 +1039,53 @@
         color-scheme: light;
       }
 
+      /* YouTube's cued player paints its own poster from the 480px-wide
+         hqdefault still, which upscales into a visibly pixelated first frame.
+         Cover the (still eagerly loaded) iframe with the 1280px still instead
+         and let pointer events fall through, so the player underneath handles
+         the click exactly as it would have and the poster only steps aside
+         once playback has actually started. */
+      .frame .poster {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: var(--ink-2);
+        pointer-events: none;
+        transition: opacity 0.2s linear;
+      }
+
+      .frame .poster.off {
+        opacity: 0;
+      }
+
+      .frame .poster img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .poster-play {
+        position: relative;
+        width: 58px;
+        height: 58px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line-2);
+        border-radius: 50%;
+        background: rgba(11, 11, 10, 0.66);
+        color: var(--paper);
+        font-size: 26px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .frame .poster {
+          transition: none;
+        }
+      }
+
       /* ---------- footer ---------- */
       .ftr {
         border-top: 1px solid var(--line);
@@ -1531,6 +1579,10 @@
           <path
             d="M14 4h6v6M20 4l-8.6 8.6M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"
           />
+        </symbol>
+        <symbol id="i-play" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9.2" />
+          <path d="M10.2 8.3 16 12l-5.8 3.7Z" />
         </symbol>
 
         <!-- Font Awesome Free 6.4.2 (CC BY 4.0, fontawesome.com/license/free),
@@ -2084,7 +2136,7 @@
               </div>
               <div class="frame">
                 <iframe
-                  src="https://www.youtube.com/embed/bYUjAz_Q1Gs"
+                  src="https://www.youtube.com/embed/bYUjAz_Q1Gs?enablejsapi=1"
                   title="Virgin Media O2: DevOps journey"
                   allow="
                     accelerometer;
@@ -2096,6 +2148,24 @@
                   "
                   allowfullscreen
                 ></iframe>
+                <div class="poster">
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="https://i.ytimg.com/vi_webp/bYUjAz_Q1Gs/maxresdefault.webp"
+                    />
+                    <img
+                      src="https://i.ytimg.com/vi/bYUjAz_Q1Gs/maxresdefault.jpg"
+                      alt=""
+                      width="1280"
+                      height="720"
+                      decoding="async"
+                    />
+                  </picture>
+                  <span class="poster-play" aria-hidden="true"
+                    ><svg class="icon"><use href="#i-play"/></svg
+                  ></span>
+                </div>
               </div>
               <div class="art-body">
                 <p>
@@ -2127,7 +2197,7 @@
               </div>
               <div class="frame">
                 <iframe
-                  src="https://www.youtube.com/embed/6cMVcKeBdkI"
+                  src="https://www.youtube.com/embed/6cMVcKeBdkI?enablejsapi=1"
                   title="Interview with the Royal Statistical Society"
                   allow="
                     accelerometer;
@@ -2139,6 +2209,24 @@
                   "
                   allowfullscreen
                 ></iframe>
+                <div class="poster">
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="https://i.ytimg.com/vi_webp/6cMVcKeBdkI/maxresdefault.webp"
+                    />
+                    <img
+                      src="https://i.ytimg.com/vi/6cMVcKeBdkI/maxresdefault.jpg"
+                      alt=""
+                      width="1280"
+                      height="720"
+                      decoding="async"
+                    />
+                  </picture>
+                  <span class="poster-play" aria-hidden="true"
+                    ><svg class="icon"><use href="#i-play"/></svg
+                  ></span>
+                </div>
               </div>
               <div class="art-body">
                 <p>
@@ -2279,7 +2367,7 @@
               </div>
               <div class="frame">
                 <iframe
-                  src="https://www.youtube.com/embed/Zv5CWN5Dp9A"
+                  src="https://www.youtube.com/embed/Zv5CWN5Dp9A?enablejsapi=1"
                   title="Inspired to Build: Live with Gleb Lukicov"
                   allow="
                     accelerometer;
@@ -2291,6 +2379,24 @@
                   "
                   allowfullscreen
                 ></iframe>
+                <div class="poster">
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="https://i.ytimg.com/vi_webp/Zv5CWN5Dp9A/maxresdefault.webp"
+                    />
+                    <img
+                      src="https://i.ytimg.com/vi/Zv5CWN5Dp9A/maxresdefault.jpg"
+                      alt=""
+                      width="1280"
+                      height="720"
+                      decoding="async"
+                    />
+                  </picture>
+                  <span class="poster-play" aria-hidden="true"
+                    ><svg class="icon"><use href="#i-play"/></svg
+                  ></span>
+                </div>
               </div>
               <div class="art-body">
                 <p>
@@ -2488,7 +2594,7 @@
               </div>
               <div class="frame">
                 <iframe
-                  src="https://www.youtube.com/embed/GyWJ_dLydPE?feature=oembed"
+                  src="https://www.youtube.com/embed/GyWJ_dLydPE?feature=oembed&amp;enablejsapi=1"
                   title="Muon g-2 wins Breakthrough Prize in Fundamental Physics"
                   allow="
                     accelerometer;
@@ -2502,6 +2608,24 @@
                   referrerpolicy="strict-origin-when-cross-origin"
                   allowfullscreen
                 ></iframe>
+                <div class="poster">
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="https://i.ytimg.com/vi_webp/GyWJ_dLydPE/maxresdefault.webp"
+                    />
+                    <img
+                      src="https://i.ytimg.com/vi/GyWJ_dLydPE/maxresdefault.jpg"
+                      alt=""
+                      width="1280"
+                      height="720"
+                      decoding="async"
+                    />
+                  </picture>
+                  <span class="poster-play" aria-hidden="true"
+                    ><svg class="icon"><use href="#i-play"/></svg
+                  ></span>
+                </div>
               </div>
             </article>
 
@@ -3383,6 +3507,50 @@
       spy.observe(s);
     });
   }
+
+  /* ---------- video posters ---------- */
+  /* The poster covers a live player and passes pointer events straight
+     through to it, so it has to uncover itself the moment playback starts.
+     Two signals report that: focus moving into the cross-origin player, which
+     the host page sees only as its own window losing focus, and the player's
+     own state messages once it has been asked to listen. */
+  var YT = "https://www.youtube.com";
+  $$(".frame > .poster").forEach(function (poster) {
+    var player = $("iframe", poster.parentNode);
+
+    function uncover() {
+      poster.classList.add("off");
+    }
+
+    addEventListener("blur", function () {
+      if (d.activeElement === player) uncover();
+    });
+    player.addEventListener("focus", uncover);
+
+    function listen() {
+      try {
+        player.contentWindow.postMessage('{"event":"listening"}', YT);
+      } catch (e) {}
+    }
+    listen();
+    player.addEventListener("load", listen);
+
+    addEventListener("message", function (e) {
+      if (e.origin !== YT || e.source !== player.contentWindow)
+        return;
+      var msg;
+      try {
+        msg = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      var info = msg && msg.info,
+        state =
+          typeof info === "number" ? info : info && info.playerState;
+      /* 1 playing, 3 buffering: states the poster must not sit on top of */
+      if (state === 1 || state === 3) uncover();
+    });
+  });
 
   /* ---------- command palette ---------- */
   var pal = $("#cmdk"),
