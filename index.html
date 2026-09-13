@@ -1951,7 +1951,7 @@
 
           <div class="arts">
             <article
-              class="art wide"
+              class="art"
               id="a-slideops"
               data-art
               data-type="repo"
@@ -1982,39 +1982,9 @@
                 <p>
                   Turn a repository into a slide deck that
                   tells you when it stops matching the code.
-                  SlideOps is a pair of Agent Skills: one
-                  builds a single-file HTML deck from a repo,
-                  the other checks that deck later. Every
-                  reference in the deck carries the file it
-                  came from, the exact line range, and a hash
-                  of those source lines, so the check is
-                  standard-library Python: no model, no
-                  network, zero tokens, milliseconds.
-                </p>
-                <p>
-                  The repo is its own plugin marketplace, so in
-                  Claude Code it is two lines: add the
-                  marketplace,
-                </p>
-                <pre class="code"><code>/plugin marketplace add glukicov/slideops</code></pre>
-                <p>then install the plugin from it:</p>
-                <pre class="code"><code>/plugin install slideops@slideops</code></pre>
-                <p>
-                  Any agent with the
-                  <a
-                    href="https://skills.sh"
-                    target="_blank"
-                    rel="noopener"
-                    >skills CLI</a>
-                  gets it in one line:
-                </p>
-                <pre class="code"><code>npx skills add glukicov/slideops</code></pre>
-                <p>
-                  It also runs on Codex, Copilot CLI and
-                  OpenCode: all three read
-                  <code>~/.agents/skills</code>, and
-                  <code>./install.sh</code> in a repo puts the
-                  skills where each of them looks.
+                  Every reference carries its source lines and a
+                  hash of them, so the check costs zero tokens
+                  and runs in milliseconds.
                 </p>
               </div>
               <p class="art-links">
@@ -2040,7 +2010,7 @@
             </article>
 
             <article
-              class="art wide"
+              class="art"
               id="a-ltm"
               data-art
               data-type="repo"
@@ -2048,8 +2018,7 @@
               <div class="art-top">
                 <span class="tag">repo</span>
                 <h3>
-                  I tried to make an LLM fail on tabular data. It
-                  didn't, sort of!
+                  I tried to make an LLM fail on tabular data
                 </h3>
               </div>
               <a
@@ -2069,47 +2038,27 @@
               </a>
               <div class="art-body">
                 <p>
-                  Can a tabular foundation model replace your
-                  training pipeline? Google's TabFM goes head to
-                  head with a trained CatBoost model and GPT-6
-                  Astra on the same rows, and then the table
-                  changes under all three: the same columns
-                  shuffled, then two new columns inserted
-                  mid-table.
-                </p>
-                <p>
-                  The deployed CatBoost model crashed on both
-                  changes. GPT-6 Astra kept its accuracy, but a
-                  column shuffle changed 22 of its 240 answers
-                  and an identical rerun changed 9. TabFM
-                  changed none, then used the new columns on the
-                  very next call, from 73.3% to 80.4%, with
-                  nothing retrained.
-                </p>
-                <p>
-                  One command runs all three models in parallel
-                  and prints the comparison:
-                </p>
-                <pre class="code"><code>examples/running-injury/run_all.sh</code></pre>
-                <p>
-                  Every prediction behind the results is
-                  committed, so the numbers can be checked
-                  without spending a token.
+                  It didn't, sort of! TabFM vs a trained
+                  CatBoost vs GPT-6 Astra on a table that
+                  changes shape. CatBoost crashed, the LLM
+                  changed 22 answers, and TabFM changed none,
+                  then used the new columns with nothing
+                  retrained.
                 </p>
               </div>
               <p class="art-links">
-                <a
-                  class="lnk"
-                  href="https://github.com/glukicov/ltm"
-                  target="_blank"
-                  rel="noopener"
-                  >LTM on GitHub<svg class="icon"><use href="#i-ext"/></svg></a>
                 <a
                   class="lnk"
                   href="https://medium.com/@lukicov/i-tried-to-make-an-llm-fail-on-tabular-data-it-didnt-sort-of-428d89acdb51"
                   target="_blank"
                   rel="noopener"
                   >Read on Medium<svg class="icon"><use href="#i-ext"/></svg></a>
+                <a
+                  class="lnk"
+                  href="https://github.com/glukicov/ltm"
+                  target="_blank"
+                  rel="noopener"
+                  >LTM on GitHub<svg class="icon"><use href="#i-ext"/></svg></a>
               </p>
             </article>
 
