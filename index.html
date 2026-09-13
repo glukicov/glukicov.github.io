@@ -1984,8 +1984,15 @@
                   tells you when it stops matching the code.
                   Every reference carries its source lines and a
                   hash of them, so the check costs zero tokens
-                  and runs in milliseconds.
+                  and runs in milliseconds. Install it for any
+                  agent with the
+                  <a
+                    href="https://skills.sh"
+                    target="_blank"
+                    rel="noopener"
+                    >skills CLI</a>:
                 </p>
+                <pre class="code"><code>npx skills add glukicov/slideops</code></pre>
               </div>
               <p class="art-links">
                 <a
@@ -2022,7 +2029,7 @@
                 </h3>
               </div>
               <a
-                class="art-media fit"
+                class="art-media"
                 href="https://github.com/glukicov/ltm"
                 target="_blank"
                 rel="noopener"
@@ -2031,7 +2038,7 @@
                   src="./images/ltm-terminal.webp"
                   alt="Terminal output of run_all.sh: CatBoost, TabFM and GPT-6 Astra run in parallel; CatBoost crashes on the shuffled and extended exports, TabFM changes no predictions, and the comparison table prints at the end"
                   width="1600"
-                  height="1040"
+                  height="900"
                   loading="lazy"
                   decoding="async"
                 />
@@ -2043,8 +2050,12 @@
                   changes shape. CatBoost crashed, the LLM
                   changed 22 answers, and TabFM changed none,
                   then used the new columns with nothing
-                  retrained.
+                  retrained. Every prediction behind the results
+                  is committed, so you can check the numbers
+                  without spending a token, or run all three
+                  models in parallel yourself:
                 </p>
+                <pre class="code"><code>examples/running-injury/run_all.sh</code></pre>
               </div>
               <p class="art-links">
                 <a
