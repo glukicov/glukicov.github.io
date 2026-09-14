@@ -1375,27 +1375,29 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .art.wide {
+        /* Two-column rule: an odd number of regular cards would leave a
+           hole in the last row, so the first regular card then spans both
+           columns, as if it were .wide. Adding or removing a card never
+           needs a class change; tests/site-structure checks every grid. */
+        .arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide))) {
           grid-column: 1 / -1;
         }
 
-        .art.wide .art-body {
+        .arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide))) .art-body {
           max-width: none;
           columns: 2;
           column-gap: 40px;
         }
 
-        .art.wide .art-body .code,
-        .art.wide .art-body li,
-        .art.wide .art-body h4 {
+        .arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide))) .art-body :is(.code, li, h4) {
           break-inside: avoid;
         }
 
-        .art.wide .art-body h4 {
+        .arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide))) .art-body h4 {
           break-after: avoid;
         }
 
-        .art.wide .art-media img {
+        .arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide))) .art-media img {
           aspect-ratio: 21 / 9;
         }
       }
