@@ -44,3 +44,35 @@ test("below-the-fold cards use rendering containment", () => {
   assert.match(html, /\.art\s*\{[^}]*content-visibility:\s*auto;/s);
   assert.match(html, /contain-intrinsic-block-size:\s*auto\s+620px;/);
 });
+
+test("two-column card grids never leave a hole in a row", () => {
+  const promote =
+    ".arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide)))";
+  assert.ok(
+    html.includes(`${promote} {`),
+    "An odd number of regular cards must promote the first one to full width",
+  );
+
+  const grids = [...html.matchAll(/<div class="arts">([\s\S]*?)\n {10}<\/div>/g)];
+  assert.ok(grids.length > 0, "The page should have card grids");
+  for (const [, grid] of grids) {
+    const wide = [...grid.matchAll(/<article\s+class="([^"]*)"/g)].map((match) =>
+      match[1].split(/\s+/).includes("wide"),
+    );
+    // Mirror the CSS: with an odd count of regular cards, the first spans both columns.
+    if (wide.filter((w) => !w).length % 2 === 1) wide[wide.indexOf(false)] = true;
+
+    let halfWidthRun = 0;
+    for (const w of [...wide, true]) {
+      if (!w) halfWidthRun += 1;
+      else {
+        assert.equal(
+          halfWidthRun % 2,
+          0,
+          `A grid of ${wide.length} cards leaves a half-empty row before a full-width card; move a wide card so every run is even`,
+        );
+        halfWidthRun = 0;
+      }
+    }
+  }
+});

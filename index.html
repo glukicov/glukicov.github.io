@@ -1375,27 +1375,29 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .art.wide {
+        /* Two-column rule: an odd number of regular cards would leave a
+           hole in the last row, so the first regular card then spans both
+           columns, as if it were .wide. Adding or removing a card never
+           needs a class change; tests/site-structure checks every grid. */
+        .arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide))) {
           grid-column: 1 / -1;
         }
 
-        .art.wide .art-body {
+        .arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide))) .art-body {
           max-width: none;
           columns: 2;
           column-gap: 40px;
         }
 
-        .art.wide .art-body .code,
-        .art.wide .art-body li,
-        .art.wide .art-body h4 {
+        .arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide))) .art-body :is(.code, li, h4) {
           break-inside: avoid;
         }
 
-        .art.wide .art-body h4 {
+        .arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide))) .art-body h4 {
           break-after: avoid;
         }
 
-        .art.wide .art-media img {
+        .arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide))) .art-media img {
           aspect-ratio: 21 / 9;
         }
       }
@@ -1942,7 +1944,7 @@
             </dd>
             <dt>outputs</dt>
             <dd>
-              <b>3 open-source projects</b> · 5 articles · 3 videos
+              <b>4 open-source projects</b> · 6 articles · 3 videos
               · 1 podcast
             </dd>
             <dt>awards</dt>
@@ -2070,6 +2072,71 @@
                   target="_blank"
                   rel="noopener"
                   >LTM on GitHub<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
+
+            <article
+              class="art"
+              id="a-ltm-ft"
+              data-art
+              data-type="repo"
+            >
+              <div class="art-top">
+                <span class="tag">repo</span>
+                <h3>
+                  Fine-tuning worked. On 2 of 5 seeds
+                </h3>
+              </div>
+              <a
+                class="art-media fit"
+                href="https://github.com/glukicov/ltm_ft"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="./images/ltm-ft-checkerboard-validation.webp"
+                  alt="Validation accuracy while fine-tuning the checkerboard task on the NVIDIA L4: training the last 4 ICL blocks barely moves off zero-shot (65.0% to 68.2%), while training the row/column encoders reaches 96.4%, close to the 97.2% ceiling, within 50 steps"
+                  width="1600"
+                  height="840"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class="art-body">
+                <p>
+                  A follow-up to LTM: I fine-tuned TabFM instead
+                  of just prompting it, measured honestly against
+                  its own zero-shot baseline, and ran the same
+                  code on an Apple M4 laptop and an NVIDIA L4 in
+                  GKE. Training the row/column encoders took a
+                  checkerboard task from 66.5% to 93.8% test
+                  accuracy, close to the 94.9% ceiling — but only
+                  on 2 of 5 data seeds; the others collapsed to
+                  predicting 0.5 for every row. The L4 ran
+                  fine-tuning 9× faster than the laptop, for about
+                  $1.30 in GPU time:
+                </p>
+                <pre class="code"><code>uv run ltm-ft run --task checkerboard --train-encoders</code></pre>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://medium.com/@lukicov/i-fine-tuned-a-1-6b-tabular-foundation-model-on-my-laptop-and-a-gpu-in-kubernetes-65c5a5f679c6"
+                  target="_blank"
+                  rel="noopener"
+                  >Read on Medium<svg class="icon"><use href="#i-ext"/></svg></a>
+                <a
+                  class="lnk"
+                  href="https://github.com/glukicov/ltm_ft"
+                  target="_blank"
+                  rel="noopener"
+                  >LTM-FT on GitHub<svg class="icon"><use href="#i-ext"/></svg></a>
+                <a
+                  class="lnk"
+                  href="https://github.com/glukicov/ltm_ft/blob/main/docs/slides/finetuning-tabfm-2026-09-14.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Slides (PDF)<svg class="icon"><use href="#i-ext"/></svg></a>
               </p>
             </article>
 
