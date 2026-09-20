@@ -2208,6 +2208,61 @@
 
             <article
               class="art"
+              id="a-laya"
+              data-art
+              data-type="repo"
+            >
+              <div class="art-top">
+                <span class="tag">repo</span>
+                <h3>
+                  Smart routing with Laya, a System 1 model
+                </h3>
+              </div>
+              <a
+                class="art-media fit"
+                href="https://github.com/glukicov/laya_router"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="./images/laya-router-card.webp"
+                  alt="Laya Router comparison: Laya and GPT-5 nano reach the same route accuracy, while Laya has lower latency and no per-request API cost"
+                  width="1376"
+                  height="1008"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class="art-body">
+                <p>
+                  A router sits on every request, so I tested
+                  whether its decision needs an LLM at all. Laya
+                  is a 421M non-autoregressive System 1 model;
+                  behind the same FastAPI endpoint as GPT-5 nano,
+                  it matched 0.600 route accuracy on 180 labelled
+                  requests in 184 ms locally rather than 6,415 ms,
+                  with no per-request API bill.
+                </p>
+                <pre class="code"><code>uv run laya-router serve --backend laya</code></pre>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://medium.com/@lukicov/smart-routing-with-an-open-source-system-1-model-laya-416fe771ce2e"
+                  target="_blank"
+                  rel="noopener"
+                  >Read on Medium<svg class="icon"><use href="#i-ext"/></svg></a>
+                <a
+                  class="lnk"
+                  href="https://github.com/glukicov/laya_router"
+                  target="_blank"
+                  rel="noopener"
+                  >Laya Router on GitHub<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
+
+            <article
+              class="art"
               id="a-mlops-article"
               data-art
               data-type="article"
