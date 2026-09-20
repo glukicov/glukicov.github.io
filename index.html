@@ -2142,6 +2142,72 @@
 
             <article
               class="art"
+              id="a-ltm-serve"
+              data-art
+              data-type="repo"
+            >
+              <div class="art-top">
+                <span class="tag">repo</span>
+                <h3>
+                  Serving TabFM online on one GPU
+                </h3>
+              </div>
+              <a
+                class="art-media fit"
+                href="https://github.com/glukicov/ltm_serve"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="./images/ltm-serve-context-scaling.webp"
+                  alt="Latency vs context size on the NVIDIA L4 and Apple M4: stock TabFM grows with the number of training rows (9.47 s at 8,192 rows on the L4), while the exact context cache stays flat near 100 ms, and the one-off cost of building that cache"
+                  width="1600"
+                  height="613"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class="art-body">
+                <p>
+                  The third LTM repo: TabFM re-reads its whole
+                  training table on every prediction, so can it
+                  serve online requests in ~100 ms? An exact
+                  context (KV) cache took a request from 9.47 s
+                  to 129 ms (74×), and <code>torch.compile</code>
+                  with CUDA graphs cut the cached forward from
+                  111 to 28 ms. Compiled Triton on one L4 served
+                  160 req/s at p50 91 ms / p99 125 ms, and the
+                  load generator was the bottleneck twice.
+                  Kubernetes set the rest of the bill: a 7 min
+                  cold start and a 20-minute compile warm-up per
+                  replica.
+                </p>
+                <pre class="code"><code>k8s/gke/run.sh k8s/gke/isvc-triton-gpu.yaml</code></pre>
+              </div>
+              <p class="art-links">
+                <a
+                  class="lnk"
+                  href="https://medium.com/@lukicov/lessons-learnt-from-serving-a-1-6b-parameter-tabular-model-online-on-one-gpu-in-kubernetes-f1a2a357ecc5"
+                  target="_blank"
+                  rel="noopener"
+                  >Read on Medium<svg class="icon"><use href="#i-ext"/></svg></a>
+                <a
+                  class="lnk"
+                  href="https://github.com/glukicov/ltm_serve"
+                  target="_blank"
+                  rel="noopener"
+                  >LTM-Serve on GitHub<svg class="icon"><use href="#i-ext"/></svg></a>
+                <a
+                  class="lnk"
+                  href="https://github.com/glukicov/ltm_serve/blob/main/docs/slides/inference-lessons-2026-09-13.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Slides (PDF)<svg class="icon"><use href="#i-ext"/></svg></a>
+              </p>
+            </article>
+
+            <article
+              class="art"
               id="a-laya"
               data-art
               data-type="repo"
