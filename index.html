@@ -1040,9 +1040,7 @@
       }
 
       /* A square frame is the shortest box in which the game's own title
-         still clears its caption, on a phone-width card as well as desktop.
-         The poster sits in that box until a tap, and a drag on it still
-         scrolls the page. */
+         still clears its caption, on a phone-width card as well as desktop. */
       .frame.perihelion {
         aspect-ratio: 1 / 1;
         overflow: hidden;
@@ -1051,34 +1049,6 @@
       .frame.perihelion iframe {
         color-scheme: dark;
         overflow: hidden;
-      }
-
-      .perihelion-poster {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        background: var(--ink-2);
-        color: var(--paper);
-        cursor: pointer;
-        touch-action: pan-y;
-      }
-
-      .perihelion-poster img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      .perihelion-poster .poster-play {
-        z-index: 1;
       }
 
       /* YouTube's cued player paints its own poster from the 480px-wide
@@ -2005,28 +1975,11 @@
                 <h3>Perihelion</h3>
               </div>
               <div class="frame perihelion">
-                <button
-                  type="button"
-                  class="perihelion-poster"
-                  aria-label="Play Perihelion"
-                >
-                  <img
-                    src="./images/perihelion-icon.webp"
-                    alt=""
-                    width="1024"
-                    height="1024"
-                  />
-                  <span class="poster-play" aria-hidden="true"
-                    ><svg class="icon"><use href="#i-play"/></svg></span>
-                </button>
-                <template>
-                  <iframe
-                    src="/perihelion/web/perihelion-2d.html"
-                    title="Perihelion, a one-tap game where a comet circles the Sun"
-                    loading="lazy"
-                    scrolling="no"
-                  ></iframe>
-                </template>
+                <iframe
+                  src="/perihelion/web/perihelion-2d.html"
+                  title="Perihelion, a one-tap game where a comet circles the Sun"
+                  scrolling="no"
+                ></iframe>
               </div>
               <div class="art-body">
                 <p>
@@ -3876,24 +3829,6 @@
           typeof info === "number" ? info : info && info.playerState;
       /* 1 playing, 3 buffering: states the poster must not sit on top of */
       if (state === 1 || state === 3) uncover();
-    });
-  });
-
-  /* The game captures touch-drag and Space once its document is alive, so
-     it stays in a template until the poster is clicked. */
-  $$(".perihelion-poster").forEach(function (poster) {
-    poster.addEventListener("click", function () {
-      var frame = poster.parentNode,
-        tpl = $("template", frame),
-        iframe = tpl && tpl.content.querySelector("iframe");
-      if (!iframe) return;
-      iframe = frame.replaceChild(iframe.cloneNode(true), poster);
-      tpl.remove();
-      iframe.addEventListener("load", function () {
-        try {
-          iframe.contentWindow.focus();
-        } catch (e) {}
-      });
     });
   });
 

@@ -18,7 +18,7 @@ test("third-party embeds load without an interaction gate", () => {
     (tag) => !tag.includes("/perihelion/web/perihelion-2d.html"),
   );
   assert.equal(thirdParty.length, 6, "Every external player should have a source");
-  for (const tag of thirdParty) {
+  for (const tag of iframes) {
     assert.match(tag, /\bsrc=/);
     assert.doesNotMatch(tag, /\bloading="lazy"/);
   }
@@ -79,14 +79,12 @@ test("Perihelion plays inside the card", () => {
     html.indexOf('id="a-perihelion"'),
     html.indexOf('id="a-slideops"'),
   );
-  assert.match(card, /class="perihelion-poster"/);
-  assert.match(card, /images\/perihelion-icon\.webp/);
-  assert.match(card, /aria-label="Play Perihelion"/);
+  assert.doesNotMatch(card, /perihelion-poster|perihelion-icon|<template/);
   assert.match(
     card,
-    /<template>\s*<iframe\b[^>]*\bsrc="\/perihelion\/web\/perihelion-2d\.html"/,
+    /<iframe\b[^>]*\bsrc="\/perihelion\/web\/perihelion-2d\.html"/,
   );
-  assert.match(card, /\bloading="lazy"/);
+  assert.doesNotMatch(card, /\bloading="lazy"/);
   assert.match(card, /\bscrolling="no"/);
   assert.match(
     card,
@@ -95,7 +93,7 @@ test("Perihelion plays inside the card", () => {
   assert.match(card, />Game page</);
   assert.match(card, />Play in the browser</);
   assert.match(html, /\.frame\.perihelion\s*\{[^}]*aspect-ratio:\s*1\s*\/\s*1;/s);
-  assert.match(html, /\$\$\("\.perihelion-poster"\)/);
+  assert.doesNotMatch(html, /perihelion-poster/);
 });
 
 test("SlideOps links to skills.sh beside GitHub", () => {
