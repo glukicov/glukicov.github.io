@@ -13,10 +13,16 @@ test("the portfolio map appears before the introduction", () => {
 });
 
 test("third-party embeds load without an interaction gate", () => {
-  const iframeSources = [...html.matchAll(/<iframe\b[^>]*\bsrc=/g)];
-  assert.equal(iframeSources.length, 6, "Every external player should have a source");
+  const iframes = [...html.matchAll(/<iframe\b[^>]*>/g)].map((match) => match[0]);
+  const thirdParty = iframes.filter(
+    (tag) => !tag.includes("/perihelion/web/perihelion-2d.html"),
+  );
+  assert.equal(thirdParty.length, 6, "Every external player should have a source");
+  for (const tag of thirdParty) {
+    assert.match(tag, /\bsrc=/);
+    assert.doesNotMatch(tag, /\bloading="lazy"/);
+  }
   assert.doesNotMatch(html, /class="embed-gate"/);
-  assert.doesNotMatch(html, /<iframe\b[^>]*loading="lazy"/);
 });
 
 test("video frames carry a full-resolution poster over the player", () => {
@@ -66,6 +72,40 @@ test("Perihelion is the first card in the projects section", () => {
     /https:\/\/glukicov\.github\.io\/perihelion\/web\/perihelion-2d\.html/,
   );
   assert.match(projects, /<b>6 open-source projects<\/b>/);
+});
+
+test("Perihelion plays inside the card", () => {
+  const card = html.slice(
+    html.indexOf('id="a-perihelion"'),
+    html.indexOf('id="a-slideops"'),
+  );
+  assert.match(card, /class="perihelion-poster"/);
+  assert.match(card, /images\/perihelion-icon\.webp/);
+  assert.match(card, /aria-label="Play Perihelion"/);
+  assert.match(
+    card,
+    /<template>\s*<iframe\b[^>]*\bsrc="\/perihelion\/web\/perihelion-2d\.html"/,
+  );
+  assert.match(card, /\bloading="lazy"/);
+  assert.match(card, /\bscrolling="no"/);
+  assert.match(
+    card,
+    /title="Perihelion, a one-tap game where a comet circles the Sun"/,
+  );
+  assert.match(card, />Game page</);
+  assert.match(card, />Play in the browser</);
+  assert.match(html, /\.frame\.perihelion\s*\{[^}]*aspect-ratio:\s*1\s*\/\s*1;/s);
+  assert.match(html, /\$\$\("\.perihelion-poster"\)/);
+});
+
+test("SlideOps links to skills.sh beside GitHub", () => {
+  const card = html.slice(html.indexOf('id="a-slideops"'), html.indexOf('id="a-ltm"'));
+  const labels = [...card.matchAll(/class="lnk"[\s\S]*?>([^<]+)/g)].map((match) =>
+    match[1].trim(),
+  );
+  assert.equal(labels[0], "SlideOps on GitHub");
+  assert.equal(labels[1], "SlideOps on skills.sh");
+  assert.match(card, /https:\/\/www\.skills\.sh\/glukicov\/slideops\/slideops/);
 });
 
 test("two-column card grids never leave a hole in a row", () => {
