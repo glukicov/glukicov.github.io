@@ -45,6 +45,29 @@ test("below-the-fold cards use rendering containment", () => {
   assert.match(html, /contain-intrinsic-block-size:\s*auto\s+620px;/);
 });
 
+test("the projects heading drops the ML prefix", () => {
+  assert.match(html, /<h2>Projects and articles<\/h2>/);
+  assert.doesNotMatch(html, /ML projects/);
+  assert.match(html, /— go to Projects</);
+});
+
+test("Perihelion is the first card in the projects section", () => {
+  const projects = html.slice(
+    html.indexOf('id="ml"'),
+    html.indexOf('id="research"'),
+  );
+  const titles = [...projects.matchAll(/<h3>([\s\S]*?)<\/h3>/g)].map((match) =>
+    match[1].replace(/\s+/g, " ").trim(),
+  );
+  assert.equal(titles[0], "Perihelion");
+  assert.match(projects, /https:\/\/glukicov\.github\.io\/perihelion\/"/);
+  assert.match(
+    projects,
+    /https:\/\/glukicov\.github\.io\/perihelion\/web\/perihelion-2d\.html/,
+  );
+  assert.match(projects, /<b>6 open-source projects<\/b>/);
+});
+
 test("two-column card grids never leave a hole in a row", () => {
   const promote =
     ".arts > :is(.wide, :nth-child(1 of :not(.wide)):nth-last-child(odd of :not(.wide)))";
